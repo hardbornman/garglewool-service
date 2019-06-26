@@ -1,0 +1,10 @@
+db:
+  dsn: root:%s@tcp(192.168.2.117:3306)/garglewool?charset=utf8&parseTime=true&loc=Asia%%2fShanghai
+  db_name: garglewool
+  maxidle_conn: 5
+  maxopen_conn: 100
+  pwd: Zwl15380906910
+app:
+  jwt:
+    secret: 4gWUTQC&^kGk@?84I?0wvz$9Ku5MOxWg
+port: 12985
