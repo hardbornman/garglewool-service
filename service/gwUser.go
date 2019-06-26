@@ -195,3 +195,20 @@ func DeleteGwUserInfo(userid int) (isSuccess bool, err error) {
 	//endregion
 
 }
+
+// 登录【用户表】信息
+func Login(loginName string, loginPwd string) (user model.GwUser, err error) {
+
+	//region 验证请求路径
+	validCallPath()
+	//endregion
+
+	//region 查询【聊天用户表】信息
+	user, err = dao.GwUserDao.Login(loginName, loginPwd)
+	if err != nil {
+		return
+	}
+	//endregion
+
+	return
+}

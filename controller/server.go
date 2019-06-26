@@ -2,6 +2,7 @@ package controller
 
 import (
 	"fmt"
+	m "gitee.com/gbat/utils/middleware"
 	"github.com/gin-gonic/gin"
 	"github.com/hardbornman/garglewool-service/controller/middleware"
 	"github.com/hardbornman/garglewool-service/controller/rest/gwComment"
@@ -31,13 +32,14 @@ func Start() {
 	r.NoRoute(func(c *gin.Context) {
 		c.JSON(404, model.Response{Code: "not found", Message: "Page not found"})
 	})
+	r.POST("/auth", gwUser.Auth)
 	v1 := r.Group("/v1")
 	v1.Use(middleware.LimitMiddleware(), middleware.CORSMiddleware())
 	{
 
 		//region REST接口
 		restNode := v1.Group("rest")
-		restNode.Use(middleware.JWTMiddleware())
+		restNode.Use(m.JWTAuth())
 		{
 
 			//region 评论管理

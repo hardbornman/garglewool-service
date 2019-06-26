@@ -220,3 +220,20 @@ func (d *gwUser) _RowsToArray(rows *sqlx.Rows) (gwUsers []model.GwUser, err erro
 	}
 	return gwUsers, err
 }
+
+// 查询【用户表】表中是否存在相关记录
+func (d *gwUser) Login(loginName string, loginPwd string) (user model.GwUser, err error) {
+	rows, err := garglewool.Queryx("select *  from gwuser where loginname=? and loginpwd=?", loginName, loginPwd)
+	if err != nil {
+		return user, err
+	}
+	defer rows.Close()
+	users, err := d._RowsToArray(rows)
+	if err != nil {
+		return user, err
+	}
+	if len(users) <= 0 {
+		return user, err
+	}
+	return users[0], nil
+}
