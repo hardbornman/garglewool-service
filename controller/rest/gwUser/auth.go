@@ -7,6 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/hardbornman/garglewool-service/model"
 	"github.com/hardbornman/garglewool-service/service"
+	"github.com/hardbornman/garglewool-service/service/wechat"
 	"net/http"
 	"time"
 )
@@ -100,4 +101,34 @@ func generateToken(c *gin.Context, user model.GwUser) {
 		"data":   data,
 	})
 	return
+}
+
+// 微信登录
+func WeChatLogin(c *gin.Context) {
+	secret := c.Request.PostFormValue("secret")
+	appid := c.Request.PostFormValue("appid")
+	js_code := c.Request.PostFormValue("js_code")
+	if secret != "" && appid != "" && js_code != "" {
+		m, err := wechat.WechatLogin(js_code, appid, secret)
+		if err == nil && len(m) > 0 {
+			c.JSON(http.StatusOK, gin.H{
+				"status": 1,
+				"msg":    m,
+			})
+			return
+		} else {
+			c.JSON(http.StatusOK, gin.H{
+				"status": -1,
+				"msg":    "验证失败" + err.Error(),
+			})
+			return
+		}
+	} else {
+		c.JSON(http.StatusOK, gin.H{
+			"status": -1,
+			"msg":    "json 解析失败",
+		})
+		return
+	}
+
 }

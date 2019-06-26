@@ -32,7 +32,9 @@ func Start() {
 	r.NoRoute(func(c *gin.Context) {
 		c.JSON(404, model.Response{Code: "not found", Message: "Page not found"})
 	})
+	r.POST("wechatlogin", gwUser.WeChatLogin)
 	r.POST("/auth", gwUser.Auth)
+
 	v1 := r.Group("/v1")
 	v1.Use(middleware.LimitMiddleware(), middleware.CORSMiddleware())
 	{
