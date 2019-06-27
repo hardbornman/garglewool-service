@@ -6,5 +6,5 @@ db:
   pwd: Zwl15380906910
 app:
   jwt:
-    secret: 4gWUTQC&^kGk@?84I?0wvz$9Ku5MOxWg
+    secret: =HALRH0x$AKypwxlS6SnTMNLtDJqw4#3
 port: 12985

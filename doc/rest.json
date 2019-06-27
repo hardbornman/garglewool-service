@@ -6,15 +6,15 @@
 			{
 				"__v": 0,
 				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e获取【评论管理】信息\u003c/code\u003e\u003c/pre\u003e",
+				"desc": "\u003cpre\u003e\u003ccode\u003e获取【评论表】信息\u003c/code\u003e\u003c/pre\u003e",
 				"edit_uid": 0,
 				"index": 0,
-				"markdown": "```\n获取【评论管理】信息\n```",
+				"markdown": "```\n获取【评论表】信息\n```",
 				"method": "GET",
-				"path": "/gw_comments/:id",
+				"path": "/comments/:id",
 				"query_path": {
 					"params": [],
-					"path": "/gw_comments/:id"
+					"path": "/comments/:id"
 				},
 				"req_body_form": [],
 				"req_body_is_json_schema": true,
@@ -34,25 +34,25 @@
 					}
 				],
 				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"评论管理\",\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"comment_createtime\":{\"description\":\"评价时间\",\"type\":\"string\"},\"comment_images\":{\"description\":\"评价图片\",\"type\":\"string\"},\"comment_info\":{\"description\":\"评价内容\",\"type\":\"string\"},\"comment_star\":{\"description\":\"评价星级\",\"type\":\"integer\"},\"commentid\":{\"description\":\"评论ID\",\"type\":\"integer\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"order_code\":{\"description\":\"订单号\",\"type\":\"string\"},\"order_commentor\":{\"description\":\"用户id\",\"type\":\"integer\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"评论表\",\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"commentor\":{\"description\":\"用户id\",\"type\":\"integer\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"id\":{\"description\":\"评论ID\",\"type\":\"integer\"},\"images\":{\"description\":\"评价图片\",\"type\":\"string\"},\"info\":{\"description\":\"评价内容\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"ordercode\":{\"description\":\"订单号\",\"type\":\"string\"},\"shopid\":{\"description\":\"店铺ID\",\"type\":\"integer\"},\"shopname\":{\"description\":\"店铺名称\",\"type\":\"string\"},\"star\":{\"description\":\"评价星级\",\"type\":\"integer\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
 				"res_body_is_json_schema": true,
 				"res_body_type": "json",
 				"status": "done",
-				"title": "获取【评论管理】信息",
+				"title": "获取【评论表】信息",
 				"type": "static"
 			},
 			{
 				"__v": 0,
 				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e获取【评论管理】列表\u003c/code\u003e\u003c/pre\u003e",
+				"desc": "\u003cpre\u003e\u003ccode\u003e获取【评论表】列表\u003c/code\u003e\u003c/pre\u003e",
 				"edit_uid": 0,
 				"index": 1,
-				"markdown": "```\n获取【评论管理】列表\n```",
+				"markdown": "```\n获取【评论表】列表\n```",
 				"method": "GET",
-				"path": "/gw_comments",
+				"path": "/comments",
 				"query_path": {
 					"params": [],
-					"path": "/gw_comments"
+					"path": "/comments"
 				},
 				"req_body_form": [],
 				"req_body_is_json_schema": true,
@@ -77,29 +77,29 @@
 						"required": "0"
 					}
 				],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"评论管理列表\",\"items\":{\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"comment_createtime\":{\"description\":\"评价时间\",\"type\":\"string\"},\"comment_images\":{\"description\":\"评价图片\",\"type\":\"string\"},\"comment_info\":{\"description\":\"评价内容\",\"type\":\"string\"},\"comment_star\":{\"description\":\"评价星级\",\"type\":\"integer\"},\"commentid\":{\"description\":\"评论ID\",\"type\":\"integer\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"order_code\":{\"description\":\"订单号\",\"type\":\"string\"},\"order_commentor\":{\"description\":\"用户id\",\"type\":\"integer\"}},\"type\":\"object\"},\"required\":[],\"type\":\"array\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"评论表列表\",\"items\":{\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"commentor\":{\"description\":\"用户id\",\"type\":\"integer\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"id\":{\"description\":\"评论ID\",\"type\":\"integer\"},\"images\":{\"description\":\"评价图片\",\"type\":\"string\"},\"info\":{\"description\":\"评价内容\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"ordercode\":{\"description\":\"订单号\",\"type\":\"string\"},\"shopid\":{\"description\":\"店铺ID\",\"type\":\"integer\"},\"shopname\":{\"description\":\"店铺名称\",\"type\":\"string\"},\"star\":{\"description\":\"评价星级\",\"type\":\"integer\"}},\"type\":\"object\"},\"required\":[],\"type\":\"array\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
 				"res_body_is_json_schema": true,
 				"res_body_type": "json",
 				"status": "done",
-				"title": "获取【评论管理】列表",
+				"title": "获取【评论表】列表",
 				"type": "static"
 			},
 			{
 				"__v": 0,
 				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e插入【评论管理】信息\u003c/code\u003e\u003c/pre\u003e",
+				"desc": "\u003cpre\u003e\u003ccode\u003e插入【评论表】信息\u003c/code\u003e\u003c/pre\u003e",
 				"edit_uid": 0,
 				"index": 2,
-				"markdown": "```\n插入【评论管理】信息\n```",
+				"markdown": "```\n插入【评论表】信息\n```",
 				"method": "POST",
-				"path": "/gw_comments",
+				"path": "/comments",
 				"query_path": {
 					"params": [],
-					"path": "/gw_comments"
+					"path": "/comments"
 				},
 				"req_body_form": [],
 				"req_body_is_json_schema": true,
-				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"comment_createtime\":{\"description\":\"评价时间\",\"name\":\"comment_createtime\",\"required\":\"1\",\"type\":\"string\"},\"comment_images\":{\"description\":\"评价图片\",\"name\":\"comment_images\",\"required\":\"1\",\"type\":\"string\"},\"comment_info\":{\"description\":\"评价内容\",\"name\":\"comment_info\",\"required\":\"1\",\"type\":\"string\"},\"comment_star\":{\"description\":\"评价星级\",\"name\":\"comment_star\",\"required\":\"1\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"order_code\":{\"description\":\"订单号\",\"name\":\"order_code\",\"required\":\"1\",\"type\":\"string\"},\"order_commentor\":{\"description\":\"用户id\",\"name\":\"order_commentor\",\"required\":\"1\",\"type\":\"integer\"}},\"required\":[\"order_code\",\"order_commentor\",\"comment_star\",\"comment_info\",\"comment_images\",\"comment_createtime\",\"adder\",\"addtime\",\"moder\",\"modtime\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"commentor\":{\"description\":\"用户id\",\"name\":\"commentor\",\"required\":\"1\",\"type\":\"integer\"},\"images\":{\"description\":\"评价图片\",\"name\":\"images\",\"required\":\"1\",\"type\":\"string\"},\"info\":{\"description\":\"评价内容\",\"name\":\"info\",\"required\":\"1\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"ordercode\":{\"description\":\"订单号\",\"name\":\"ordercode\",\"required\":\"1\",\"type\":\"string\"},\"shopid\":{\"description\":\"店铺ID\",\"name\":\"shopid\",\"required\":\"1\",\"type\":\"integer\"},\"star\":{\"description\":\"评价星级\",\"name\":\"star\",\"required\":\"1\",\"type\":\"integer\"}},\"required\":[\"ordercode\",\"commentor\",\"star\",\"info\",\"images\",\"adder\",\"addtime\",\"moder\",\"modtime\",\"shopid\"],\"title\":\"empty object\",\"type\":\"object\"}",
 				"req_body_type": "json",
 				"req_headers": [
 					{
@@ -116,30 +116,30 @@
 				],
 				"req_params": [],
 				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"评论管理\",\"properties\":{\"commentid\":{\"description\":\"评论ID\",\"type\":\"integer\"},\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"评论表\",\"properties\":{\"id\":{\"description\":\"评论ID\",\"type\":\"integer\"},\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
 				"res_body_is_json_schema": true,
 				"res_body_type": "json",
 				"status": "done",
 				"tag": [],
-				"title": "插入【评论管理】信息",
+				"title": "插入【评论表】信息",
 				"type": "static"
 			},
 			{
 				"__v": 0,
 				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e修改【评论管理】信息\u003c/code\u003e\u003c/pre\u003e",
+				"desc": "\u003cpre\u003e\u003ccode\u003e修改【评论表】信息\u003c/code\u003e\u003c/pre\u003e",
 				"edit_uid": 0,
 				"index": 3,
-				"markdown": "```\n修改【评论管理】信息\n```",
+				"markdown": "```\n修改【评论表】信息\n```",
 				"method": "PUT",
-				"path": "/gw_comments/:id",
+				"path": "/comments/:id",
 				"query_path": {
 					"params": [],
-					"path": "/gw_comments/:id"
+					"path": "/comments/:id"
 				},
 				"req_body_form": [],
 				"req_body_is_json_schema": true,
-				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"comment_createtime\":{\"description\":\"评价时间\",\"name\":\"comment_createtime\",\"required\":\"1\",\"type\":\"string\"},\"comment_images\":{\"description\":\"评价图片\",\"name\":\"comment_images\",\"required\":\"1\",\"type\":\"string\"},\"comment_info\":{\"description\":\"评价内容\",\"name\":\"comment_info\",\"required\":\"1\",\"type\":\"string\"},\"comment_star\":{\"description\":\"评价星级\",\"name\":\"comment_star\",\"required\":\"1\",\"type\":\"integer\"},\"commentid\":{\"description\":\"评论ID\",\"name\":\"commentid\",\"required\":\"1\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"order_code\":{\"description\":\"订单号\",\"name\":\"order_code\",\"required\":\"1\",\"type\":\"string\"},\"order_commentor\":{\"description\":\"用户id\",\"name\":\"order_commentor\",\"required\":\"1\",\"type\":\"integer\"}},\"required\":[\"commentid\",\"order_code\",\"order_commentor\",\"comment_star\",\"comment_info\",\"comment_images\",\"comment_createtime\",\"adder\",\"addtime\",\"moder\",\"modtime\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"commentor\":{\"description\":\"用户id\",\"name\":\"commentor\",\"required\":\"1\",\"type\":\"integer\"},\"id\":{\"description\":\"评论ID\",\"name\":\"id\",\"required\":\"1\",\"type\":\"integer\"},\"images\":{\"description\":\"评价图片\",\"name\":\"images\",\"required\":\"1\",\"type\":\"string\"},\"info\":{\"description\":\"评价内容\",\"name\":\"info\",\"required\":\"1\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"ordercode\":{\"description\":\"订单号\",\"name\":\"ordercode\",\"required\":\"1\",\"type\":\"string\"},\"shopid\":{\"description\":\"店铺ID\",\"name\":\"shopid\",\"required\":\"1\",\"type\":\"integer\"},\"star\":{\"description\":\"评价星级\",\"name\":\"star\",\"required\":\"1\",\"type\":\"integer\"}},\"required\":[\"id\",\"ordercode\",\"commentor\",\"star\",\"info\",\"images\",\"adder\",\"addtime\",\"moder\",\"modtime\",\"shopid\"],\"title\":\"empty object\",\"type\":\"object\"}",
 				"req_body_type": "json",
 				"req_headers": [
 					{
@@ -162,26 +162,26 @@
 					}
 				],
 				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"评论管理\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"评论表\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
 				"res_body_is_json_schema": true,
 				"res_body_type": "json",
 				"status": "done",
 				"tag": [],
-				"title": "修改【评论管理】信息",
+				"title": "修改【评论表】信息",
 				"type": "static"
 			},
 			{
 				"__v": 0,
 				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e删除【评论管理】信息\u003c/code\u003e\u003c/pre\u003e",
+				"desc": "\u003cpre\u003e\u003ccode\u003e删除【评论表】信息\u003c/code\u003e\u003c/pre\u003e",
 				"edit_uid": 0,
 				"index": 4,
-				"markdown": "```\n删除【评论管理】信息\n```",
+				"markdown": "```\n删除【评论表】信息\n```",
 				"method": "DELETE",
-				"path": "/gw_comments/:id",
+				"path": "/comments/:id",
 				"query_path": {
 					"params": [],
-					"path": "/gw_comments/:id"
+					"path": "/comments/:id"
 				},
 				"req_body_form": [],
 				"req_body_is_json_schema": true,
@@ -201,1298 +201,20 @@
 					}
 				],
 				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"评论管理\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"评论表\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
 				"res_body_is_json_schema": true,
 				"res_body_type": "json",
 				"status": "done",
 				"tag": [],
-				"title": "删除【评论管理】信息",
+				"title": "删除【评论表】信息",
 				"type": "static"
 			}
 		],
-		"name": "评论管理"
+		"name": "评论表"
 	},
 	{
 		"desc": "",
 		"index": 1,
-		"list": [
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e获取【订单管理】信息\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 0,
-				"markdown": "```\n获取【订单管理】信息\n```",
-				"method": "GET",
-				"path": "/gw_orders/:id",
-				"query_path": {
-					"params": [],
-					"path": "/gw_orders/:id"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_headers": [
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [
-					{
-						"desc": "订单ID",
-						"name": "id",
-						"required": "1"
-					}
-				],
-				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"订单管理\",\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"order_buyer\":{\"description\":\"用户id\",\"type\":\"integer\"},\"order_code\":{\"description\":\"订单号\",\"type\":\"string\"},\"order_isinvalid\":{\"description\":\"是否失效\",\"type\":\"integer\"},\"order_isrefund\":{\"description\":\"是否退款\",\"type\":\"integer\"},\"order_isused\":{\"description\":\"是否使用\",\"type\":\"integer\"},\"order_payprice\":{\"description\":\"购买总价（元）\",\"type\":\"string\"},\"order_paytime\":{\"description\":\"购买日期\",\"type\":\"string\"},\"order_paytype\":{\"description\":\"支付方式\",\"type\":\"integer\"},\"order_refundprice\":{\"description\":\"退款金额\",\"type\":\"string\"},\"order_refundtime\":{\"description\":\"退款日期\",\"type\":\"string\"},\"order_remark\":{\"description\":\"订单备注\",\"type\":\"string\"},\"order_totalprice\":{\"description\":\"订单总价（元）\",\"type\":\"string\"},\"orderid\":{\"description\":\"订单ID\",\"type\":\"integer\"},\"pkg_code\":{\"description\":\"套餐号\",\"type\":\"string\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"title": "获取【订单管理】信息",
-				"type": "static"
-			},
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e获取【订单管理】列表\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 1,
-				"markdown": "```\n获取【订单管理】列表\n```",
-				"method": "GET",
-				"path": "/gw_orders",
-				"query_path": {
-					"params": [],
-					"path": "/gw_orders"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_headers": [
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [],
-				"req_query": [
-					{
-						"desc": "当前页码，从1开始，最大支持100000，默认是1。",
-						"name": "pageIndex",
-						"required": "0"
-					},
-					{
-						"desc": "每页记录数，从1开始，最大支持500，默认是15。",
-						"name": "pageSize",
-						"required": "0"
-					}
-				],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"订单管理列表\",\"items\":{\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"order_buyer\":{\"description\":\"用户id\",\"type\":\"integer\"},\"order_code\":{\"description\":\"订单号\",\"type\":\"string\"},\"order_isinvalid\":{\"description\":\"是否失效\",\"type\":\"integer\"},\"order_isrefund\":{\"description\":\"是否退款\",\"type\":\"integer\"},\"order_isused\":{\"description\":\"是否使用\",\"type\":\"integer\"},\"order_payprice\":{\"description\":\"购买总价（元）\",\"type\":\"string\"},\"order_paytime\":{\"description\":\"购买日期\",\"type\":\"string\"},\"order_paytype\":{\"description\":\"支付方式\",\"type\":\"integer\"},\"order_refundprice\":{\"description\":\"退款金额\",\"type\":\"string\"},\"order_refundtime\":{\"description\":\"退款日期\",\"type\":\"string\"},\"order_remark\":{\"description\":\"订单备注\",\"type\":\"string\"},\"order_totalprice\":{\"description\":\"订单总价（元）\",\"type\":\"string\"},\"orderid\":{\"description\":\"订单ID\",\"type\":\"integer\"},\"pkg_code\":{\"description\":\"套餐号\",\"type\":\"string\"}},\"type\":\"object\"},\"required\":[],\"type\":\"array\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"title": "获取【订单管理】列表",
-				"type": "static"
-			},
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e插入【订单管理】信息\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 2,
-				"markdown": "```\n插入【订单管理】信息\n```",
-				"method": "POST",
-				"path": "/gw_orders",
-				"query_path": {
-					"params": [],
-					"path": "/gw_orders"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"order_buyer\":{\"description\":\"用户id\",\"name\":\"order_buyer\",\"required\":\"1\",\"type\":\"integer\"},\"order_code\":{\"description\":\"订单号\",\"name\":\"order_code\",\"required\":\"1\",\"type\":\"string\"},\"order_isinvalid\":{\"description\":\"是否失效\",\"name\":\"order_isinvalid\",\"required\":\"1\",\"type\":\"integer\"},\"order_isrefund\":{\"description\":\"是否退款\",\"name\":\"order_isrefund\",\"required\":\"1\",\"type\":\"integer\"},\"order_isused\":{\"description\":\"是否使用\",\"name\":\"order_isused\",\"required\":\"1\",\"type\":\"integer\"},\"order_payprice\":{\"description\":\"购买总价（元）\",\"name\":\"order_payprice\",\"required\":\"1\",\"type\":\"number\"},\"order_paytime\":{\"description\":\"购买日期\",\"name\":\"order_paytime\",\"required\":\"1\",\"type\":\"string\"},\"order_paytype\":{\"description\":\"支付方式\",\"name\":\"order_paytype\",\"required\":\"1\",\"type\":\"integer\"},\"order_refundprice\":{\"description\":\"退款金额\",\"name\":\"order_refundprice\",\"required\":\"1\",\"type\":\"number\"},\"order_refundtime\":{\"description\":\"退款日期\",\"name\":\"order_refundtime\",\"required\":\"1\",\"type\":\"string\"},\"order_remark\":{\"description\":\"订单备注\",\"name\":\"order_remark\",\"required\":\"1\",\"type\":\"string\"},\"order_totalprice\":{\"description\":\"订单总价（元）\",\"name\":\"order_totalprice\",\"required\":\"1\",\"type\":\"number\"},\"pkg_code\":{\"description\":\"套餐号\",\"name\":\"pkg_code\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"pkg_code\",\"order_code\",\"order_buyer\",\"order_paytype\",\"order_totalprice\",\"order_payprice\",\"order_paytime\",\"order_isinvalid\",\"order_isused\",\"order_isrefund\",\"order_refundprice\",\"order_refundtime\",\"order_remark\",\"adder\",\"addtime\",\"moder\",\"modtime\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"req_body_type": "json",
-				"req_headers": [
-					{
-						"name": "Content-Type",
-						"required": "1",
-						"value": "application/json"
-					},
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [],
-				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"订单管理\",\"properties\":{\"orderid\":{\"description\":\"订单ID\",\"type\":\"integer\"},\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"tag": [],
-				"title": "插入【订单管理】信息",
-				"type": "static"
-			},
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e修改【订单管理】信息\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 3,
-				"markdown": "```\n修改【订单管理】信息\n```",
-				"method": "PUT",
-				"path": "/gw_orders/:id",
-				"query_path": {
-					"params": [],
-					"path": "/gw_orders/:id"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"order_buyer\":{\"description\":\"用户id\",\"name\":\"order_buyer\",\"required\":\"1\",\"type\":\"integer\"},\"order_code\":{\"description\":\"订单号\",\"name\":\"order_code\",\"required\":\"1\",\"type\":\"string\"},\"order_isinvalid\":{\"description\":\"是否失效\",\"name\":\"order_isinvalid\",\"required\":\"1\",\"type\":\"integer\"},\"order_isrefund\":{\"description\":\"是否退款\",\"name\":\"order_isrefund\",\"required\":\"1\",\"type\":\"integer\"},\"order_isused\":{\"description\":\"是否使用\",\"name\":\"order_isused\",\"required\":\"1\",\"type\":\"integer\"},\"order_payprice\":{\"description\":\"购买总价（元）\",\"name\":\"order_payprice\",\"required\":\"1\",\"type\":\"number\"},\"order_paytime\":{\"description\":\"购买日期\",\"name\":\"order_paytime\",\"required\":\"1\",\"type\":\"string\"},\"order_paytype\":{\"description\":\"支付方式\",\"name\":\"order_paytype\",\"required\":\"1\",\"type\":\"integer\"},\"order_refundprice\":{\"description\":\"退款金额\",\"name\":\"order_refundprice\",\"required\":\"1\",\"type\":\"number\"},\"order_refundtime\":{\"description\":\"退款日期\",\"name\":\"order_refundtime\",\"required\":\"1\",\"type\":\"string\"},\"order_remark\":{\"description\":\"订单备注\",\"name\":\"order_remark\",\"required\":\"1\",\"type\":\"string\"},\"order_totalprice\":{\"description\":\"订单总价（元）\",\"name\":\"order_totalprice\",\"required\":\"1\",\"type\":\"number\"},\"orderid\":{\"description\":\"订单ID\",\"name\":\"orderid\",\"required\":\"1\",\"type\":\"integer\"},\"pkg_code\":{\"description\":\"套餐号\",\"name\":\"pkg_code\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"orderid\",\"pkg_code\",\"order_code\",\"order_buyer\",\"order_paytype\",\"order_totalprice\",\"order_payprice\",\"order_paytime\",\"order_isinvalid\",\"order_isused\",\"order_isrefund\",\"order_refundprice\",\"order_refundtime\",\"order_remark\",\"adder\",\"addtime\",\"moder\",\"modtime\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"req_body_type": "json",
-				"req_headers": [
-					{
-						"name": "Content-Type",
-						"required": "1",
-						"value": "application/json"
-					},
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [
-					{
-						"desc": "订单ID",
-						"name": "id",
-						"required": "1"
-					}
-				],
-				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"订单管理\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"tag": [],
-				"title": "修改【订单管理】信息",
-				"type": "static"
-			},
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e删除【订单管理】信息\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 4,
-				"markdown": "```\n删除【订单管理】信息\n```",
-				"method": "DELETE",
-				"path": "/gw_orders/:id",
-				"query_path": {
-					"params": [],
-					"path": "/gw_orders/:id"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_headers": [
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [
-					{
-						"desc": "订单ID",
-						"name": "id",
-						"required": "1"
-					}
-				],
-				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"订单管理\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"tag": [],
-				"title": "删除【订单管理】信息",
-				"type": "static"
-			}
-		],
-		"name": "订单管理"
-	},
-	{
-		"desc": "",
-		"index": 2,
-		"list": [
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e获取【套餐管理】信息\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 0,
-				"markdown": "```\n获取【套餐管理】信息\n```",
-				"method": "GET",
-				"path": "/gw_packages/:id",
-				"query_path": {
-					"params": [],
-					"path": "/gw_packages/:id"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_headers": [
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [
-					{
-						"desc": "套餐ID",
-						"name": "id",
-						"required": "1"
-					}
-				],
-				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"套餐管理\",\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"packageid\":{\"description\":\"套餐ID\",\"type\":\"integer\"},\"pkg_code\":{\"description\":\"套餐号\",\"type\":\"string\"},\"pkg_createtime\":{\"description\":\"上架日期\",\"type\":\"string\"},\"pkg_exittime\":{\"description\":\"下架日期\",\"type\":\"string\"},\"pkg_follows\":{\"description\":\"今日关注人数\",\"type\":\"integer\"},\"pkg_info\":{\"description\":\"套餐说明\",\"type\":\"string\"},\"pkg_isinhouse\":{\"description\":\"是否仅限堂食\",\"type\":\"integer\"},\"pkg_isnew\":{\"description\":\"是否新品\",\"type\":\"integer\"},\"pkg_isorder\":{\"description\":\"是否需要预约\",\"type\":\"integer\"},\"pkg_isrecommend\":{\"description\":\"是否强烈推荐\",\"type\":\"integer\"},\"pkg_isrefund\":{\"description\":\"是否支持退款\",\"type\":\"integer\"},\"pkg_links\":{\"description\":\"更多优惠链接地址\",\"type\":\"string\"},\"pkg_people\":{\"description\":\"人数\",\"type\":\"integer\"},\"pkg_title\":{\"description\":\"套餐标题\",\"type\":\"string\"},\"pkg_type\":{\"description\":\"套餐类别\",\"type\":\"string\"},\"pkg_validdays\":{\"description\":\"有效期（天）\",\"type\":\"integer\"},\"pkg_validtime\":{\"description\":\"生效日期\",\"type\":\"string\"},\"shop_code\":{\"description\":\"店铺号\",\"type\":\"string\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"title": "获取【套餐管理】信息",
-				"type": "static"
-			},
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e获取【套餐管理】列表\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 1,
-				"markdown": "```\n获取【套餐管理】列表\n```",
-				"method": "GET",
-				"path": "/gw_packages",
-				"query_path": {
-					"params": [],
-					"path": "/gw_packages"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_headers": [
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [],
-				"req_query": [
-					{
-						"desc": "当前页码，从1开始，最大支持100000，默认是1。",
-						"name": "pageIndex",
-						"required": "0"
-					},
-					{
-						"desc": "每页记录数，从1开始，最大支持500，默认是15。",
-						"name": "pageSize",
-						"required": "0"
-					}
-				],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"套餐管理列表\",\"items\":{\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"packageid\":{\"description\":\"套餐ID\",\"type\":\"integer\"},\"pkg_code\":{\"description\":\"套餐号\",\"type\":\"string\"},\"pkg_createtime\":{\"description\":\"上架日期\",\"type\":\"string\"},\"pkg_exittime\":{\"description\":\"下架日期\",\"type\":\"string\"},\"pkg_follows\":{\"description\":\"今日关注人数\",\"type\":\"integer\"},\"pkg_info\":{\"description\":\"套餐说明\",\"type\":\"string\"},\"pkg_isinhouse\":{\"description\":\"是否仅限堂食\",\"type\":\"integer\"},\"pkg_isnew\":{\"description\":\"是否新品\",\"type\":\"integer\"},\"pkg_isorder\":{\"description\":\"是否需要预约\",\"type\":\"integer\"},\"pkg_isrecommend\":{\"description\":\"是否强烈推荐\",\"type\":\"integer\"},\"pkg_isrefund\":{\"description\":\"是否支持退款\",\"type\":\"integer\"},\"pkg_links\":{\"description\":\"更多优惠链接地址\",\"type\":\"string\"},\"pkg_people\":{\"description\":\"人数\",\"type\":\"integer\"},\"pkg_title\":{\"description\":\"套餐标题\",\"type\":\"string\"},\"pkg_type\":{\"description\":\"套餐类别\",\"type\":\"string\"},\"pkg_validdays\":{\"description\":\"有效期（天）\",\"type\":\"integer\"},\"pkg_validtime\":{\"description\":\"生效日期\",\"type\":\"string\"},\"shop_code\":{\"description\":\"店铺号\",\"type\":\"string\"}},\"type\":\"object\"},\"required\":[],\"type\":\"array\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"title": "获取【套餐管理】列表",
-				"type": "static"
-			},
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e插入【套餐管理】信息\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 2,
-				"markdown": "```\n插入【套餐管理】信息\n```",
-				"method": "POST",
-				"path": "/gw_packages",
-				"query_path": {
-					"params": [],
-					"path": "/gw_packages"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"pkg_code\":{\"description\":\"套餐号\",\"name\":\"pkg_code\",\"required\":\"1\",\"type\":\"string\"},\"pkg_createtime\":{\"description\":\"上架日期\",\"name\":\"pkg_createtime\",\"required\":\"1\",\"type\":\"string\"},\"pkg_exittime\":{\"description\":\"下架日期\",\"name\":\"pkg_exittime\",\"required\":\"1\",\"type\":\"string\"},\"pkg_follows\":{\"description\":\"今日关注人数\",\"name\":\"pkg_follows\",\"required\":\"1\",\"type\":\"integer\"},\"pkg_info\":{\"description\":\"套餐说明\",\"name\":\"pkg_info\",\"required\":\"1\",\"type\":\"string\"},\"pkg_isinhouse\":{\"description\":\"是否仅限堂食\",\"name\":\"pkg_isinhouse\",\"required\":\"1\",\"type\":\"integer\"},\"pkg_isnew\":{\"description\":\"是否新品\",\"name\":\"pkg_isnew\",\"required\":\"1\",\"type\":\"integer\"},\"pkg_isorder\":{\"description\":\"是否需要预约\",\"name\":\"pkg_isorder\",\"required\":\"1\",\"type\":\"integer\"},\"pkg_isrecommend\":{\"description\":\"是否强烈推荐\",\"name\":\"pkg_isrecommend\",\"required\":\"1\",\"type\":\"integer\"},\"pkg_isrefund\":{\"description\":\"是否支持退款\",\"name\":\"pkg_isrefund\",\"required\":\"1\",\"type\":\"integer\"},\"pkg_links\":{\"description\":\"更多优惠链接地址\",\"name\":\"pkg_links\",\"required\":\"1\",\"type\":\"string\"},\"pkg_people\":{\"description\":\"人数\",\"name\":\"pkg_people\",\"required\":\"1\",\"type\":\"integer\"},\"pkg_title\":{\"description\":\"套餐标题\",\"name\":\"pkg_title\",\"required\":\"1\",\"type\":\"string\"},\"pkg_type\":{\"description\":\"套餐类别\",\"name\":\"pkg_type\",\"required\":\"1\",\"type\":\"string\"},\"pkg_validdays\":{\"description\":\"有效期（天）\",\"name\":\"pkg_validdays\",\"required\":\"1\",\"type\":\"integer\"},\"pkg_validtime\":{\"description\":\"生效日期\",\"name\":\"pkg_validtime\",\"required\":\"1\",\"type\":\"string\"},\"shop_code\":{\"description\":\"店铺号\",\"name\":\"shop_code\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"shop_code\",\"pkg_code\",\"pkg_type\",\"pkg_title\",\"pkg_people\",\"pkg_isorder\",\"pkg_isrefund\",\"pkg_isinhouse\",\"pkg_isnew\",\"pkg_isrecommend\",\"pkg_validdays\",\"pkg_follows\",\"pkg_createtime\",\"pkg_validtime\",\"pkg_exittime\",\"pkg_links\",\"pkg_info\",\"adder\",\"addtime\",\"moder\",\"modtime\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"req_body_type": "json",
-				"req_headers": [
-					{
-						"name": "Content-Type",
-						"required": "1",
-						"value": "application/json"
-					},
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [],
-				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"套餐管理\",\"properties\":{\"packageid\":{\"description\":\"套餐ID\",\"type\":\"integer\"},\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"tag": [],
-				"title": "插入【套餐管理】信息",
-				"type": "static"
-			},
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e修改【套餐管理】信息\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 3,
-				"markdown": "```\n修改【套餐管理】信息\n```",
-				"method": "PUT",
-				"path": "/gw_packages/:id",
-				"query_path": {
-					"params": [],
-					"path": "/gw_packages/:id"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"packageid\":{\"description\":\"套餐ID\",\"name\":\"packageid\",\"required\":\"1\",\"type\":\"integer\"},\"pkg_code\":{\"description\":\"套餐号\",\"name\":\"pkg_code\",\"required\":\"1\",\"type\":\"string\"},\"pkg_createtime\":{\"description\":\"上架日期\",\"name\":\"pkg_createtime\",\"required\":\"1\",\"type\":\"string\"},\"pkg_exittime\":{\"description\":\"下架日期\",\"name\":\"pkg_exittime\",\"required\":\"1\",\"type\":\"string\"},\"pkg_follows\":{\"description\":\"今日关注人数\",\"name\":\"pkg_follows\",\"required\":\"1\",\"type\":\"integer\"},\"pkg_info\":{\"description\":\"套餐说明\",\"name\":\"pkg_info\",\"required\":\"1\",\"type\":\"string\"},\"pkg_isinhouse\":{\"description\":\"是否仅限堂食\",\"name\":\"pkg_isinhouse\",\"required\":\"1\",\"type\":\"integer\"},\"pkg_isnew\":{\"description\":\"是否新品\",\"name\":\"pkg_isnew\",\"required\":\"1\",\"type\":\"integer\"},\"pkg_isorder\":{\"description\":\"是否需要预约\",\"name\":\"pkg_isorder\",\"required\":\"1\",\"type\":\"integer\"},\"pkg_isrecommend\":{\"description\":\"是否强烈推荐\",\"name\":\"pkg_isrecommend\",\"required\":\"1\",\"type\":\"integer\"},\"pkg_isrefund\":{\"description\":\"是否支持退款\",\"name\":\"pkg_isrefund\",\"required\":\"1\",\"type\":\"integer\"},\"pkg_links\":{\"description\":\"更多优惠链接地址\",\"name\":\"pkg_links\",\"required\":\"1\",\"type\":\"string\"},\"pkg_people\":{\"description\":\"人数\",\"name\":\"pkg_people\",\"required\":\"1\",\"type\":\"integer\"},\"pkg_title\":{\"description\":\"套餐标题\",\"name\":\"pkg_title\",\"required\":\"1\",\"type\":\"string\"},\"pkg_type\":{\"description\":\"套餐类别\",\"name\":\"pkg_type\",\"required\":\"1\",\"type\":\"string\"},\"pkg_validdays\":{\"description\":\"有效期（天）\",\"name\":\"pkg_validdays\",\"required\":\"1\",\"type\":\"integer\"},\"pkg_validtime\":{\"description\":\"生效日期\",\"name\":\"pkg_validtime\",\"required\":\"1\",\"type\":\"string\"},\"shop_code\":{\"description\":\"店铺号\",\"name\":\"shop_code\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"packageid\",\"shop_code\",\"pkg_code\",\"pkg_type\",\"pkg_title\",\"pkg_people\",\"pkg_isorder\",\"pkg_isrefund\",\"pkg_isinhouse\",\"pkg_isnew\",\"pkg_isrecommend\",\"pkg_validdays\",\"pkg_follows\",\"pkg_createtime\",\"pkg_validtime\",\"pkg_exittime\",\"pkg_links\",\"pkg_info\",\"adder\",\"addtime\",\"moder\",\"modtime\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"req_body_type": "json",
-				"req_headers": [
-					{
-						"name": "Content-Type",
-						"required": "1",
-						"value": "application/json"
-					},
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [
-					{
-						"desc": "套餐ID",
-						"name": "id",
-						"required": "1"
-					}
-				],
-				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"套餐管理\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"tag": [],
-				"title": "修改【套餐管理】信息",
-				"type": "static"
-			},
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e删除【套餐管理】信息\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 4,
-				"markdown": "```\n删除【套餐管理】信息\n```",
-				"method": "DELETE",
-				"path": "/gw_packages/:id",
-				"query_path": {
-					"params": [],
-					"path": "/gw_packages/:id"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_headers": [
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [
-					{
-						"desc": "套餐ID",
-						"name": "id",
-						"required": "1"
-					}
-				],
-				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"套餐管理\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"tag": [],
-				"title": "删除【套餐管理】信息",
-				"type": "static"
-			}
-		],
-		"name": "套餐管理"
-	},
-	{
-		"desc": "",
-		"index": 3,
-		"list": [
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e获取【套餐明细管理】信息\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 0,
-				"markdown": "```\n获取【套餐明细管理】信息\n```",
-				"method": "GET",
-				"path": "/gw_packagedetails/:id",
-				"query_path": {
-					"params": [],
-					"path": "/gw_packagedetails/:id"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_headers": [
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [
-					{
-						"desc": "套餐明细ID",
-						"name": "id",
-						"required": "1"
-					}
-				],
-				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"套餐明细管理\",\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"packagedetailid\":{\"description\":\"套餐明细ID\",\"type\":\"integer\"},\"pkg_code\":{\"description\":\"套餐号\",\"type\":\"string\"},\"pkgdetail_name\":{\"description\":\"商品名称\",\"type\":\"string\"},\"pkgdetail_nums\":{\"description\":\"数量\",\"type\":\"integer\"},\"pkgdetail_price\":{\"description\":\"单价（元）\",\"type\":\"string\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"title": "获取【套餐明细管理】信息",
-				"type": "static"
-			},
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e获取【套餐明细管理】列表\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 1,
-				"markdown": "```\n获取【套餐明细管理】列表\n```",
-				"method": "GET",
-				"path": "/gw_packagedetails",
-				"query_path": {
-					"params": [],
-					"path": "/gw_packagedetails"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_headers": [
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [],
-				"req_query": [
-					{
-						"desc": "当前页码，从1开始，最大支持100000，默认是1。",
-						"name": "pageIndex",
-						"required": "0"
-					},
-					{
-						"desc": "每页记录数，从1开始，最大支持500，默认是15。",
-						"name": "pageSize",
-						"required": "0"
-					}
-				],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"套餐明细管理列表\",\"items\":{\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"packagedetailid\":{\"description\":\"套餐明细ID\",\"type\":\"integer\"},\"pkg_code\":{\"description\":\"套餐号\",\"type\":\"string\"},\"pkgdetail_name\":{\"description\":\"商品名称\",\"type\":\"string\"},\"pkgdetail_nums\":{\"description\":\"数量\",\"type\":\"integer\"},\"pkgdetail_price\":{\"description\":\"单价（元）\",\"type\":\"string\"}},\"type\":\"object\"},\"required\":[],\"type\":\"array\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"title": "获取【套餐明细管理】列表",
-				"type": "static"
-			},
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e插入【套餐明细管理】信息\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 2,
-				"markdown": "```\n插入【套餐明细管理】信息\n```",
-				"method": "POST",
-				"path": "/gw_packagedetails",
-				"query_path": {
-					"params": [],
-					"path": "/gw_packagedetails"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"pkg_code\":{\"description\":\"套餐号\",\"name\":\"pkg_code\",\"required\":\"1\",\"type\":\"string\"},\"pkgdetail_name\":{\"description\":\"商品名称\",\"name\":\"pkgdetail_name\",\"required\":\"1\",\"type\":\"string\"},\"pkgdetail_nums\":{\"description\":\"数量\",\"name\":\"pkgdetail_nums\",\"required\":\"1\",\"type\":\"integer\"},\"pkgdetail_price\":{\"description\":\"单价（元）\",\"name\":\"pkgdetail_price\",\"required\":\"1\",\"type\":\"number\"}},\"required\":[\"pkg_code\",\"pkgdetail_name\",\"pkgdetail_nums\",\"pkgdetail_price\",\"adder\",\"addtime\",\"moder\",\"modtime\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"req_body_type": "json",
-				"req_headers": [
-					{
-						"name": "Content-Type",
-						"required": "1",
-						"value": "application/json"
-					},
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [],
-				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"套餐明细管理\",\"properties\":{\"packagedetailid\":{\"description\":\"套餐明细ID\",\"type\":\"integer\"},\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"tag": [],
-				"title": "插入【套餐明细管理】信息",
-				"type": "static"
-			},
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e修改【套餐明细管理】信息\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 3,
-				"markdown": "```\n修改【套餐明细管理】信息\n```",
-				"method": "PUT",
-				"path": "/gw_packagedetails/:id",
-				"query_path": {
-					"params": [],
-					"path": "/gw_packagedetails/:id"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"packagedetailid\":{\"description\":\"套餐明细ID\",\"name\":\"packagedetailid\",\"required\":\"1\",\"type\":\"integer\"},\"pkg_code\":{\"description\":\"套餐号\",\"name\":\"pkg_code\",\"required\":\"1\",\"type\":\"string\"},\"pkgdetail_name\":{\"description\":\"商品名称\",\"name\":\"pkgdetail_name\",\"required\":\"1\",\"type\":\"string\"},\"pkgdetail_nums\":{\"description\":\"数量\",\"name\":\"pkgdetail_nums\",\"required\":\"1\",\"type\":\"integer\"},\"pkgdetail_price\":{\"description\":\"单价（元）\",\"name\":\"pkgdetail_price\",\"required\":\"1\",\"type\":\"number\"}},\"required\":[\"packagedetailid\",\"pkg_code\",\"pkgdetail_name\",\"pkgdetail_nums\",\"pkgdetail_price\",\"adder\",\"addtime\",\"moder\",\"modtime\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"req_body_type": "json",
-				"req_headers": [
-					{
-						"name": "Content-Type",
-						"required": "1",
-						"value": "application/json"
-					},
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [
-					{
-						"desc": "套餐明细ID",
-						"name": "id",
-						"required": "1"
-					}
-				],
-				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"套餐明细管理\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"tag": [],
-				"title": "修改【套餐明细管理】信息",
-				"type": "static"
-			},
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e删除【套餐明细管理】信息\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 4,
-				"markdown": "```\n删除【套餐明细管理】信息\n```",
-				"method": "DELETE",
-				"path": "/gw_packagedetails/:id",
-				"query_path": {
-					"params": [],
-					"path": "/gw_packagedetails/:id"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_headers": [
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [
-					{
-						"desc": "套餐明细ID",
-						"name": "id",
-						"required": "1"
-					}
-				],
-				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"套餐明细管理\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"tag": [],
-				"title": "删除【套餐明细管理】信息",
-				"type": "static"
-			}
-		],
-		"name": "套餐明细管理"
-	},
-	{
-		"desc": "",
-		"index": 4,
-		"list": [
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e获取【店铺管理】信息\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 0,
-				"markdown": "```\n获取【店铺管理】信息\n```",
-				"method": "GET",
-				"path": "/gw_shops/:id",
-				"query_path": {
-					"params": [],
-					"path": "/gw_shops/:id"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_headers": [
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [
-					{
-						"desc": "店铺ID",
-						"name": "id",
-						"required": "1"
-					}
-				],
-				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"店铺管理\",\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"shop_address\":{\"description\":\"店铺详细地址\",\"type\":\"string\"},\"shop_city\":{\"description\":\"店铺地址-市\",\"type\":\"string\"},\"shop_code\":{\"description\":\"店铺号\",\"type\":\"string\"},\"shop_createtime\":{\"description\":\"加盟平台日期\",\"type\":\"string\"},\"shop_district\":{\"description\":\"店铺地址-区\",\"type\":\"string\"},\"shop_exittime\":{\"description\":\"退出平台日期\",\"type\":\"string\"},\"shop_name\":{\"description\":\"店铺名称\",\"type\":\"string\"},\"shop_phone\":{\"description\":\"加盟平台日期\",\"type\":\"string\"},\"shop_province\":{\"description\":\"店铺地址-省\",\"type\":\"string\"},\"shopid\":{\"description\":\"店铺ID\",\"type\":\"integer\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"title": "获取【店铺管理】信息",
-				"type": "static"
-			},
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e获取【店铺管理】列表\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 1,
-				"markdown": "```\n获取【店铺管理】列表\n```",
-				"method": "GET",
-				"path": "/gw_shops",
-				"query_path": {
-					"params": [],
-					"path": "/gw_shops"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_headers": [
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [],
-				"req_query": [
-					{
-						"desc": "当前页码，从1开始，最大支持100000，默认是1。",
-						"name": "pageIndex",
-						"required": "0"
-					},
-					{
-						"desc": "每页记录数，从1开始，最大支持500，默认是15。",
-						"name": "pageSize",
-						"required": "0"
-					}
-				],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"店铺管理列表\",\"items\":{\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"shop_address\":{\"description\":\"店铺详细地址\",\"type\":\"string\"},\"shop_city\":{\"description\":\"店铺地址-市\",\"type\":\"string\"},\"shop_code\":{\"description\":\"店铺号\",\"type\":\"string\"},\"shop_createtime\":{\"description\":\"加盟平台日期\",\"type\":\"string\"},\"shop_district\":{\"description\":\"店铺地址-区\",\"type\":\"string\"},\"shop_exittime\":{\"description\":\"退出平台日期\",\"type\":\"string\"},\"shop_name\":{\"description\":\"店铺名称\",\"type\":\"string\"},\"shop_phone\":{\"description\":\"加盟平台日期\",\"type\":\"string\"},\"shop_province\":{\"description\":\"店铺地址-省\",\"type\":\"string\"},\"shopid\":{\"description\":\"店铺ID\",\"type\":\"integer\"}},\"type\":\"object\"},\"required\":[],\"type\":\"array\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"title": "获取【店铺管理】列表",
-				"type": "static"
-			},
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e插入【店铺管理】信息\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 2,
-				"markdown": "```\n插入【店铺管理】信息\n```",
-				"method": "POST",
-				"path": "/gw_shops",
-				"query_path": {
-					"params": [],
-					"path": "/gw_shops"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"shop_address\":{\"description\":\"店铺详细地址\",\"name\":\"shop_address\",\"required\":\"1\",\"type\":\"string\"},\"shop_city\":{\"description\":\"店铺地址-市\",\"name\":\"shop_city\",\"required\":\"1\",\"type\":\"string\"},\"shop_code\":{\"description\":\"店铺号\",\"name\":\"shop_code\",\"required\":\"1\",\"type\":\"string\"},\"shop_createtime\":{\"description\":\"加盟平台日期\",\"name\":\"shop_createtime\",\"required\":\"1\",\"type\":\"string\"},\"shop_district\":{\"description\":\"店铺地址-区\",\"name\":\"shop_district\",\"required\":\"1\",\"type\":\"string\"},\"shop_exittime\":{\"description\":\"退出平台日期\",\"name\":\"shop_exittime\",\"required\":\"1\",\"type\":\"string\"},\"shop_name\":{\"description\":\"店铺名称\",\"name\":\"shop_name\",\"required\":\"1\",\"type\":\"string\"},\"shop_phone\":{\"description\":\"加盟平台日期\",\"name\":\"shop_phone\",\"required\":\"1\",\"type\":\"string\"},\"shop_province\":{\"description\":\"店铺地址-省\",\"name\":\"shop_province\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"shop_code\",\"shop_name\",\"shop_province\",\"shop_city\",\"shop_district\",\"shop_address\",\"shop_phone\",\"shop_createtime\",\"shop_exittime\",\"adder\",\"addtime\",\"moder\",\"modtime\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"req_body_type": "json",
-				"req_headers": [
-					{
-						"name": "Content-Type",
-						"required": "1",
-						"value": "application/json"
-					},
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [],
-				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"店铺管理\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"},\"shopid\":{\"description\":\"店铺ID\",\"type\":\"integer\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"tag": [],
-				"title": "插入【店铺管理】信息",
-				"type": "static"
-			},
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e修改【店铺管理】信息\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 3,
-				"markdown": "```\n修改【店铺管理】信息\n```",
-				"method": "PUT",
-				"path": "/gw_shops/:id",
-				"query_path": {
-					"params": [],
-					"path": "/gw_shops/:id"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"shop_address\":{\"description\":\"店铺详细地址\",\"name\":\"shop_address\",\"required\":\"1\",\"type\":\"string\"},\"shop_city\":{\"description\":\"店铺地址-市\",\"name\":\"shop_city\",\"required\":\"1\",\"type\":\"string\"},\"shop_code\":{\"description\":\"店铺号\",\"name\":\"shop_code\",\"required\":\"1\",\"type\":\"string\"},\"shop_createtime\":{\"description\":\"加盟平台日期\",\"name\":\"shop_createtime\",\"required\":\"1\",\"type\":\"string\"},\"shop_district\":{\"description\":\"店铺地址-区\",\"name\":\"shop_district\",\"required\":\"1\",\"type\":\"string\"},\"shop_exittime\":{\"description\":\"退出平台日期\",\"name\":\"shop_exittime\",\"required\":\"1\",\"type\":\"string\"},\"shop_name\":{\"description\":\"店铺名称\",\"name\":\"shop_name\",\"required\":\"1\",\"type\":\"string\"},\"shop_phone\":{\"description\":\"加盟平台日期\",\"name\":\"shop_phone\",\"required\":\"1\",\"type\":\"string\"},\"shop_province\":{\"description\":\"店铺地址-省\",\"name\":\"shop_province\",\"required\":\"1\",\"type\":\"string\"},\"shopid\":{\"description\":\"店铺ID\",\"name\":\"shopid\",\"required\":\"1\",\"type\":\"integer\"}},\"required\":[\"shopid\",\"shop_code\",\"shop_name\",\"shop_province\",\"shop_city\",\"shop_district\",\"shop_address\",\"shop_phone\",\"shop_createtime\",\"shop_exittime\",\"adder\",\"addtime\",\"moder\",\"modtime\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"req_body_type": "json",
-				"req_headers": [
-					{
-						"name": "Content-Type",
-						"required": "1",
-						"value": "application/json"
-					},
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [
-					{
-						"desc": "店铺ID",
-						"name": "id",
-						"required": "1"
-					}
-				],
-				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"店铺管理\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"tag": [],
-				"title": "修改【店铺管理】信息",
-				"type": "static"
-			},
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e删除【店铺管理】信息\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 4,
-				"markdown": "```\n删除【店铺管理】信息\n```",
-				"method": "DELETE",
-				"path": "/gw_shops/:id",
-				"query_path": {
-					"params": [],
-					"path": "/gw_shops/:id"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_headers": [
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [
-					{
-						"desc": "店铺ID",
-						"name": "id",
-						"required": "1"
-					}
-				],
-				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"店铺管理\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"tag": [],
-				"title": "删除【店铺管理】信息",
-				"type": "static"
-			}
-		],
-		"name": "店铺管理"
-	},
-	{
-		"desc": "",
-		"index": 5,
-		"list": [
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e获取【用户管理】信息\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 0,
-				"markdown": "```\n获取【用户管理】信息\n```",
-				"method": "GET",
-				"path": "/gw_users/:id",
-				"query_path": {
-					"params": [],
-					"path": "/gw_users/:id"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_headers": [
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [
-					{
-						"desc": "用户ID",
-						"name": "id",
-						"required": "1"
-					}
-				],
-				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"用户管理\",\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"user_golds\":{\"description\":\"用户金币数量\",\"type\":\"integer\"},\"user_name\":{\"description\":\"用户名\",\"type\":\"string\"},\"user_phone\":{\"description\":\"手机号\",\"type\":\"string\"},\"userid\":{\"description\":\"用户ID\",\"type\":\"integer\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"title": "获取【用户管理】信息",
-				"type": "static"
-			},
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e获取【用户管理】列表\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 1,
-				"markdown": "```\n获取【用户管理】列表\n```",
-				"method": "GET",
-				"path": "/gw_users",
-				"query_path": {
-					"params": [],
-					"path": "/gw_users"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_headers": [
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [],
-				"req_query": [
-					{
-						"desc": "当前页码，从1开始，最大支持100000，默认是1。",
-						"name": "pageIndex",
-						"required": "0"
-					},
-					{
-						"desc": "每页记录数，从1开始，最大支持500，默认是15。",
-						"name": "pageSize",
-						"required": "0"
-					}
-				],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"用户管理列表\",\"items\":{\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"user_golds\":{\"description\":\"用户金币数量\",\"type\":\"integer\"},\"user_name\":{\"description\":\"用户名\",\"type\":\"string\"},\"user_phone\":{\"description\":\"手机号\",\"type\":\"string\"},\"userid\":{\"description\":\"用户ID\",\"type\":\"integer\"}},\"type\":\"object\"},\"required\":[],\"type\":\"array\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"title": "获取【用户管理】列表",
-				"type": "static"
-			},
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e插入【用户管理】信息\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 2,
-				"markdown": "```\n插入【用户管理】信息\n```",
-				"method": "POST",
-				"path": "/gw_users",
-				"query_path": {
-					"params": [],
-					"path": "/gw_users"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"user_golds\":{\"description\":\"用户金币数量\",\"name\":\"user_golds\",\"required\":\"1\",\"type\":\"integer\"},\"user_name\":{\"description\":\"用户名\",\"name\":\"user_name\",\"required\":\"1\",\"type\":\"string\"},\"user_phone\":{\"description\":\"手机号\",\"name\":\"user_phone\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"user_name\",\"user_phone\",\"user_golds\",\"adder\",\"addtime\",\"moder\",\"modtime\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"req_body_type": "json",
-				"req_headers": [
-					{
-						"name": "Content-Type",
-						"required": "1",
-						"value": "application/json"
-					},
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [],
-				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"用户管理\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"},\"userid\":{\"description\":\"用户ID\",\"type\":\"integer\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"tag": [],
-				"title": "插入【用户管理】信息",
-				"type": "static"
-			},
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e修改【用户管理】信息\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 3,
-				"markdown": "```\n修改【用户管理】信息\n```",
-				"method": "PUT",
-				"path": "/gw_users/:id",
-				"query_path": {
-					"params": [],
-					"path": "/gw_users/:id"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"user_golds\":{\"description\":\"用户金币数量\",\"name\":\"user_golds\",\"required\":\"1\",\"type\":\"integer\"},\"user_name\":{\"description\":\"用户名\",\"name\":\"user_name\",\"required\":\"1\",\"type\":\"string\"},\"user_phone\":{\"description\":\"手机号\",\"name\":\"user_phone\",\"required\":\"1\",\"type\":\"string\"},\"userid\":{\"description\":\"用户ID\",\"name\":\"userid\",\"required\":\"1\",\"type\":\"integer\"}},\"required\":[\"userid\",\"user_name\",\"user_phone\",\"user_golds\",\"adder\",\"addtime\",\"moder\",\"modtime\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"req_body_type": "json",
-				"req_headers": [
-					{
-						"name": "Content-Type",
-						"required": "1",
-						"value": "application/json"
-					},
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [
-					{
-						"desc": "用户ID",
-						"name": "id",
-						"required": "1"
-					}
-				],
-				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"用户管理\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"tag": [],
-				"title": "修改【用户管理】信息",
-				"type": "static"
-			},
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e删除【用户管理】信息\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 4,
-				"markdown": "```\n删除【用户管理】信息\n```",
-				"method": "DELETE",
-				"path": "/gw_users/:id",
-				"query_path": {
-					"params": [],
-					"path": "/gw_users/:id"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_headers": [
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [
-					{
-						"desc": "用户ID",
-						"name": "id",
-						"required": "1"
-					}
-				],
-				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"用户管理\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"tag": [],
-				"title": "删除【用户管理】信息",
-				"type": "static"
-			}
-		],
-		"name": "用户管理"
-	},
-	{
-		"desc": "",
-		"index": 6,
-		"list": [
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e获取【抵用券管理】信息\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 0,
-				"markdown": "```\n获取【抵用券管理】信息\n```",
-				"method": "GET",
-				"path": "/gw_vouchers/:id",
-				"query_path": {
-					"params": [],
-					"path": "/gw_vouchers/:id"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_headers": [
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [
-					{
-						"desc": "抵用券ID",
-						"name": "id",
-						"required": "1"
-					}
-				],
-				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"抵用券管理\",\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"voucher_code\":{\"description\":\"抵用券号\",\"type\":\"string\"},\"voucher_createtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"voucher_isinvalid\":{\"description\":\"是否失效\",\"type\":\"integer\"},\"voucher_quota\":{\"description\":\"额度\",\"type\":\"string\"},\"voucher_reduce\":{\"description\":\"抵消\",\"type\":\"string\"},\"voucher_userid\":{\"description\":\"用户id\",\"type\":\"integer\"},\"voucher_validdays\":{\"description\":\"有效期（天）\",\"type\":\"integer\"},\"voucherid\":{\"description\":\"抵用券ID\",\"type\":\"integer\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"title": "获取【抵用券管理】信息",
-				"type": "static"
-			},
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e获取【抵用券管理】列表\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 1,
-				"markdown": "```\n获取【抵用券管理】列表\n```",
-				"method": "GET",
-				"path": "/gw_vouchers",
-				"query_path": {
-					"params": [],
-					"path": "/gw_vouchers"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_headers": [
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [],
-				"req_query": [
-					{
-						"desc": "当前页码，从1开始，最大支持100000，默认是1。",
-						"name": "pageIndex",
-						"required": "0"
-					},
-					{
-						"desc": "每页记录数，从1开始，最大支持500，默认是15。",
-						"name": "pageSize",
-						"required": "0"
-					}
-				],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"抵用券管理列表\",\"items\":{\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"voucher_code\":{\"description\":\"抵用券号\",\"type\":\"string\"},\"voucher_createtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"voucher_isinvalid\":{\"description\":\"是否失效\",\"type\":\"integer\"},\"voucher_quota\":{\"description\":\"额度\",\"type\":\"string\"},\"voucher_reduce\":{\"description\":\"抵消\",\"type\":\"string\"},\"voucher_userid\":{\"description\":\"用户id\",\"type\":\"integer\"},\"voucher_validdays\":{\"description\":\"有效期（天）\",\"type\":\"integer\"},\"voucherid\":{\"description\":\"抵用券ID\",\"type\":\"integer\"}},\"type\":\"object\"},\"required\":[],\"type\":\"array\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"title": "获取【抵用券管理】列表",
-				"type": "static"
-			},
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e插入【抵用券管理】信息\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 2,
-				"markdown": "```\n插入【抵用券管理】信息\n```",
-				"method": "POST",
-				"path": "/gw_vouchers",
-				"query_path": {
-					"params": [],
-					"path": "/gw_vouchers"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"voucher_code\":{\"description\":\"抵用券号\",\"name\":\"voucher_code\",\"required\":\"1\",\"type\":\"string\"},\"voucher_createtime\":{\"description\":\"创建时间\",\"name\":\"voucher_createtime\",\"required\":\"1\",\"type\":\"string\"},\"voucher_isinvalid\":{\"description\":\"是否失效\",\"name\":\"voucher_isinvalid\",\"required\":\"1\",\"type\":\"integer\"},\"voucher_quota\":{\"description\":\"额度\",\"name\":\"voucher_quota\",\"required\":\"1\",\"type\":\"number\"},\"voucher_reduce\":{\"description\":\"抵消\",\"name\":\"voucher_reduce\",\"required\":\"1\",\"type\":\"number\"},\"voucher_userid\":{\"description\":\"用户id\",\"name\":\"voucher_userid\",\"required\":\"1\",\"type\":\"integer\"},\"voucher_validdays\":{\"description\":\"有效期（天）\",\"name\":\"voucher_validdays\",\"required\":\"1\",\"type\":\"integer\"}},\"required\":[\"voucher_code\",\"voucher_userid\",\"voucher_quota\",\"voucher_reduce\",\"voucher_createtime\",\"voucher_validdays\",\"voucher_isinvalid\",\"adder\",\"addtime\",\"moder\",\"modtime\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"req_body_type": "json",
-				"req_headers": [
-					{
-						"name": "Content-Type",
-						"required": "1",
-						"value": "application/json"
-					},
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [],
-				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"抵用券管理\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"},\"voucherid\":{\"description\":\"抵用券ID\",\"type\":\"integer\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"tag": [],
-				"title": "插入【抵用券管理】信息",
-				"type": "static"
-			},
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e修改【抵用券管理】信息\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 3,
-				"markdown": "```\n修改【抵用券管理】信息\n```",
-				"method": "PUT",
-				"path": "/gw_vouchers/:id",
-				"query_path": {
-					"params": [],
-					"path": "/gw_vouchers/:id"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"voucher_code\":{\"description\":\"抵用券号\",\"name\":\"voucher_code\",\"required\":\"1\",\"type\":\"string\"},\"voucher_createtime\":{\"description\":\"创建时间\",\"name\":\"voucher_createtime\",\"required\":\"1\",\"type\":\"string\"},\"voucher_isinvalid\":{\"description\":\"是否失效\",\"name\":\"voucher_isinvalid\",\"required\":\"1\",\"type\":\"integer\"},\"voucher_quota\":{\"description\":\"额度\",\"name\":\"voucher_quota\",\"required\":\"1\",\"type\":\"number\"},\"voucher_reduce\":{\"description\":\"抵消\",\"name\":\"voucher_reduce\",\"required\":\"1\",\"type\":\"number\"},\"voucher_userid\":{\"description\":\"用户id\",\"name\":\"voucher_userid\",\"required\":\"1\",\"type\":\"integer\"},\"voucher_validdays\":{\"description\":\"有效期（天）\",\"name\":\"voucher_validdays\",\"required\":\"1\",\"type\":\"integer\"},\"voucherid\":{\"description\":\"抵用券ID\",\"name\":\"voucherid\",\"required\":\"1\",\"type\":\"integer\"}},\"required\":[\"voucherid\",\"voucher_code\",\"voucher_userid\",\"voucher_quota\",\"voucher_reduce\",\"voucher_createtime\",\"voucher_validdays\",\"voucher_isinvalid\",\"adder\",\"addtime\",\"moder\",\"modtime\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"req_body_type": "json",
-				"req_headers": [
-					{
-						"name": "Content-Type",
-						"required": "1",
-						"value": "application/json"
-					},
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [
-					{
-						"desc": "抵用券ID",
-						"name": "id",
-						"required": "1"
-					}
-				],
-				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"抵用券管理\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"tag": [],
-				"title": "修改【抵用券管理】信息",
-				"type": "static"
-			},
-			{
-				"__v": 0,
-				"api_opened": false,
-				"desc": "\u003cpre\u003e\u003ccode\u003e删除【抵用券管理】信息\u003c/code\u003e\u003c/pre\u003e",
-				"edit_uid": 0,
-				"index": 4,
-				"markdown": "```\n删除【抵用券管理】信息\n```",
-				"method": "DELETE",
-				"path": "/gw_vouchers/:id",
-				"query_path": {
-					"params": [],
-					"path": "/gw_vouchers/:id"
-				},
-				"req_body_form": [],
-				"req_body_is_json_schema": true,
-				"req_headers": [
-					{
-						"desc": "jwt的值",
-						"name": "Authorization",
-						"required": "1",
-						"value": "Bearer jwt的值"
-					}
-				],
-				"req_params": [
-					{
-						"desc": "抵用券ID",
-						"name": "id",
-						"required": "1"
-					}
-				],
-				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"抵用券管理\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
-				"res_body_is_json_schema": true,
-				"res_body_type": "json",
-				"status": "done",
-				"tag": [],
-				"title": "删除【抵用券管理】信息",
-				"type": "static"
-			}
-		],
-		"name": "抵用券管理"
-	},
-	{
-		"desc": "",
-		"index": 7,
 		"list": [
 			{
 				"__v": 0,
@@ -1502,10 +224,10 @@
 				"index": 0,
 				"markdown": "```\n获取【字典表】信息\n```",
 				"method": "GET",
-				"path": "/sys_dictionarys/:id",
+				"path": "/dictionarys/:id",
 				"query_path": {
 					"params": [],
-					"path": "/sys_dictionarys/:id"
+					"path": "/dictionarys/:id"
 				},
 				"req_body_form": [],
 				"req_body_is_json_schema": true,
@@ -1540,10 +262,10 @@
 				"index": 1,
 				"markdown": "```\n获取【字典表】列表\n```",
 				"method": "GET",
-				"path": "/sys_dictionarys",
+				"path": "/dictionarys",
 				"query_path": {
 					"params": [],
-					"path": "/sys_dictionarys"
+					"path": "/dictionarys"
 				},
 				"req_body_form": [],
 				"req_body_is_json_schema": true,
@@ -1583,10 +305,10 @@
 				"index": 2,
 				"markdown": "```\n插入【字典表】信息\n```",
 				"method": "POST",
-				"path": "/sys_dictionarys",
+				"path": "/dictionarys",
 				"query_path": {
 					"params": [],
-					"path": "/sys_dictionarys"
+					"path": "/dictionarys"
 				},
 				"req_body_form": [],
 				"req_body_is_json_schema": true,
@@ -1623,10 +345,10 @@
 				"index": 3,
 				"markdown": "```\n修改【字典表】信息\n```",
 				"method": "PUT",
-				"path": "/sys_dictionarys/:id",
+				"path": "/dictionarys/:id",
 				"query_path": {
 					"params": [],
-					"path": "/sys_dictionarys/:id"
+					"path": "/dictionarys/:id"
 				},
 				"req_body_form": [],
 				"req_body_is_json_schema": true,
@@ -1669,10 +391,10 @@
 				"index": 4,
 				"markdown": "```\n删除【字典表】信息\n```",
 				"method": "DELETE",
-				"path": "/sys_dictionarys/:id",
+				"path": "/dictionarys/:id",
 				"query_path": {
 					"params": [],
-					"path": "/sys_dictionarys/:id"
+					"path": "/dictionarys/:id"
 				},
 				"req_body_form": [],
 				"req_body_is_json_schema": true,
@@ -1705,7 +427,7 @@
 	},
 	{
 		"desc": "",
-		"index": 8,
+		"index": 2,
 		"list": [
 			{
 				"__v": 0,
@@ -1715,10 +437,10 @@
 				"index": 0,
 				"markdown": "```\n获取【字典分类】信息\n```",
 				"method": "GET",
-				"path": "/sys_dictionarycategorys/:id",
+				"path": "/dictionarycategorys/:id",
 				"query_path": {
 					"params": [],
-					"path": "/sys_dictionarycategorys/:id"
+					"path": "/dictionarycategorys/:id"
 				},
 				"req_body_form": [],
 				"req_body_is_json_schema": true,
@@ -1753,10 +475,10 @@
 				"index": 1,
 				"markdown": "```\n获取【字典分类】列表\n```",
 				"method": "GET",
-				"path": "/sys_dictionarycategorys",
+				"path": "/dictionarycategorys",
 				"query_path": {
 					"params": [],
-					"path": "/sys_dictionarycategorys"
+					"path": "/dictionarycategorys"
 				},
 				"req_body_form": [],
 				"req_body_is_json_schema": true,
@@ -1796,10 +518,10 @@
 				"index": 2,
 				"markdown": "```\n插入【字典分类】信息\n```",
 				"method": "POST",
-				"path": "/sys_dictionarycategorys",
+				"path": "/dictionarycategorys",
 				"query_path": {
 					"params": [],
-					"path": "/sys_dictionarycategorys"
+					"path": "/dictionarycategorys"
 				},
 				"req_body_form": [],
 				"req_body_is_json_schema": true,
@@ -1836,10 +558,10 @@
 				"index": 3,
 				"markdown": "```\n修改【字典分类】信息\n```",
 				"method": "PUT",
-				"path": "/sys_dictionarycategorys/:id",
+				"path": "/dictionarycategorys/:id",
 				"query_path": {
 					"params": [],
-					"path": "/sys_dictionarycategorys/:id"
+					"path": "/dictionarycategorys/:id"
 				},
 				"req_body_form": [],
 				"req_body_is_json_schema": true,
@@ -1882,10 +604,10 @@
 				"index": 4,
 				"markdown": "```\n删除【字典分类】信息\n```",
 				"method": "DELETE",
-				"path": "/sys_dictionarycategorys/:id",
+				"path": "/dictionarycategorys/:id",
 				"query_path": {
 					"params": [],
-					"path": "/sys_dictionarycategorys/:id"
+					"path": "/dictionarycategorys/:id"
 				},
 				"req_body_form": [],
 				"req_body_is_json_schema": true,
@@ -1915,5 +637,1709 @@
 			}
 		],
 		"name": "字典分类"
+	},
+	{
+		"desc": "",
+		"index": 3,
+		"list": [
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e获取【买家客户表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 0,
+				"markdown": "```\n获取【买家客户表】信息\n```",
+				"method": "GET",
+				"path": "/guests/:id",
+				"query_path": {
+					"params": [],
+					"path": "/guests/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "用户ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"买家客户表\",\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"golds\":{\"description\":\"用户金币数量\",\"type\":\"integer\"},\"guestid\":{\"description\":\"用户ID\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"name\":{\"description\":\"用户名\",\"type\":\"string\"},\"password\":{\"description\":\"用户密码\",\"type\":\"string\"},\"phone\":{\"description\":\"手机号\",\"type\":\"string\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"title": "获取【买家客户表】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e获取【买家客户表】列表\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 1,
+				"markdown": "```\n获取【买家客户表】列表\n```",
+				"method": "GET",
+				"path": "/guests",
+				"query_path": {
+					"params": [],
+					"path": "/guests"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [],
+				"req_query": [
+					{
+						"desc": "当前页码，从1开始，最大支持100000，默认是1。",
+						"name": "pageIndex",
+						"required": "0"
+					},
+					{
+						"desc": "每页记录数，从1开始，最大支持500，默认是15。",
+						"name": "pageSize",
+						"required": "0"
+					}
+				],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"买家客户表列表\",\"items\":{\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"golds\":{\"description\":\"用户金币数量\",\"type\":\"integer\"},\"guestid\":{\"description\":\"用户ID\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"name\":{\"description\":\"用户名\",\"type\":\"string\"},\"password\":{\"description\":\"用户密码\",\"type\":\"string\"},\"phone\":{\"description\":\"手机号\",\"type\":\"string\"}},\"type\":\"object\"},\"required\":[],\"type\":\"array\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"title": "获取【买家客户表】列表",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e插入【买家客户表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 2,
+				"markdown": "```\n插入【买家客户表】信息\n```",
+				"method": "POST",
+				"path": "/guests",
+				"query_path": {
+					"params": [],
+					"path": "/guests"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"golds\":{\"description\":\"用户金币数量\",\"name\":\"golds\",\"required\":\"1\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"name\":{\"description\":\"用户名\",\"name\":\"name\",\"required\":\"1\",\"type\":\"string\"},\"password\":{\"description\":\"用户密码\",\"name\":\"password\",\"required\":\"1\",\"type\":\"string\"},\"phone\":{\"description\":\"手机号\",\"name\":\"phone\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"name\",\"password\",\"phone\",\"golds\",\"adder\",\"addtime\",\"moder\",\"modtime\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_type": "json",
+				"req_headers": [
+					{
+						"name": "Content-Type",
+						"required": "1",
+						"value": "application/json"
+					},
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"买家客户表\",\"properties\":{\"guestid\":{\"description\":\"用户ID\",\"type\":\"integer\"},\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "插入【买家客户表】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e修改【买家客户表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 3,
+				"markdown": "```\n修改【买家客户表】信息\n```",
+				"method": "PUT",
+				"path": "/guests/:id",
+				"query_path": {
+					"params": [],
+					"path": "/guests/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"golds\":{\"description\":\"用户金币数量\",\"name\":\"golds\",\"required\":\"1\",\"type\":\"integer\"},\"guestid\":{\"description\":\"用户ID\",\"name\":\"guestid\",\"required\":\"1\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"name\":{\"description\":\"用户名\",\"name\":\"name\",\"required\":\"1\",\"type\":\"string\"},\"password\":{\"description\":\"用户密码\",\"name\":\"password\",\"required\":\"1\",\"type\":\"string\"},\"phone\":{\"description\":\"手机号\",\"name\":\"phone\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"guestid\",\"name\",\"password\",\"phone\",\"golds\",\"adder\",\"addtime\",\"moder\",\"modtime\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_type": "json",
+				"req_headers": [
+					{
+						"name": "Content-Type",
+						"required": "1",
+						"value": "application/json"
+					},
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "用户ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"买家客户表\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "修改【买家客户表】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e删除【买家客户表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 4,
+				"markdown": "```\n删除【买家客户表】信息\n```",
+				"method": "DELETE",
+				"path": "/guests/:id",
+				"query_path": {
+					"params": [],
+					"path": "/guests/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "用户ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"买家客户表\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "删除【买家客户表】信息",
+				"type": "static"
+			}
+		],
+		"name": "买家客户表"
+	},
+	{
+		"desc": "",
+		"index": 4,
+		"list": [
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e获取【商家用户表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 0,
+				"markdown": "```\n获取【商家用户表】信息\n```",
+				"method": "GET",
+				"path": "/merchants/:id",
+				"query_path": {
+					"params": [],
+					"path": "/merchants/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "商家ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"商家用户表\",\"properties\":{\"addr\":{\"description\":\"地址\",\"type\":\"string\"},\"createtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"enable\":{\"description\":\"是否启用\",\"type\":\"string\"},\"lastloginaddr\":{\"description\":\"最近登录地址\",\"type\":\"string\"},\"lastlogintime\":{\"description\":\"最近登录时间\",\"type\":\"string\"},\"loginaccount\":{\"description\":\"登录账户\",\"type\":\"string\"},\"merchantid\":{\"description\":\"商家ID\",\"type\":\"integer\"},\"merchantname\":{\"description\":\"商家名\",\"type\":\"string\"},\"nick\":{\"description\":\"昵称\",\"type\":\"string\"},\"phone\":{\"description\":\"手机号\",\"type\":\"string\"},\"remark\":{\"description\":\"备注\",\"type\":\"string\"},\"rigstertime\":{\"description\":\"注册时间\",\"type\":\"string\"},\"rolename\":{\"description\":\"角色名称\",\"type\":\"string\"},\"updatetime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"userroleid\":{\"description\":\"用户角色ID\",\"type\":\"integer\"},\"wechataccount\":{\"description\":\"微信账号\",\"type\":\"string\"},\"wechatsign\":{\"description\":\"微信签名\",\"type\":\"string\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"title": "获取【商家用户表】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e获取【商家用户表】列表\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 1,
+				"markdown": "```\n获取【商家用户表】列表\n```",
+				"method": "GET",
+				"path": "/merchants",
+				"query_path": {
+					"params": [],
+					"path": "/merchants"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [],
+				"req_query": [
+					{
+						"desc": "当前页码，从1开始，最大支持100000，默认是1。",
+						"name": "pageIndex",
+						"required": "0"
+					},
+					{
+						"desc": "每页记录数，从1开始，最大支持500，默认是15。",
+						"name": "pageSize",
+						"required": "0"
+					}
+				],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"商家用户表列表\",\"items\":{\"properties\":{\"addr\":{\"description\":\"地址\",\"type\":\"string\"},\"createtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"enable\":{\"description\":\"是否启用\",\"type\":\"string\"},\"lastloginaddr\":{\"description\":\"最近登录地址\",\"type\":\"string\"},\"lastlogintime\":{\"description\":\"最近登录时间\",\"type\":\"string\"},\"loginaccount\":{\"description\":\"登录账户\",\"type\":\"string\"},\"merchantid\":{\"description\":\"商家ID\",\"type\":\"integer\"},\"merchantname\":{\"description\":\"商家名\",\"type\":\"string\"},\"nick\":{\"description\":\"昵称\",\"type\":\"string\"},\"phone\":{\"description\":\"手机号\",\"type\":\"string\"},\"remark\":{\"description\":\"备注\",\"type\":\"string\"},\"rigstertime\":{\"description\":\"注册时间\",\"type\":\"string\"},\"rolename\":{\"description\":\"角色名称\",\"type\":\"string\"},\"updatetime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"userroleid\":{\"description\":\"用户角色ID\",\"type\":\"integer\"},\"wechataccount\":{\"description\":\"微信账号\",\"type\":\"string\"},\"wechatsign\":{\"description\":\"微信签名\",\"type\":\"string\"}},\"type\":\"object\"},\"required\":[],\"type\":\"array\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"title": "获取【商家用户表】列表",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e插入【商家用户表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 2,
+				"markdown": "```\n插入【商家用户表】信息\n```",
+				"method": "POST",
+				"path": "/merchants",
+				"query_path": {
+					"params": [],
+					"path": "/merchants"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_body_other": "{\"properties\":{\"addr\":{\"description\":\"地址\",\"name\":\"addr\",\"required\":\"1\",\"type\":\"string\"},\"enable\":{\"description\":\"是否启用\",\"name\":\"enable\",\"required\":\"1\",\"type\":\"boolean\"},\"lastloginaddr\":{\"description\":\"最近登录地址\",\"name\":\"lastloginaddr\",\"required\":\"1\",\"type\":\"string\"},\"lastlogintime\":{\"description\":\"最近登录时间\",\"name\":\"lastlogintime\",\"required\":\"1\",\"type\":\"string\"},\"loginaccount\":{\"description\":\"登录账户\",\"name\":\"loginaccount\",\"required\":\"1\",\"type\":\"string\"},\"loginpwd\":{\"description\":\"登录密码\",\"name\":\"loginpwd\",\"required\":\"1\",\"type\":\"string\"},\"merchantname\":{\"description\":\"商家名\",\"name\":\"merchantname\",\"required\":\"1\",\"type\":\"string\"},\"nick\":{\"description\":\"昵称\",\"name\":\"nick\",\"required\":\"1\",\"type\":\"string\"},\"phone\":{\"description\":\"手机号\",\"name\":\"phone\",\"required\":\"1\",\"type\":\"string\"},\"remark\":{\"description\":\"备注\",\"name\":\"remark\",\"required\":\"1\",\"type\":\"string\"},\"rigstertime\":{\"description\":\"注册时间\",\"name\":\"rigstertime\",\"required\":\"1\",\"type\":\"string\"},\"userroleid\":{\"description\":\"用户角色ID\",\"name\":\"userroleid\",\"required\":\"1\",\"type\":\"integer\"},\"wechataccount\":{\"description\":\"微信账号\",\"name\":\"wechataccount\",\"required\":\"1\",\"type\":\"string\"},\"wechatsign\":{\"description\":\"微信签名\",\"name\":\"wechatsign\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"merchantname\",\"phone\",\"userroleid\",\"loginpwd\",\"loginaccount\",\"nick\",\"wechataccount\",\"wechatsign\",\"remark\",\"lastlogintime\",\"lastloginaddr\",\"rigstertime\",\"enable\",\"addr\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_type": "json",
+				"req_headers": [
+					{
+						"name": "Content-Type",
+						"required": "1",
+						"value": "application/json"
+					},
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"商家用户表\",\"properties\":{\"merchantid\":{\"description\":\"商家ID\",\"type\":\"integer\"},\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "插入【商家用户表】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e修改【商家用户表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 3,
+				"markdown": "```\n修改【商家用户表】信息\n```",
+				"method": "PUT",
+				"path": "/merchants/:id",
+				"query_path": {
+					"params": [],
+					"path": "/merchants/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_body_other": "{\"properties\":{\"addr\":{\"description\":\"地址\",\"name\":\"addr\",\"required\":\"1\",\"type\":\"string\"},\"enable\":{\"description\":\"是否启用\",\"name\":\"enable\",\"required\":\"1\",\"type\":\"boolean\"},\"lastloginaddr\":{\"description\":\"最近登录地址\",\"name\":\"lastloginaddr\",\"required\":\"1\",\"type\":\"string\"},\"lastlogintime\":{\"description\":\"最近登录时间\",\"name\":\"lastlogintime\",\"required\":\"1\",\"type\":\"string\"},\"loginaccount\":{\"description\":\"登录账户\",\"name\":\"loginaccount\",\"required\":\"1\",\"type\":\"string\"},\"loginpwd\":{\"description\":\"登录密码\",\"name\":\"loginpwd\",\"required\":\"1\",\"type\":\"string\"},\"merchantid\":{\"description\":\"商家ID\",\"name\":\"merchantid\",\"required\":\"1\",\"type\":\"integer\"},\"merchantname\":{\"description\":\"商家名\",\"name\":\"merchantname\",\"required\":\"1\",\"type\":\"string\"},\"nick\":{\"description\":\"昵称\",\"name\":\"nick\",\"required\":\"1\",\"type\":\"string\"},\"phone\":{\"description\":\"手机号\",\"name\":\"phone\",\"required\":\"1\",\"type\":\"string\"},\"remark\":{\"description\":\"备注\",\"name\":\"remark\",\"required\":\"1\",\"type\":\"string\"},\"rigstertime\":{\"description\":\"注册时间\",\"name\":\"rigstertime\",\"required\":\"1\",\"type\":\"string\"},\"userroleid\":{\"description\":\"用户角色ID\",\"name\":\"userroleid\",\"required\":\"1\",\"type\":\"integer\"},\"wechataccount\":{\"description\":\"微信账号\",\"name\":\"wechataccount\",\"required\":\"1\",\"type\":\"string\"},\"wechatsign\":{\"description\":\"微信签名\",\"name\":\"wechatsign\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"merchantid\",\"merchantname\",\"phone\",\"userroleid\",\"loginpwd\",\"loginaccount\",\"nick\",\"wechataccount\",\"wechatsign\",\"remark\",\"lastlogintime\",\"lastloginaddr\",\"rigstertime\",\"enable\",\"addr\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_type": "json",
+				"req_headers": [
+					{
+						"name": "Content-Type",
+						"required": "1",
+						"value": "application/json"
+					},
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "商家ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"商家用户表\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "修改【商家用户表】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e删除【商家用户表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 4,
+				"markdown": "```\n删除【商家用户表】信息\n```",
+				"method": "DELETE",
+				"path": "/merchants/:id",
+				"query_path": {
+					"params": [],
+					"path": "/merchants/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "商家ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"商家用户表\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "删除【商家用户表】信息",
+				"type": "static"
+			}
+		],
+		"name": "商家用户表"
+	},
+	{
+		"desc": "",
+		"index": 5,
+		"list": [
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e获取【订单表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 0,
+				"markdown": "```\n获取【订单表】信息\n```",
+				"method": "GET",
+				"path": "/orders/:id",
+				"query_path": {
+					"params": [],
+					"path": "/orders/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "订单ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"订单表\",\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"buyer\":{\"description\":\"用户id\",\"type\":\"integer\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"isinvalid\":{\"description\":\"是否失效\",\"type\":\"string\"},\"isrefund\":{\"description\":\"是否退款\",\"type\":\"string\"},\"isused\":{\"description\":\"是否使用\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"ordercode\":{\"description\":\"订单号\",\"type\":\"string\"},\"orderid\":{\"description\":\"订单ID\",\"type\":\"integer\"},\"payprice\":{\"description\":\"购买总价（元）\",\"type\":\"number\"},\"paytime\":{\"description\":\"购买日期\",\"type\":\"string\"},\"paytype\":{\"description\":\"支付方式\",\"type\":\"integer\"},\"pkgcode\":{\"description\":\"套餐号\",\"type\":\"string\"},\"refundprice\":{\"description\":\"退款金额\",\"type\":\"number\"},\"refundtime\":{\"description\":\"退款日期\",\"type\":\"string\"},\"remark\":{\"description\":\"订单备注\",\"type\":\"string\"},\"totalprice\":{\"description\":\"订单总价（元）\",\"type\":\"number\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"title": "获取【订单表】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e获取【订单表】列表\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 1,
+				"markdown": "```\n获取【订单表】列表\n```",
+				"method": "GET",
+				"path": "/orders",
+				"query_path": {
+					"params": [],
+					"path": "/orders"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [],
+				"req_query": [
+					{
+						"desc": "当前页码，从1开始，最大支持100000，默认是1。",
+						"name": "pageIndex",
+						"required": "0"
+					},
+					{
+						"desc": "每页记录数，从1开始，最大支持500，默认是15。",
+						"name": "pageSize",
+						"required": "0"
+					}
+				],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"订单表列表\",\"items\":{\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"buyer\":{\"description\":\"用户id\",\"type\":\"integer\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"isinvalid\":{\"description\":\"是否失效\",\"type\":\"string\"},\"isrefund\":{\"description\":\"是否退款\",\"type\":\"string\"},\"isused\":{\"description\":\"是否使用\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"ordercode\":{\"description\":\"订单号\",\"type\":\"string\"},\"orderid\":{\"description\":\"订单ID\",\"type\":\"integer\"},\"payprice\":{\"description\":\"购买总价（元）\",\"type\":\"number\"},\"paytime\":{\"description\":\"购买日期\",\"type\":\"string\"},\"paytype\":{\"description\":\"支付方式\",\"type\":\"integer\"},\"pkgcode\":{\"description\":\"套餐号\",\"type\":\"string\"},\"refundprice\":{\"description\":\"退款金额\",\"type\":\"number\"},\"refundtime\":{\"description\":\"退款日期\",\"type\":\"string\"},\"remark\":{\"description\":\"订单备注\",\"type\":\"string\"},\"totalprice\":{\"description\":\"订单总价（元）\",\"type\":\"number\"}},\"type\":\"object\"},\"required\":[],\"type\":\"array\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"title": "获取【订单表】列表",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e插入【订单表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 2,
+				"markdown": "```\n插入【订单表】信息\n```",
+				"method": "POST",
+				"path": "/orders",
+				"query_path": {
+					"params": [],
+					"path": "/orders"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"buyer\":{\"description\":\"用户id\",\"name\":\"buyer\",\"required\":\"1\",\"type\":\"integer\"},\"isinvalid\":{\"description\":\"是否失效\",\"name\":\"isinvalid\",\"required\":\"1\",\"type\":\"boolean\"},\"isrefund\":{\"description\":\"是否退款\",\"name\":\"isrefund\",\"required\":\"1\",\"type\":\"boolean\"},\"isused\":{\"description\":\"是否使用\",\"name\":\"isused\",\"required\":\"1\",\"type\":\"boolean\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"ordercode\":{\"description\":\"订单号\",\"name\":\"ordercode\",\"required\":\"1\",\"type\":\"string\"},\"payprice\":{\"description\":\"购买总价（元）\",\"name\":\"payprice\",\"required\":\"1\",\"type\":\"number\"},\"paytime\":{\"description\":\"购买日期\",\"name\":\"paytime\",\"required\":\"1\",\"type\":\"string\"},\"paytype\":{\"description\":\"支付方式\",\"name\":\"paytype\",\"required\":\"1\",\"type\":\"integer\"},\"pkgcode\":{\"description\":\"套餐号\",\"name\":\"pkgcode\",\"required\":\"1\",\"type\":\"string\"},\"refundprice\":{\"description\":\"退款金额\",\"name\":\"refundprice\",\"required\":\"1\",\"type\":\"number\"},\"refundtime\":{\"description\":\"退款日期\",\"name\":\"refundtime\",\"required\":\"1\",\"type\":\"string\"},\"remark\":{\"description\":\"订单备注\",\"name\":\"remark\",\"required\":\"1\",\"type\":\"string\"},\"totalprice\":{\"description\":\"订单总价（元）\",\"name\":\"totalprice\",\"required\":\"1\",\"type\":\"number\"}},\"required\":[\"pkgcode\",\"ordercode\",\"buyer\",\"paytype\",\"totalprice\",\"payprice\",\"paytime\",\"isinvalid\",\"isused\",\"isrefund\",\"refundprice\",\"refundtime\",\"remark\",\"adder\",\"addtime\",\"moder\",\"modtime\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_type": "json",
+				"req_headers": [
+					{
+						"name": "Content-Type",
+						"required": "1",
+						"value": "application/json"
+					},
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"订单表\",\"properties\":{\"orderid\":{\"description\":\"订单ID\",\"type\":\"integer\"},\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "插入【订单表】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e修改【订单表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 3,
+				"markdown": "```\n修改【订单表】信息\n```",
+				"method": "PUT",
+				"path": "/orders/:id",
+				"query_path": {
+					"params": [],
+					"path": "/orders/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"buyer\":{\"description\":\"用户id\",\"name\":\"buyer\",\"required\":\"1\",\"type\":\"integer\"},\"isinvalid\":{\"description\":\"是否失效\",\"name\":\"isinvalid\",\"required\":\"1\",\"type\":\"boolean\"},\"isrefund\":{\"description\":\"是否退款\",\"name\":\"isrefund\",\"required\":\"1\",\"type\":\"boolean\"},\"isused\":{\"description\":\"是否使用\",\"name\":\"isused\",\"required\":\"1\",\"type\":\"boolean\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"ordercode\":{\"description\":\"订单号\",\"name\":\"ordercode\",\"required\":\"1\",\"type\":\"string\"},\"orderid\":{\"description\":\"订单ID\",\"name\":\"orderid\",\"required\":\"1\",\"type\":\"integer\"},\"payprice\":{\"description\":\"购买总价（元）\",\"name\":\"payprice\",\"required\":\"1\",\"type\":\"number\"},\"paytime\":{\"description\":\"购买日期\",\"name\":\"paytime\",\"required\":\"1\",\"type\":\"string\"},\"paytype\":{\"description\":\"支付方式\",\"name\":\"paytype\",\"required\":\"1\",\"type\":\"integer\"},\"pkgcode\":{\"description\":\"套餐号\",\"name\":\"pkgcode\",\"required\":\"1\",\"type\":\"string\"},\"refundprice\":{\"description\":\"退款金额\",\"name\":\"refundprice\",\"required\":\"1\",\"type\":\"number\"},\"refundtime\":{\"description\":\"退款日期\",\"name\":\"refundtime\",\"required\":\"1\",\"type\":\"string\"},\"remark\":{\"description\":\"订单备注\",\"name\":\"remark\",\"required\":\"1\",\"type\":\"string\"},\"totalprice\":{\"description\":\"订单总价（元）\",\"name\":\"totalprice\",\"required\":\"1\",\"type\":\"number\"}},\"required\":[\"orderid\",\"pkgcode\",\"ordercode\",\"buyer\",\"paytype\",\"totalprice\",\"payprice\",\"paytime\",\"isinvalid\",\"isused\",\"isrefund\",\"refundprice\",\"refundtime\",\"remark\",\"adder\",\"addtime\",\"moder\",\"modtime\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_type": "json",
+				"req_headers": [
+					{
+						"name": "Content-Type",
+						"required": "1",
+						"value": "application/json"
+					},
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "订单ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"订单表\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "修改【订单表】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e删除【订单表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 4,
+				"markdown": "```\n删除【订单表】信息\n```",
+				"method": "DELETE",
+				"path": "/orders/:id",
+				"query_path": {
+					"params": [],
+					"path": "/orders/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "订单ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"订单表\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "删除【订单表】信息",
+				"type": "static"
+			}
+		],
+		"name": "订单表"
+	},
+	{
+		"desc": "",
+		"index": 6,
+		"list": [
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e获取【套餐表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 0,
+				"markdown": "```\n获取【套餐表】信息\n```",
+				"method": "GET",
+				"path": "/setmeals/:id",
+				"query_path": {
+					"params": [],
+					"path": "/setmeals/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "套餐ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"套餐表\",\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"createtime\":{\"description\":\"上架日期\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"exittime\":{\"description\":\"下架日期\",\"type\":\"string\"},\"info\":{\"description\":\"套餐说明\",\"type\":\"string\"},\"isinhouse\":{\"description\":\"是否仅限堂食\",\"type\":\"string\"},\"isnew\":{\"description\":\"是否新品\",\"type\":\"string\"},\"isorder\":{\"description\":\"是否需要预约\",\"type\":\"string\"},\"isrecommend\":{\"description\":\"是否强烈推荐\",\"type\":\"string\"},\"isrefund\":{\"description\":\"是否支持退款\",\"type\":\"string\"},\"links\":{\"description\":\"更多优惠链接地址\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"people\":{\"description\":\"人数\",\"type\":\"integer\"},\"pkgcode\":{\"description\":\"套餐号\",\"type\":\"string\"},\"setmealid\":{\"description\":\"套餐ID\",\"type\":\"integer\"},\"setmealtype\":{\"description\":\"套餐类别\",\"type\":\"string\"},\"shopid\":{\"description\":\"店铺ID\",\"type\":\"integer\"},\"shopname\":{\"description\":\"店铺名称\",\"type\":\"string\"},\"title\":{\"description\":\"套餐标题\",\"type\":\"string\"},\"validdays\":{\"description\":\"有效期（天）\",\"type\":\"integer\"},\"validtime\":{\"description\":\"生效日期\",\"type\":\"string\"},\"watchers\":{\"description\":\"今日关注人数\",\"type\":\"integer\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"title": "获取【套餐表】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e获取【套餐表】列表\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 1,
+				"markdown": "```\n获取【套餐表】列表\n```",
+				"method": "GET",
+				"path": "/setmeals",
+				"query_path": {
+					"params": [],
+					"path": "/setmeals"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [],
+				"req_query": [
+					{
+						"desc": "当前页码，从1开始，最大支持100000，默认是1。",
+						"name": "pageIndex",
+						"required": "0"
+					},
+					{
+						"desc": "每页记录数，从1开始，最大支持500，默认是15。",
+						"name": "pageSize",
+						"required": "0"
+					}
+				],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"套餐表列表\",\"items\":{\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"createtime\":{\"description\":\"上架日期\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"exittime\":{\"description\":\"下架日期\",\"type\":\"string\"},\"info\":{\"description\":\"套餐说明\",\"type\":\"string\"},\"isinhouse\":{\"description\":\"是否仅限堂食\",\"type\":\"string\"},\"isnew\":{\"description\":\"是否新品\",\"type\":\"string\"},\"isorder\":{\"description\":\"是否需要预约\",\"type\":\"string\"},\"isrecommend\":{\"description\":\"是否强烈推荐\",\"type\":\"string\"},\"isrefund\":{\"description\":\"是否支持退款\",\"type\":\"string\"},\"links\":{\"description\":\"更多优惠链接地址\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"people\":{\"description\":\"人数\",\"type\":\"integer\"},\"pkgcode\":{\"description\":\"套餐号\",\"type\":\"string\"},\"setmealid\":{\"description\":\"套餐ID\",\"type\":\"integer\"},\"setmealtype\":{\"description\":\"套餐类别\",\"type\":\"string\"},\"shopid\":{\"description\":\"店铺ID\",\"type\":\"integer\"},\"shopname\":{\"description\":\"店铺名称\",\"type\":\"string\"},\"title\":{\"description\":\"套餐标题\",\"type\":\"string\"},\"validdays\":{\"description\":\"有效期（天）\",\"type\":\"integer\"},\"validtime\":{\"description\":\"生效日期\",\"type\":\"string\"},\"watchers\":{\"description\":\"今日关注人数\",\"type\":\"integer\"}},\"type\":\"object\"},\"required\":[],\"type\":\"array\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"title": "获取【套餐表】列表",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e插入【套餐表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 2,
+				"markdown": "```\n插入【套餐表】信息\n```",
+				"method": "POST",
+				"path": "/setmeals",
+				"query_path": {
+					"params": [],
+					"path": "/setmeals"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"exittime\":{\"description\":\"下架日期\",\"name\":\"exittime\",\"required\":\"1\",\"type\":\"string\"},\"info\":{\"description\":\"套餐说明\",\"name\":\"info\",\"required\":\"1\",\"type\":\"string\"},\"isinhouse\":{\"description\":\"是否仅限堂食\",\"name\":\"isinhouse\",\"required\":\"1\",\"type\":\"boolean\"},\"isnew\":{\"description\":\"是否新品\",\"name\":\"isnew\",\"required\":\"1\",\"type\":\"boolean\"},\"isorder\":{\"description\":\"是否需要预约\",\"name\":\"isorder\",\"required\":\"1\",\"type\":\"boolean\"},\"isrecommend\":{\"description\":\"是否强烈推荐\",\"name\":\"isrecommend\",\"required\":\"1\",\"type\":\"boolean\"},\"isrefund\":{\"description\":\"是否支持退款\",\"name\":\"isrefund\",\"required\":\"1\",\"type\":\"boolean\"},\"links\":{\"description\":\"更多优惠链接地址\",\"name\":\"links\",\"required\":\"1\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"people\":{\"description\":\"人数\",\"name\":\"people\",\"required\":\"1\",\"type\":\"integer\"},\"pkgcode\":{\"description\":\"套餐号\",\"name\":\"pkgcode\",\"required\":\"1\",\"type\":\"string\"},\"setmealtype\":{\"description\":\"套餐类别\",\"name\":\"setmealtype\",\"required\":\"1\",\"type\":\"string\"},\"shopid\":{\"description\":\"店铺ID\",\"name\":\"shopid\",\"required\":\"1\",\"type\":\"integer\"},\"title\":{\"description\":\"套餐标题\",\"name\":\"title\",\"required\":\"1\",\"type\":\"string\"},\"validdays\":{\"description\":\"有效期（天）\",\"name\":\"validdays\",\"required\":\"1\",\"type\":\"integer\"},\"validtime\":{\"description\":\"生效日期\",\"name\":\"validtime\",\"required\":\"1\",\"type\":\"string\"},\"watchers\":{\"description\":\"今日关注人数\",\"name\":\"watchers\",\"required\":\"1\",\"type\":\"integer\"}},\"required\":[\"shopid\",\"pkgcode\",\"setmealtype\",\"title\",\"people\",\"isorder\",\"isrefund\",\"isinhouse\",\"isnew\",\"isrecommend\",\"validdays\",\"watchers\",\"validtime\",\"exittime\",\"links\",\"info\",\"adder\",\"addtime\",\"moder\",\"modtime\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_type": "json",
+				"req_headers": [
+					{
+						"name": "Content-Type",
+						"required": "1",
+						"value": "application/json"
+					},
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"套餐表\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"},\"setmealid\":{\"description\":\"套餐ID\",\"type\":\"integer\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "插入【套餐表】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e修改【套餐表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 3,
+				"markdown": "```\n修改【套餐表】信息\n```",
+				"method": "PUT",
+				"path": "/setmeals/:id",
+				"query_path": {
+					"params": [],
+					"path": "/setmeals/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"exittime\":{\"description\":\"下架日期\",\"name\":\"exittime\",\"required\":\"1\",\"type\":\"string\"},\"info\":{\"description\":\"套餐说明\",\"name\":\"info\",\"required\":\"1\",\"type\":\"string\"},\"isinhouse\":{\"description\":\"是否仅限堂食\",\"name\":\"isinhouse\",\"required\":\"1\",\"type\":\"boolean\"},\"isnew\":{\"description\":\"是否新品\",\"name\":\"isnew\",\"required\":\"1\",\"type\":\"boolean\"},\"isorder\":{\"description\":\"是否需要预约\",\"name\":\"isorder\",\"required\":\"1\",\"type\":\"boolean\"},\"isrecommend\":{\"description\":\"是否强烈推荐\",\"name\":\"isrecommend\",\"required\":\"1\",\"type\":\"boolean\"},\"isrefund\":{\"description\":\"是否支持退款\",\"name\":\"isrefund\",\"required\":\"1\",\"type\":\"boolean\"},\"links\":{\"description\":\"更多优惠链接地址\",\"name\":\"links\",\"required\":\"1\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"people\":{\"description\":\"人数\",\"name\":\"people\",\"required\":\"1\",\"type\":\"integer\"},\"pkgcode\":{\"description\":\"套餐号\",\"name\":\"pkgcode\",\"required\":\"1\",\"type\":\"string\"},\"setmealid\":{\"description\":\"套餐ID\",\"name\":\"setmealid\",\"required\":\"1\",\"type\":\"integer\"},\"setmealtype\":{\"description\":\"套餐类别\",\"name\":\"setmealtype\",\"required\":\"1\",\"type\":\"string\"},\"shopid\":{\"description\":\"店铺ID\",\"name\":\"shopid\",\"required\":\"1\",\"type\":\"integer\"},\"title\":{\"description\":\"套餐标题\",\"name\":\"title\",\"required\":\"1\",\"type\":\"string\"},\"validdays\":{\"description\":\"有效期（天）\",\"name\":\"validdays\",\"required\":\"1\",\"type\":\"integer\"},\"validtime\":{\"description\":\"生效日期\",\"name\":\"validtime\",\"required\":\"1\",\"type\":\"string\"},\"watchers\":{\"description\":\"今日关注人数\",\"name\":\"watchers\",\"required\":\"1\",\"type\":\"integer\"}},\"required\":[\"setmealid\",\"shopid\",\"pkgcode\",\"setmealtype\",\"title\",\"people\",\"isorder\",\"isrefund\",\"isinhouse\",\"isnew\",\"isrecommend\",\"validdays\",\"watchers\",\"validtime\",\"exittime\",\"links\",\"info\",\"adder\",\"addtime\",\"moder\",\"modtime\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_type": "json",
+				"req_headers": [
+					{
+						"name": "Content-Type",
+						"required": "1",
+						"value": "application/json"
+					},
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "套餐ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"套餐表\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "修改【套餐表】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e删除【套餐表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 4,
+				"markdown": "```\n删除【套餐表】信息\n```",
+				"method": "DELETE",
+				"path": "/setmeals/:id",
+				"query_path": {
+					"params": [],
+					"path": "/setmeals/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "套餐ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"套餐表\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "删除【套餐表】信息",
+				"type": "static"
+			}
+		],
+		"name": "套餐表"
+	},
+	{
+		"desc": "",
+		"index": 7,
+		"list": [
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e获取【套餐明细表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 0,
+				"markdown": "```\n获取【套餐明细表】信息\n```",
+				"method": "GET",
+				"path": "/setmealdetails/:id",
+				"query_path": {
+					"params": [],
+					"path": "/setmealdetails/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "套餐明细ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"套餐明细表\",\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"name\":{\"description\":\"商品名称\",\"type\":\"string\"},\"nums\":{\"description\":\"数量\",\"type\":\"integer\"},\"price\":{\"description\":\"单价（元）\",\"type\":\"number\"},\"setmealdetailid\":{\"description\":\"套餐明细ID\",\"type\":\"integer\"},\"setmealid\":{\"description\":\"套餐ID\",\"type\":\"integer\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"title": "获取【套餐明细表】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e获取【套餐明细表】列表\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 1,
+				"markdown": "```\n获取【套餐明细表】列表\n```",
+				"method": "GET",
+				"path": "/setmealdetails",
+				"query_path": {
+					"params": [],
+					"path": "/setmealdetails"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [],
+				"req_query": [
+					{
+						"desc": "当前页码，从1开始，最大支持100000，默认是1。",
+						"name": "pageIndex",
+						"required": "0"
+					},
+					{
+						"desc": "每页记录数，从1开始，最大支持500，默认是15。",
+						"name": "pageSize",
+						"required": "0"
+					}
+				],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"套餐明细表列表\",\"items\":{\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"name\":{\"description\":\"商品名称\",\"type\":\"string\"},\"nums\":{\"description\":\"数量\",\"type\":\"integer\"},\"price\":{\"description\":\"单价（元）\",\"type\":\"number\"},\"setmealdetailid\":{\"description\":\"套餐明细ID\",\"type\":\"integer\"},\"setmealid\":{\"description\":\"套餐ID\",\"type\":\"integer\"}},\"type\":\"object\"},\"required\":[],\"type\":\"array\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"title": "获取【套餐明细表】列表",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e插入【套餐明细表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 2,
+				"markdown": "```\n插入【套餐明细表】信息\n```",
+				"method": "POST",
+				"path": "/setmealdetails",
+				"query_path": {
+					"params": [],
+					"path": "/setmealdetails"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"name\":{\"description\":\"商品名称\",\"name\":\"name\",\"required\":\"1\",\"type\":\"string\"},\"nums\":{\"description\":\"数量\",\"name\":\"nums\",\"required\":\"1\",\"type\":\"integer\"},\"price\":{\"description\":\"单价（元）\",\"name\":\"price\",\"required\":\"1\",\"type\":\"number\"},\"setmealid\":{\"description\":\"套餐ID\",\"name\":\"setmealid\",\"required\":\"1\",\"type\":\"integer\"}},\"required\":[\"setmealid\",\"name\",\"nums\",\"price\",\"adder\",\"addtime\",\"moder\",\"modtime\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_type": "json",
+				"req_headers": [
+					{
+						"name": "Content-Type",
+						"required": "1",
+						"value": "application/json"
+					},
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"套餐明细表\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"},\"setmealdetailid\":{\"description\":\"套餐明细ID\",\"type\":\"integer\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "插入【套餐明细表】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e修改【套餐明细表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 3,
+				"markdown": "```\n修改【套餐明细表】信息\n```",
+				"method": "PUT",
+				"path": "/setmealdetails/:id",
+				"query_path": {
+					"params": [],
+					"path": "/setmealdetails/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"name\":{\"description\":\"商品名称\",\"name\":\"name\",\"required\":\"1\",\"type\":\"string\"},\"nums\":{\"description\":\"数量\",\"name\":\"nums\",\"required\":\"1\",\"type\":\"integer\"},\"price\":{\"description\":\"单价（元）\",\"name\":\"price\",\"required\":\"1\",\"type\":\"number\"},\"setmealdetailid\":{\"description\":\"套餐明细ID\",\"name\":\"setmealdetailid\",\"required\":\"1\",\"type\":\"integer\"},\"setmealid\":{\"description\":\"套餐ID\",\"name\":\"setmealid\",\"required\":\"1\",\"type\":\"integer\"}},\"required\":[\"setmealdetailid\",\"setmealid\",\"name\",\"nums\",\"price\",\"adder\",\"addtime\",\"moder\",\"modtime\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_type": "json",
+				"req_headers": [
+					{
+						"name": "Content-Type",
+						"required": "1",
+						"value": "application/json"
+					},
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "套餐明细ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"套餐明细表\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "修改【套餐明细表】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e删除【套餐明细表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 4,
+				"markdown": "```\n删除【套餐明细表】信息\n```",
+				"method": "DELETE",
+				"path": "/setmealdetails/:id",
+				"query_path": {
+					"params": [],
+					"path": "/setmealdetails/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "套餐明细ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"套餐明细表\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "删除【套餐明细表】信息",
+				"type": "static"
+			}
+		],
+		"name": "套餐明细表"
+	},
+	{
+		"desc": "",
+		"index": 8,
+		"list": [
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e获取【店铺表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 0,
+				"markdown": "```\n获取【店铺表】信息\n```",
+				"method": "GET",
+				"path": "/shops/:id",
+				"query_path": {
+					"params": [],
+					"path": "/shops/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "店铺ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"店铺表\",\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"address\":{\"description\":\"店铺详细地址\",\"type\":\"string\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"city\":{\"description\":\"店铺地址-市\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"district\":{\"description\":\"店铺地址-区\",\"type\":\"string\"},\"exittime\":{\"description\":\"退出平台日期\",\"type\":\"string\"},\"leaguetime\":{\"description\":\"加盟平台日期\",\"type\":\"string\"},\"merchantid\":{\"description\":\"商家ID\",\"type\":\"integer\"},\"merchantname\":{\"description\":\"商家名\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"phone\":{\"description\":\"电话\",\"type\":\"string\"},\"province\":{\"description\":\"店铺地址-省\",\"type\":\"string\"},\"shopcode\":{\"description\":\"店铺号\",\"type\":\"string\"},\"shopid\":{\"description\":\"店铺ID\",\"type\":\"integer\"},\"shopname\":{\"description\":\"店铺名称\",\"type\":\"string\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"title": "获取【店铺表】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e获取【店铺表】列表\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 1,
+				"markdown": "```\n获取【店铺表】列表\n```",
+				"method": "GET",
+				"path": "/shops",
+				"query_path": {
+					"params": [],
+					"path": "/shops"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [],
+				"req_query": [
+					{
+						"desc": "当前页码，从1开始，最大支持100000，默认是1。",
+						"name": "pageIndex",
+						"required": "0"
+					},
+					{
+						"desc": "每页记录数，从1开始，最大支持500，默认是15。",
+						"name": "pageSize",
+						"required": "0"
+					}
+				],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"店铺表列表\",\"items\":{\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"address\":{\"description\":\"店铺详细地址\",\"type\":\"string\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"city\":{\"description\":\"店铺地址-市\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"district\":{\"description\":\"店铺地址-区\",\"type\":\"string\"},\"exittime\":{\"description\":\"退出平台日期\",\"type\":\"string\"},\"leaguetime\":{\"description\":\"加盟平台日期\",\"type\":\"string\"},\"merchantid\":{\"description\":\"商家ID\",\"type\":\"integer\"},\"merchantname\":{\"description\":\"商家名\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"phone\":{\"description\":\"电话\",\"type\":\"string\"},\"province\":{\"description\":\"店铺地址-省\",\"type\":\"string\"},\"shopcode\":{\"description\":\"店铺号\",\"type\":\"string\"},\"shopid\":{\"description\":\"店铺ID\",\"type\":\"integer\"},\"shopname\":{\"description\":\"店铺名称\",\"type\":\"string\"}},\"type\":\"object\"},\"required\":[],\"type\":\"array\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"title": "获取【店铺表】列表",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e插入【店铺表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 2,
+				"markdown": "```\n插入【店铺表】信息\n```",
+				"method": "POST",
+				"path": "/shops",
+				"query_path": {
+					"params": [],
+					"path": "/shops"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"address\":{\"description\":\"店铺详细地址\",\"name\":\"address\",\"required\":\"1\",\"type\":\"string\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"city\":{\"description\":\"店铺地址-市\",\"name\":\"city\",\"required\":\"1\",\"type\":\"string\"},\"district\":{\"description\":\"店铺地址-区\",\"name\":\"district\",\"required\":\"1\",\"type\":\"string\"},\"exittime\":{\"description\":\"退出平台日期\",\"name\":\"exittime\",\"required\":\"1\",\"type\":\"string\"},\"leaguetime\":{\"description\":\"加盟平台日期\",\"name\":\"leaguetime\",\"required\":\"1\",\"type\":\"string\"},\"merchantid\":{\"description\":\"商家ID\",\"name\":\"merchantid\",\"required\":\"1\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"phone\":{\"description\":\"电话\",\"name\":\"phone\",\"required\":\"1\",\"type\":\"string\"},\"province\":{\"description\":\"店铺地址-省\",\"name\":\"province\",\"required\":\"1\",\"type\":\"string\"},\"shopcode\":{\"description\":\"店铺号\",\"name\":\"shopcode\",\"required\":\"1\",\"type\":\"string\"},\"shopname\":{\"description\":\"店铺名称\",\"name\":\"shopname\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"shopcode\",\"shopname\",\"province\",\"city\",\"district\",\"address\",\"phone\",\"leaguetime\",\"exittime\",\"adder\",\"addtime\",\"moder\",\"modtime\",\"merchantid\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_type": "json",
+				"req_headers": [
+					{
+						"name": "Content-Type",
+						"required": "1",
+						"value": "application/json"
+					},
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"店铺表\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"},\"shopid\":{\"description\":\"店铺ID\",\"type\":\"integer\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "插入【店铺表】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e修改【店铺表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 3,
+				"markdown": "```\n修改【店铺表】信息\n```",
+				"method": "PUT",
+				"path": "/shops/:id",
+				"query_path": {
+					"params": [],
+					"path": "/shops/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"address\":{\"description\":\"店铺详细地址\",\"name\":\"address\",\"required\":\"1\",\"type\":\"string\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"city\":{\"description\":\"店铺地址-市\",\"name\":\"city\",\"required\":\"1\",\"type\":\"string\"},\"district\":{\"description\":\"店铺地址-区\",\"name\":\"district\",\"required\":\"1\",\"type\":\"string\"},\"exittime\":{\"description\":\"退出平台日期\",\"name\":\"exittime\",\"required\":\"1\",\"type\":\"string\"},\"leaguetime\":{\"description\":\"加盟平台日期\",\"name\":\"leaguetime\",\"required\":\"1\",\"type\":\"string\"},\"merchantid\":{\"description\":\"商家ID\",\"name\":\"merchantid\",\"required\":\"1\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"phone\":{\"description\":\"电话\",\"name\":\"phone\",\"required\":\"1\",\"type\":\"string\"},\"province\":{\"description\":\"店铺地址-省\",\"name\":\"province\",\"required\":\"1\",\"type\":\"string\"},\"shopcode\":{\"description\":\"店铺号\",\"name\":\"shopcode\",\"required\":\"1\",\"type\":\"string\"},\"shopid\":{\"description\":\"店铺ID\",\"name\":\"shopid\",\"required\":\"1\",\"type\":\"integer\"},\"shopname\":{\"description\":\"店铺名称\",\"name\":\"shopname\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"shopid\",\"shopcode\",\"shopname\",\"province\",\"city\",\"district\",\"address\",\"phone\",\"leaguetime\",\"exittime\",\"adder\",\"addtime\",\"moder\",\"modtime\",\"merchantid\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_type": "json",
+				"req_headers": [
+					{
+						"name": "Content-Type",
+						"required": "1",
+						"value": "application/json"
+					},
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "店铺ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"店铺表\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "修改【店铺表】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e删除【店铺表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 4,
+				"markdown": "```\n删除【店铺表】信息\n```",
+				"method": "DELETE",
+				"path": "/shops/:id",
+				"query_path": {
+					"params": [],
+					"path": "/shops/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "店铺ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"店铺表\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "删除【店铺表】信息",
+				"type": "static"
+			}
+		],
+		"name": "店铺表"
+	},
+	{
+		"desc": "",
+		"index": 9,
+		"list": [
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e获取【用户角色表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 0,
+				"markdown": "```\n获取【用户角色表】信息\n```",
+				"method": "GET",
+				"path": "/userroles/:id",
+				"query_path": {
+					"params": [],
+					"path": "/userroles/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "用户角色ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"用户角色表\",\"properties\":{\"createtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"desc\":{\"description\":\"描述\",\"type\":\"string\"},\"remark\":{\"description\":\"备注\",\"type\":\"string\"},\"rolename\":{\"description\":\"角色名称\",\"type\":\"string\"},\"updatetime\":{\"description\":\"更新时间\",\"type\":\"string\"},\"userroleid\":{\"description\":\"用户角色ID\",\"type\":\"integer\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"title": "获取【用户角色表】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e获取【用户角色表】列表\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 1,
+				"markdown": "```\n获取【用户角色表】列表\n```",
+				"method": "GET",
+				"path": "/userroles",
+				"query_path": {
+					"params": [],
+					"path": "/userroles"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [],
+				"req_query": [
+					{
+						"desc": "当前页码，从1开始，最大支持100000，默认是1。",
+						"name": "pageIndex",
+						"required": "0"
+					},
+					{
+						"desc": "每页记录数，从1开始，最大支持500，默认是15。",
+						"name": "pageSize",
+						"required": "0"
+					}
+				],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"用户角色表列表\",\"items\":{\"properties\":{\"createtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"desc\":{\"description\":\"描述\",\"type\":\"string\"},\"remark\":{\"description\":\"备注\",\"type\":\"string\"},\"rolename\":{\"description\":\"角色名称\",\"type\":\"string\"},\"updatetime\":{\"description\":\"更新时间\",\"type\":\"string\"},\"userroleid\":{\"description\":\"用户角色ID\",\"type\":\"integer\"}},\"type\":\"object\"},\"required\":[],\"type\":\"array\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"title": "获取【用户角色表】列表",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e插入【用户角色表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 2,
+				"markdown": "```\n插入【用户角色表】信息\n```",
+				"method": "POST",
+				"path": "/userroles",
+				"query_path": {
+					"params": [],
+					"path": "/userroles"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_body_other": "{\"properties\":{\"desc\":{\"description\":\"描述\",\"name\":\"desc\",\"required\":\"1\",\"type\":\"string\"},\"remark\":{\"description\":\"备注\",\"name\":\"remark\",\"required\":\"1\",\"type\":\"string\"},\"rolename\":{\"description\":\"角色名称\",\"name\":\"rolename\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"rolename\",\"desc\",\"remark\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_type": "json",
+				"req_headers": [
+					{
+						"name": "Content-Type",
+						"required": "1",
+						"value": "application/json"
+					},
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"用户角色表\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"},\"userroleid\":{\"description\":\"用户角色ID\",\"type\":\"integer\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "插入【用户角色表】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e修改【用户角色表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 3,
+				"markdown": "```\n修改【用户角色表】信息\n```",
+				"method": "PUT",
+				"path": "/userroles/:id",
+				"query_path": {
+					"params": [],
+					"path": "/userroles/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_body_other": "{\"properties\":{\"desc\":{\"description\":\"描述\",\"name\":\"desc\",\"required\":\"1\",\"type\":\"string\"},\"remark\":{\"description\":\"备注\",\"name\":\"remark\",\"required\":\"1\",\"type\":\"string\"},\"rolename\":{\"description\":\"角色名称\",\"name\":\"rolename\",\"required\":\"1\",\"type\":\"string\"},\"userroleid\":{\"description\":\"用户角色ID\",\"name\":\"userroleid\",\"required\":\"1\",\"type\":\"integer\"}},\"required\":[\"userroleid\",\"rolename\",\"desc\",\"remark\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_type": "json",
+				"req_headers": [
+					{
+						"name": "Content-Type",
+						"required": "1",
+						"value": "application/json"
+					},
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "用户角色ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"用户角色表\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "修改【用户角色表】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e删除【用户角色表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 4,
+				"markdown": "```\n删除【用户角色表】信息\n```",
+				"method": "DELETE",
+				"path": "/userroles/:id",
+				"query_path": {
+					"params": [],
+					"path": "/userroles/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "用户角色ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"用户角色表\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "删除【用户角色表】信息",
+				"type": "static"
+			}
+		],
+		"name": "用户角色表"
+	},
+	{
+		"desc": "",
+		"index": 10,
+		"list": [
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e获取【抵用券管理】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 0,
+				"markdown": "```\n获取【抵用券管理】信息\n```",
+				"method": "GET",
+				"path": "/vouchers/:id",
+				"query_path": {
+					"params": [],
+					"path": "/vouchers/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "抵用券ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"抵用券管理\",\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"code\":{\"description\":\"抵用券号\",\"type\":\"string\"},\"createtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"guestid\":{\"description\":\"用户id\",\"type\":\"integer\"},\"isinvalid\":{\"description\":\"是否失效\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"name\":{\"description\":\"用户名\",\"type\":\"string\"},\"quota\":{\"description\":\"额度\",\"type\":\"number\"},\"reduce\":{\"description\":\"抵消\",\"type\":\"number\"},\"validdays\":{\"description\":\"有效期（天）\",\"type\":\"integer\"},\"voucherid\":{\"description\":\"抵用券ID\",\"type\":\"integer\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"title": "获取【抵用券管理】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e获取【抵用券管理】列表\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 1,
+				"markdown": "```\n获取【抵用券管理】列表\n```",
+				"method": "GET",
+				"path": "/vouchers",
+				"query_path": {
+					"params": [],
+					"path": "/vouchers"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [],
+				"req_query": [
+					{
+						"desc": "当前页码，从1开始，最大支持100000，默认是1。",
+						"name": "pageIndex",
+						"required": "0"
+					},
+					{
+						"desc": "每页记录数，从1开始，最大支持500，默认是15。",
+						"name": "pageSize",
+						"required": "0"
+					}
+				],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"抵用券管理列表\",\"items\":{\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"code\":{\"description\":\"抵用券号\",\"type\":\"string\"},\"createtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"guestid\":{\"description\":\"用户id\",\"type\":\"integer\"},\"isinvalid\":{\"description\":\"是否失效\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"name\":{\"description\":\"用户名\",\"type\":\"string\"},\"quota\":{\"description\":\"额度\",\"type\":\"number\"},\"reduce\":{\"description\":\"抵消\",\"type\":\"number\"},\"validdays\":{\"description\":\"有效期（天）\",\"type\":\"integer\"},\"voucherid\":{\"description\":\"抵用券ID\",\"type\":\"integer\"}},\"type\":\"object\"},\"required\":[],\"type\":\"array\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"title": "获取【抵用券管理】列表",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e插入【抵用券管理】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 2,
+				"markdown": "```\n插入【抵用券管理】信息\n```",
+				"method": "POST",
+				"path": "/vouchers",
+				"query_path": {
+					"params": [],
+					"path": "/vouchers"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"code\":{\"description\":\"抵用券号\",\"name\":\"code\",\"required\":\"1\",\"type\":\"string\"},\"guestid\":{\"description\":\"用户id\",\"name\":\"guestid\",\"required\":\"1\",\"type\":\"integer\"},\"isinvalid\":{\"description\":\"是否失效\",\"name\":\"isinvalid\",\"required\":\"1\",\"type\":\"boolean\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"quota\":{\"description\":\"额度\",\"name\":\"quota\",\"required\":\"1\",\"type\":\"number\"},\"reduce\":{\"description\":\"抵消\",\"name\":\"reduce\",\"required\":\"1\",\"type\":\"number\"},\"validdays\":{\"description\":\"有效期（天）\",\"name\":\"validdays\",\"required\":\"1\",\"type\":\"integer\"}},\"required\":[\"code\",\"guestid\",\"quota\",\"reduce\",\"validdays\",\"isinvalid\",\"adder\",\"addtime\",\"moder\",\"modtime\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_type": "json",
+				"req_headers": [
+					{
+						"name": "Content-Type",
+						"required": "1",
+						"value": "application/json"
+					},
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"抵用券管理\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"},\"voucherid\":{\"description\":\"抵用券ID\",\"type\":\"integer\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "插入【抵用券管理】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e修改【抵用券管理】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 3,
+				"markdown": "```\n修改【抵用券管理】信息\n```",
+				"method": "PUT",
+				"path": "/vouchers/:id",
+				"query_path": {
+					"params": [],
+					"path": "/vouchers/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"code\":{\"description\":\"抵用券号\",\"name\":\"code\",\"required\":\"1\",\"type\":\"string\"},\"guestid\":{\"description\":\"用户id\",\"name\":\"guestid\",\"required\":\"1\",\"type\":\"integer\"},\"isinvalid\":{\"description\":\"是否失效\",\"name\":\"isinvalid\",\"required\":\"1\",\"type\":\"boolean\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"quota\":{\"description\":\"额度\",\"name\":\"quota\",\"required\":\"1\",\"type\":\"number\"},\"reduce\":{\"description\":\"抵消\",\"name\":\"reduce\",\"required\":\"1\",\"type\":\"number\"},\"validdays\":{\"description\":\"有效期（天）\",\"name\":\"validdays\",\"required\":\"1\",\"type\":\"integer\"},\"voucherid\":{\"description\":\"抵用券ID\",\"name\":\"voucherid\",\"required\":\"1\",\"type\":\"integer\"}},\"required\":[\"voucherid\",\"code\",\"guestid\",\"quota\",\"reduce\",\"validdays\",\"isinvalid\",\"adder\",\"addtime\",\"moder\",\"modtime\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_type": "json",
+				"req_headers": [
+					{
+						"name": "Content-Type",
+						"required": "1",
+						"value": "application/json"
+					},
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "抵用券ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"抵用券管理\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "修改【抵用券管理】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e删除【抵用券管理】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 4,
+				"markdown": "```\n删除【抵用券管理】信息\n```",
+				"method": "DELETE",
+				"path": "/vouchers/:id",
+				"query_path": {
+					"params": [],
+					"path": "/vouchers/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "抵用券ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"抵用券管理\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "删除【抵用券管理】信息",
+				"type": "static"
+			}
+		],
+		"name": "抵用券管理"
 	}
 ]

@@ -1,4 +1,4 @@
-package gwUser
+package rest
 
 import (
 	"fmt"
@@ -7,14 +7,13 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/hardbornman/garglewool-service/model"
 	"github.com/hardbornman/garglewool-service/service"
-	"github.com/hardbornman/garglewool-service/service/wechat"
 	"net/http"
 	"time"
 )
 
 type LoginResult struct {
 	Token string `json:"token"`
-	model.GwUser
+	model.Merchant
 }
 
 func Test(c *gin.Context) {
@@ -40,13 +39,13 @@ func GetDataByTime(c *gin.Context) {
 
 // 登录
 func Auth(c *gin.Context) {
-	account := c.Request.PostFormValue("loginname")
+	account := c.Request.PostFormValue("loginaccount")
 	pwd := c.Request.PostFormValue("loginpwd")
 
 	if account != "" && pwd != "" {
-		user, err := service.Login(account, pwd)
-		if err == nil && user.Userid > 0 {
-			generateToken(c, user)
+		merchant, err := service.Login(account, pwd)
+		if err == nil && merchant.Merchantid > 0 {
+			generateToken(c, merchant)
 		} else {
 			c.JSON(http.StatusOK, gin.H{
 				"status": -1,
@@ -65,16 +64,16 @@ func Auth(c *gin.Context) {
 }
 
 // 生成令牌
-func generateToken(c *gin.Context, user model.GwUser) {
+func generateToken(c *gin.Context, user model.Merchant) {
 	j := &myjwt.JWT{
 		[]byte("newtrekWang"),
 	}
 
 	claims := myjwt.CustomClaims{
-		user.Userid,
+		user.Merchantid,
 		0,
-		user.UserName,
-		user.UserPhone,
+		user.Loginaccount,
+		user.Phone,
 		jwtgo.StandardClaims{
 			NotBefore: int64(time.Now().Unix() - 1000),    // 签名生效时间
 			ExpiresAt: int64(time.Now().Unix() + 48*3600), // 过期时间 一小时
@@ -92,8 +91,8 @@ func generateToken(c *gin.Context, user model.GwUser) {
 	}
 	fmt.Println(token)
 	data := LoginResult{
-		GwUser: user,
-		Token:  token,
+		Merchant: user,
+		Token:    token,
 	}
 	c.JSON(http.StatusOK, gin.H{
 		"status": 0,
@@ -101,34 +100,4 @@ func generateToken(c *gin.Context, user model.GwUser) {
 		"data":   data,
 	})
 	return
-}
-
-// 微信登录
-func WeChatLogin(c *gin.Context) {
-	secret := c.Request.PostFormValue("secret")
-	appid := c.Request.PostFormValue("appid")
-	js_code := c.Request.PostFormValue("js_code")
-	if secret != "" && appid != "" && js_code != "" {
-		m, err := wechat.WechatLogin(js_code, appid, secret)
-		if err == nil && len(m) > 0 {
-			c.JSON(http.StatusOK, gin.H{
-				"status": 1,
-				"msg":    m,
-			})
-			return
-		} else {
-			c.JSON(http.StatusOK, gin.H{
-				"status": -1,
-				"msg":    "验证失败" + err.Error(),
-			})
-			return
-		}
-	} else {
-		c.JSON(http.StatusOK, gin.H{
-			"status": -1,
-			"msg":    "json 解析失败",
-		})
-		return
-	}
-
 }

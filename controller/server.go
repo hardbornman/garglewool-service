@@ -5,15 +5,18 @@ import (
 	m "gitee.com/gbat/utils/middleware"
 	"github.com/gin-gonic/gin"
 	"github.com/hardbornman/garglewool-service/controller/middleware"
-	"github.com/hardbornman/garglewool-service/controller/rest/gwComment"
-	"github.com/hardbornman/garglewool-service/controller/rest/gwOrder"
-	"github.com/hardbornman/garglewool-service/controller/rest/gwPackage"
-	"github.com/hardbornman/garglewool-service/controller/rest/gwPackagedetail"
-	"github.com/hardbornman/garglewool-service/controller/rest/gwShop"
-	"github.com/hardbornman/garglewool-service/controller/rest/gwUser"
-	"github.com/hardbornman/garglewool-service/controller/rest/gwVoucher"
-	"github.com/hardbornman/garglewool-service/controller/rest/sysDictionary"
-	"github.com/hardbornman/garglewool-service/controller/rest/sysDictionarycategory"
+	"github.com/hardbornman/garglewool-service/controller/rest"
+	"github.com/hardbornman/garglewool-service/controller/rest/comment"
+	"github.com/hardbornman/garglewool-service/controller/rest/dictionary"
+	"github.com/hardbornman/garglewool-service/controller/rest/dictionarycategory"
+	"github.com/hardbornman/garglewool-service/controller/rest/guest"
+	"github.com/hardbornman/garglewool-service/controller/rest/merchant"
+	"github.com/hardbornman/garglewool-service/controller/rest/order"
+	"github.com/hardbornman/garglewool-service/controller/rest/setmeal"
+	"github.com/hardbornman/garglewool-service/controller/rest/setmealdetail"
+	"github.com/hardbornman/garglewool-service/controller/rest/shop"
+	"github.com/hardbornman/garglewool-service/controller/rest/userrole"
+	"github.com/hardbornman/garglewool-service/controller/rest/voucher"
 	"github.com/hardbornman/garglewool-service/initials/config"
 	"github.com/hardbornman/garglewool-service/model"
 )
@@ -32,9 +35,7 @@ func Start() {
 	r.NoRoute(func(c *gin.Context) {
 		c.JSON(404, model.Response{Code: "not found", Message: "Page not found"})
 	})
-	r.POST("wechatlogin", gwUser.WeChatLogin)
-	r.POST("/auth", gwUser.Auth)
-
+	r.POST("/auth", rest.Auth)
 	v1 := r.Group("/v1")
 	v1.Use(middleware.LimitMiddleware(), middleware.CORSMiddleware())
 	{
@@ -44,102 +45,124 @@ func Start() {
 		restNode.Use(m.JWTAuth())
 		{
 
-			//region 评论管理
-			gwCommentNode := restNode.Group("gwComments")
+			//region 评论表
+			commentNode := restNode.Group("comments")
 			{
-				gwCommentNode.GET("", gwComment.GetGwCommentList)
-				gwCommentNode.GET(":id", gwComment.GetGwCommentInfo)
-				gwCommentNode.POST("", gwComment.InsertGwCommentInfo)
-				gwCommentNode.PUT(":id", gwComment.UpdateGwCommentInfo)
-				gwCommentNode.DELETE(":id", gwComment.DeleteGwCommentInfo)
-			}
-			//endregion
-
-			//region 订单管理
-			gwOrderNode := restNode.Group("gwOrders")
-			{
-				gwOrderNode.GET("", gwOrder.GetGwOrderList)
-				gwOrderNode.GET(":id", gwOrder.GetGwOrderInfo)
-				gwOrderNode.POST("", gwOrder.InsertGwOrderInfo)
-				gwOrderNode.PUT(":id", gwOrder.UpdateGwOrderInfo)
-				gwOrderNode.DELETE(":id", gwOrder.DeleteGwOrderInfo)
-			}
-			//endregion
-
-			//region 套餐管理
-			gwPackageNode := restNode.Group("gwPackages")
-			{
-				gwPackageNode.GET("", gwPackage.GetGwPackageList)
-				gwPackageNode.GET(":id", gwPackage.GetGwPackageInfo)
-				gwPackageNode.POST("", gwPackage.InsertGwPackageInfo)
-				gwPackageNode.PUT(":id", gwPackage.UpdateGwPackageInfo)
-				gwPackageNode.DELETE(":id", gwPackage.DeleteGwPackageInfo)
-			}
-			//endregion
-
-			//region 套餐明细管理
-			gwPackagedetailNode := restNode.Group("gwPackagedetails")
-			{
-				gwPackagedetailNode.GET("", gwPackagedetail.GetGwPackagedetailList)
-				gwPackagedetailNode.GET(":id", gwPackagedetail.GetGwPackagedetailInfo)
-				gwPackagedetailNode.POST("", gwPackagedetail.InsertGwPackagedetailInfo)
-				gwPackagedetailNode.PUT(":id", gwPackagedetail.UpdateGwPackagedetailInfo)
-				gwPackagedetailNode.DELETE(":id", gwPackagedetail.DeleteGwPackagedetailInfo)
-			}
-			//endregion
-
-			//region 店铺管理
-			gwShopNode := restNode.Group("gwShops")
-			{
-				gwShopNode.GET("", gwShop.GetGwShopList)
-				gwShopNode.GET(":id", gwShop.GetGwShopInfo)
-				gwShopNode.POST("", gwShop.InsertGwShopInfo)
-				gwShopNode.PUT(":id", gwShop.UpdateGwShopInfo)
-				gwShopNode.DELETE(":id", gwShop.DeleteGwShopInfo)
-			}
-			//endregion
-
-			//region 用户管理
-			gwUserNode := restNode.Group("gwUsers")
-			{
-				gwUserNode.GET("", gwUser.GetGwUserList)
-				gwUserNode.GET(":id", gwUser.GetGwUserInfo)
-				gwUserNode.POST("", gwUser.InsertGwUserInfo)
-				gwUserNode.PUT(":id", gwUser.UpdateGwUserInfo)
-				gwUserNode.DELETE(":id", gwUser.DeleteGwUserInfo)
-			}
-			//endregion
-
-			//region 抵用券管理
-			gwVoucherNode := restNode.Group("gwVouchers")
-			{
-				gwVoucherNode.GET("", gwVoucher.GetGwVoucherList)
-				gwVoucherNode.GET(":id", gwVoucher.GetGwVoucherInfo)
-				gwVoucherNode.POST("", gwVoucher.InsertGwVoucherInfo)
-				gwVoucherNode.PUT(":id", gwVoucher.UpdateGwVoucherInfo)
-				gwVoucherNode.DELETE(":id", gwVoucher.DeleteGwVoucherInfo)
+				commentNode.GET("", comment.GetCommentList)
+				commentNode.GET(":id", comment.GetCommentInfo)
+				commentNode.POST("", comment.InsertCommentInfo)
+				commentNode.PUT(":id", comment.UpdateCommentInfo)
+				commentNode.DELETE(":id", comment.DeleteCommentInfo)
 			}
 			//endregion
 
 			//region 字典表
-			sysDictionaryNode := restNode.Group("sysDictionarys")
+			dictionaryNode := restNode.Group("dictionarys")
 			{
-				sysDictionaryNode.GET("", sysDictionary.GetSysDictionaryList)
-				sysDictionaryNode.GET(":id", sysDictionary.GetSysDictionaryInfo)
-				sysDictionaryNode.POST("", sysDictionary.InsertSysDictionaryInfo)
-				sysDictionaryNode.PUT(":id", sysDictionary.UpdateSysDictionaryInfo)
-				sysDictionaryNode.DELETE(":id", sysDictionary.DeleteSysDictionaryInfo)
+				dictionaryNode.GET("", dictionary.GetDictionaryList)
+				dictionaryNode.GET(":id", dictionary.GetDictionaryInfo)
+				dictionaryNode.POST("", dictionary.InsertDictionaryInfo)
+				dictionaryNode.PUT(":id", dictionary.UpdateDictionaryInfo)
+				dictionaryNode.DELETE(":id", dictionary.DeleteDictionaryInfo)
 			}
 			//endregion
 
 			//region 字典分类
-			sysDictionarycategoryNode := restNode.Group("sysDictionarycategorys")
+			dictionarycategoryNode := restNode.Group("dictionarycategorys")
 			{
-				sysDictionarycategoryNode.GET("", sysDictionarycategory.GetSysDictionarycategoryList)
-				sysDictionarycategoryNode.GET(":id", sysDictionarycategory.GetSysDictionarycategoryInfo)
-				sysDictionarycategoryNode.POST("", sysDictionarycategory.InsertSysDictionarycategoryInfo)
-				sysDictionarycategoryNode.PUT(":id", sysDictionarycategory.UpdateSysDictionarycategoryInfo)
-				sysDictionarycategoryNode.DELETE(":id", sysDictionarycategory.DeleteSysDictionarycategoryInfo)
+				dictionarycategoryNode.GET("", dictionarycategory.GetDictionarycategoryList)
+				dictionarycategoryNode.GET(":id", dictionarycategory.GetDictionarycategoryInfo)
+				dictionarycategoryNode.POST("", dictionarycategory.InsertDictionarycategoryInfo)
+				dictionarycategoryNode.PUT(":id", dictionarycategory.UpdateDictionarycategoryInfo)
+				dictionarycategoryNode.DELETE(":id", dictionarycategory.DeleteDictionarycategoryInfo)
+			}
+			//endregion
+
+			//region 买家客户表
+			guestNode := restNode.Group("guests")
+			{
+				guestNode.GET("", guest.GetGuestList)
+				guestNode.GET(":id", guest.GetGuestInfo)
+				guestNode.POST("", guest.InsertGuestInfo)
+				guestNode.PUT(":id", guest.UpdateGuestInfo)
+				guestNode.DELETE(":id", guest.DeleteGuestInfo)
+			}
+			//endregion
+
+			//region 商家用户表
+			merchantNode := restNode.Group("merchants")
+			{
+				merchantNode.GET("", merchant.GetMerchantList)
+				merchantNode.GET(":id", merchant.GetMerchantInfo)
+				merchantNode.POST("", merchant.InsertMerchantInfo)
+				merchantNode.PUT(":id", merchant.UpdateMerchantInfo)
+				merchantNode.DELETE(":id", merchant.DeleteMerchantInfo)
+			}
+			//endregion
+
+			//region 订单表
+			orderNode := restNode.Group("orders")
+			{
+				orderNode.GET("", order.GetOrderList)
+				orderNode.GET(":id", order.GetOrderInfo)
+				orderNode.POST("", order.InsertOrderInfo)
+				orderNode.PUT(":id", order.UpdateOrderInfo)
+				orderNode.DELETE(":id", order.DeleteOrderInfo)
+			}
+			//endregion
+
+			//region 套餐表
+			setmealNode := restNode.Group("setmeals")
+			{
+				setmealNode.GET("", setmeal.GetSetmealList)
+				setmealNode.GET(":id", setmeal.GetSetmealInfo)
+				setmealNode.POST("", setmeal.InsertSetmealInfo)
+				setmealNode.PUT(":id", setmeal.UpdateSetmealInfo)
+				setmealNode.DELETE(":id", setmeal.DeleteSetmealInfo)
+			}
+			//endregion
+
+			//region 套餐明细表
+			setmealdetailNode := restNode.Group("setmealdetails")
+			{
+				setmealdetailNode.GET("", setmealdetail.GetSetmealdetailList)
+				setmealdetailNode.GET(":id", setmealdetail.GetSetmealdetailInfo)
+				setmealdetailNode.POST("", setmealdetail.InsertSetmealdetailInfo)
+				setmealdetailNode.PUT(":id", setmealdetail.UpdateSetmealdetailInfo)
+				setmealdetailNode.DELETE(":id", setmealdetail.DeleteSetmealdetailInfo)
+			}
+			//endregion
+
+			//region 店铺表
+			shopNode := restNode.Group("shops")
+			{
+				shopNode.GET("", shop.GetShopList)
+				shopNode.GET(":id", shop.GetShopInfo)
+				shopNode.POST("", shop.InsertShopInfo)
+				shopNode.PUT(":id", shop.UpdateShopInfo)
+				shopNode.DELETE(":id", shop.DeleteShopInfo)
+			}
+			//endregion
+
+			//region 用户角色表
+			userroleNode := restNode.Group("userroles")
+			{
+				userroleNode.GET("", userrole.GetUserroleList)
+				userroleNode.GET(":id", userrole.GetUserroleInfo)
+				userroleNode.POST("", userrole.InsertUserroleInfo)
+				userroleNode.PUT(":id", userrole.UpdateUserroleInfo)
+				userroleNode.DELETE(":id", userrole.DeleteUserroleInfo)
+			}
+			//endregion
+
+			//region 抵用券管理
+			voucherNode := restNode.Group("vouchers")
+			{
+				voucherNode.GET("", voucher.GetVoucherList)
+				voucherNode.GET(":id", voucher.GetVoucherInfo)
+				voucherNode.POST("", voucher.InsertVoucherInfo)
+				voucherNode.PUT(":id", voucher.UpdateVoucherInfo)
+				voucherNode.DELETE(":id", voucher.DeleteVoucherInfo)
 			}
 			//endregion
 
