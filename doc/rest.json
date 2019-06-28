@@ -6,6 +6,234 @@
 			{
 				"__v": 0,
 				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e获取【区域表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 0,
+				"markdown": "```\n获取【区域表】信息\n```",
+				"method": "GET",
+				"path": "/areas/:id",
+				"query_path": {
+					"params": [],
+					"path": "/areas/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "序号",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"区域表\",\"properties\":{\"areaid\":{\"description\":\"序号\",\"type\":\"integer\"},\"latitude\":{\"description\":\"纬度\",\"type\":\"string\"},\"longitude\":{\"description\":\"经度\",\"type\":\"string\"},\"parentCode\":{\"description\":\"父级编码\",\"type\":\"string\"},\"regionCode\":{\"description\":\"区域编码\",\"type\":\"string\"},\"regionName\":{\"description\":\"区域名称\",\"type\":\"string\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"title": "获取【区域表】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e获取【区域表】列表\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 1,
+				"markdown": "```\n获取【区域表】列表\n```",
+				"method": "GET",
+				"path": "/areas",
+				"query_path": {
+					"params": [],
+					"path": "/areas"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [],
+				"req_query": [
+					{
+						"desc": "当前页码，从1开始，最大支持100000，默认是1。",
+						"name": "pageIndex",
+						"required": "0"
+					},
+					{
+						"desc": "每页记录数，从1开始，最大支持500，默认是15。",
+						"name": "pageSize",
+						"required": "0"
+					},
+					{
+						"desc": "区域名称",
+						"name": "regionName",
+						"required": "0"
+					},
+					{
+						"desc": "经度",
+						"name": "longitude",
+						"required": "0"
+					},
+					{
+						"desc": "纬度",
+						"name": "latitude",
+						"required": "0"
+					}
+				],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"区域表列表\",\"items\":{\"properties\":{\"areaid\":{\"description\":\"序号\",\"type\":\"integer\"},\"latitude\":{\"description\":\"纬度\",\"type\":\"string\"},\"longitude\":{\"description\":\"经度\",\"type\":\"string\"},\"parentCode\":{\"description\":\"父级编码\",\"type\":\"string\"},\"regionCode\":{\"description\":\"区域编码\",\"type\":\"string\"},\"regionName\":{\"description\":\"区域名称\",\"type\":\"string\"}},\"type\":\"object\"},\"required\":[],\"type\":\"array\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"title": "获取【区域表】列表",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e插入【区域表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 2,
+				"markdown": "```\n插入【区域表】信息\n```",
+				"method": "POST",
+				"path": "/areas",
+				"query_path": {
+					"params": [],
+					"path": "/areas"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_body_other": "{\"properties\":{\"latitude\":{\"description\":\"纬度\",\"name\":\"latitude\",\"required\":\"1\",\"type\":\"string\"},\"longitude\":{\"description\":\"经度\",\"name\":\"longitude\",\"required\":\"1\",\"type\":\"string\"},\"parentCode\":{\"description\":\"父级编码\",\"name\":\"parentCode\",\"required\":\"1\",\"type\":\"string\"},\"regionCode\":{\"description\":\"区域编码\",\"name\":\"regionCode\",\"required\":\"1\",\"type\":\"string\"},\"regionName\":{\"description\":\"区域名称\",\"name\":\"regionName\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"regionName\",\"regionCode\",\"parentCode\",\"longitude\",\"latitude\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_type": "json",
+				"req_headers": [
+					{
+						"name": "Content-Type",
+						"required": "1",
+						"value": "application/json"
+					},
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"区域表\",\"properties\":{\"areaid\":{\"description\":\"序号\",\"type\":\"integer\"},\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "插入【区域表】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e修改【区域表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 3,
+				"markdown": "```\n修改【区域表】信息\n```",
+				"method": "PUT",
+				"path": "/areas/:id",
+				"query_path": {
+					"params": [],
+					"path": "/areas/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_body_other": "{\"properties\":{\"areaid\":{\"description\":\"序号\",\"name\":\"areaid\",\"required\":\"1\",\"type\":\"integer\"},\"latitude\":{\"description\":\"纬度\",\"name\":\"latitude\",\"required\":\"1\",\"type\":\"string\"},\"longitude\":{\"description\":\"经度\",\"name\":\"longitude\",\"required\":\"1\",\"type\":\"string\"},\"parentCode\":{\"description\":\"父级编码\",\"name\":\"parentCode\",\"required\":\"1\",\"type\":\"string\"},\"regionCode\":{\"description\":\"区域编码\",\"name\":\"regionCode\",\"required\":\"1\",\"type\":\"string\"},\"regionName\":{\"description\":\"区域名称\",\"name\":\"regionName\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"areaid\",\"regionName\",\"regionCode\",\"parentCode\",\"longitude\",\"latitude\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_type": "json",
+				"req_headers": [
+					{
+						"name": "Content-Type",
+						"required": "1",
+						"value": "application/json"
+					},
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "序号",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"区域表\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "修改【区域表】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e删除【区域表】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 4,
+				"markdown": "```\n删除【区域表】信息\n```",
+				"method": "DELETE",
+				"path": "/areas/:id",
+				"query_path": {
+					"params": [],
+					"path": "/areas/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "序号",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"区域表\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "删除【区域表】信息",
+				"type": "static"
+			}
+		],
+		"name": "区域表"
+	},
+	{
+		"desc": "",
+		"index": 1,
+		"list": [
+			{
+				"__v": 0,
+				"api_opened": false,
 				"desc": "\u003cpre\u003e\u003ccode\u003e获取【评论表】信息\u003c/code\u003e\u003c/pre\u003e",
 				"edit_uid": 0,
 				"index": 0,
@@ -214,7 +442,7 @@
 	},
 	{
 		"desc": "",
-		"index": 1,
+		"index": 2,
 		"list": [
 			{
 				"__v": 0,
@@ -427,7 +655,7 @@
 	},
 	{
 		"desc": "",
-		"index": 2,
+		"index": 3,
 		"list": [
 			{
 				"__v": 0,
@@ -640,7 +868,7 @@
 	},
 	{
 		"desc": "",
-		"index": 3,
+		"index": 4,
 		"list": [
 			{
 				"__v": 0,
@@ -853,7 +1081,7 @@
 	},
 	{
 		"desc": "",
-		"index": 4,
+		"index": 5,
 		"list": [
 			{
 				"__v": 0,
@@ -886,7 +1114,7 @@
 					}
 				],
 				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"商家用户表\",\"properties\":{\"addr\":{\"description\":\"地址\",\"type\":\"string\"},\"createtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"enable\":{\"description\":\"是否启用\",\"type\":\"string\"},\"lastloginaddr\":{\"description\":\"最近登录地址\",\"type\":\"string\"},\"lastlogintime\":{\"description\":\"最近登录时间\",\"type\":\"string\"},\"loginaccount\":{\"description\":\"登录账户\",\"type\":\"string\"},\"merchantid\":{\"description\":\"商家ID\",\"type\":\"integer\"},\"merchantname\":{\"description\":\"商家名\",\"type\":\"string\"},\"nick\":{\"description\":\"昵称\",\"type\":\"string\"},\"phone\":{\"description\":\"手机号\",\"type\":\"string\"},\"remark\":{\"description\":\"备注\",\"type\":\"string\"},\"rigstertime\":{\"description\":\"注册时间\",\"type\":\"string\"},\"rolename\":{\"description\":\"角色名称\",\"type\":\"string\"},\"updatetime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"userroleid\":{\"description\":\"用户角色ID\",\"type\":\"integer\"},\"wechataccount\":{\"description\":\"微信账号\",\"type\":\"string\"},\"wechatsign\":{\"description\":\"微信签名\",\"type\":\"string\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"商家用户表\",\"properties\":{\"addr\":{\"description\":\"地址\",\"type\":\"string\"},\"createtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"enable\":{\"description\":\"是否启用\",\"type\":\"integer\"},\"lastloginaddr\":{\"description\":\"最近登录地址\",\"type\":\"string\"},\"lastlogintime\":{\"description\":\"最近登录时间\",\"type\":\"string\"},\"loginaccount\":{\"description\":\"登录账户\",\"type\":\"string\"},\"merchantid\":{\"description\":\"商家ID\",\"type\":\"integer\"},\"merchantname\":{\"description\":\"商家名\",\"type\":\"string\"},\"nick\":{\"description\":\"昵称\",\"type\":\"string\"},\"phone\":{\"description\":\"手机号\",\"type\":\"string\"},\"remark\":{\"description\":\"备注\",\"type\":\"string\"},\"rigstertime\":{\"description\":\"注册时间\",\"type\":\"string\"},\"rolename\":{\"description\":\"角色名称\",\"type\":\"string\"},\"updatetime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"userroleid\":{\"description\":\"用户角色ID\",\"type\":\"integer\"},\"wechataccount\":{\"description\":\"微信账号\",\"type\":\"string\"},\"wechatsign\":{\"description\":\"微信签名\",\"type\":\"string\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
 				"res_body_is_json_schema": true,
 				"res_body_type": "json",
 				"status": "done",
@@ -929,7 +1157,7 @@
 						"required": "0"
 					}
 				],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"商家用户表列表\",\"items\":{\"properties\":{\"addr\":{\"description\":\"地址\",\"type\":\"string\"},\"createtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"enable\":{\"description\":\"是否启用\",\"type\":\"string\"},\"lastloginaddr\":{\"description\":\"最近登录地址\",\"type\":\"string\"},\"lastlogintime\":{\"description\":\"最近登录时间\",\"type\":\"string\"},\"loginaccount\":{\"description\":\"登录账户\",\"type\":\"string\"},\"merchantid\":{\"description\":\"商家ID\",\"type\":\"integer\"},\"merchantname\":{\"description\":\"商家名\",\"type\":\"string\"},\"nick\":{\"description\":\"昵称\",\"type\":\"string\"},\"phone\":{\"description\":\"手机号\",\"type\":\"string\"},\"remark\":{\"description\":\"备注\",\"type\":\"string\"},\"rigstertime\":{\"description\":\"注册时间\",\"type\":\"string\"},\"rolename\":{\"description\":\"角色名称\",\"type\":\"string\"},\"updatetime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"userroleid\":{\"description\":\"用户角色ID\",\"type\":\"integer\"},\"wechataccount\":{\"description\":\"微信账号\",\"type\":\"string\"},\"wechatsign\":{\"description\":\"微信签名\",\"type\":\"string\"}},\"type\":\"object\"},\"required\":[],\"type\":\"array\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"商家用户表列表\",\"items\":{\"properties\":{\"addr\":{\"description\":\"地址\",\"type\":\"string\"},\"createtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"enable\":{\"description\":\"是否启用\",\"type\":\"integer\"},\"lastloginaddr\":{\"description\":\"最近登录地址\",\"type\":\"string\"},\"lastlogintime\":{\"description\":\"最近登录时间\",\"type\":\"string\"},\"loginaccount\":{\"description\":\"登录账户\",\"type\":\"string\"},\"merchantid\":{\"description\":\"商家ID\",\"type\":\"integer\"},\"merchantname\":{\"description\":\"商家名\",\"type\":\"string\"},\"nick\":{\"description\":\"昵称\",\"type\":\"string\"},\"phone\":{\"description\":\"手机号\",\"type\":\"string\"},\"remark\":{\"description\":\"备注\",\"type\":\"string\"},\"rigstertime\":{\"description\":\"注册时间\",\"type\":\"string\"},\"rolename\":{\"description\":\"角色名称\",\"type\":\"string\"},\"updatetime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"userroleid\":{\"description\":\"用户角色ID\",\"type\":\"integer\"},\"wechataccount\":{\"description\":\"微信账号\",\"type\":\"string\"},\"wechatsign\":{\"description\":\"微信签名\",\"type\":\"string\"}},\"type\":\"object\"},\"required\":[],\"type\":\"array\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
 				"res_body_is_json_schema": true,
 				"res_body_type": "json",
 				"status": "done",
@@ -951,7 +1179,7 @@
 				},
 				"req_body_form": [],
 				"req_body_is_json_schema": true,
-				"req_body_other": "{\"properties\":{\"addr\":{\"description\":\"地址\",\"name\":\"addr\",\"required\":\"1\",\"type\":\"string\"},\"enable\":{\"description\":\"是否启用\",\"name\":\"enable\",\"required\":\"1\",\"type\":\"boolean\"},\"lastloginaddr\":{\"description\":\"最近登录地址\",\"name\":\"lastloginaddr\",\"required\":\"1\",\"type\":\"string\"},\"lastlogintime\":{\"description\":\"最近登录时间\",\"name\":\"lastlogintime\",\"required\":\"1\",\"type\":\"string\"},\"loginaccount\":{\"description\":\"登录账户\",\"name\":\"loginaccount\",\"required\":\"1\",\"type\":\"string\"},\"loginpwd\":{\"description\":\"登录密码\",\"name\":\"loginpwd\",\"required\":\"1\",\"type\":\"string\"},\"merchantname\":{\"description\":\"商家名\",\"name\":\"merchantname\",\"required\":\"1\",\"type\":\"string\"},\"nick\":{\"description\":\"昵称\",\"name\":\"nick\",\"required\":\"1\",\"type\":\"string\"},\"phone\":{\"description\":\"手机号\",\"name\":\"phone\",\"required\":\"1\",\"type\":\"string\"},\"remark\":{\"description\":\"备注\",\"name\":\"remark\",\"required\":\"1\",\"type\":\"string\"},\"rigstertime\":{\"description\":\"注册时间\",\"name\":\"rigstertime\",\"required\":\"1\",\"type\":\"string\"},\"userroleid\":{\"description\":\"用户角色ID\",\"name\":\"userroleid\",\"required\":\"1\",\"type\":\"integer\"},\"wechataccount\":{\"description\":\"微信账号\",\"name\":\"wechataccount\",\"required\":\"1\",\"type\":\"string\"},\"wechatsign\":{\"description\":\"微信签名\",\"name\":\"wechatsign\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"merchantname\",\"phone\",\"userroleid\",\"loginpwd\",\"loginaccount\",\"nick\",\"wechataccount\",\"wechatsign\",\"remark\",\"lastlogintime\",\"lastloginaddr\",\"rigstertime\",\"enable\",\"addr\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_other": "{\"properties\":{\"addr\":{\"description\":\"地址\",\"name\":\"addr\",\"required\":\"1\",\"type\":\"string\"},\"enable\":{\"description\":\"是否启用\",\"name\":\"enable\",\"required\":\"1\",\"type\":\"integer\"},\"lastloginaddr\":{\"description\":\"最近登录地址\",\"name\":\"lastloginaddr\",\"required\":\"1\",\"type\":\"string\"},\"lastlogintime\":{\"description\":\"最近登录时间\",\"name\":\"lastlogintime\",\"required\":\"1\",\"type\":\"string\"},\"loginaccount\":{\"description\":\"登录账户\",\"name\":\"loginaccount\",\"required\":\"1\",\"type\":\"string\"},\"loginpwd\":{\"description\":\"登录密码\",\"name\":\"loginpwd\",\"required\":\"1\",\"type\":\"string\"},\"merchantname\":{\"description\":\"商家名\",\"name\":\"merchantname\",\"required\":\"1\",\"type\":\"string\"},\"nick\":{\"description\":\"昵称\",\"name\":\"nick\",\"required\":\"1\",\"type\":\"string\"},\"phone\":{\"description\":\"手机号\",\"name\":\"phone\",\"required\":\"1\",\"type\":\"string\"},\"remark\":{\"description\":\"备注\",\"name\":\"remark\",\"required\":\"1\",\"type\":\"string\"},\"rigstertime\":{\"description\":\"注册时间\",\"name\":\"rigstertime\",\"required\":\"1\",\"type\":\"string\"},\"userroleid\":{\"description\":\"用户角色ID\",\"name\":\"userroleid\",\"required\":\"1\",\"type\":\"integer\"},\"wechataccount\":{\"description\":\"微信账号\",\"name\":\"wechataccount\",\"required\":\"1\",\"type\":\"string\"},\"wechatsign\":{\"description\":\"微信签名\",\"name\":\"wechatsign\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"merchantname\",\"phone\",\"userroleid\",\"loginpwd\",\"loginaccount\",\"nick\",\"wechataccount\",\"wechatsign\",\"remark\",\"lastlogintime\",\"lastloginaddr\",\"rigstertime\",\"enable\",\"addr\"],\"title\":\"empty object\",\"type\":\"object\"}",
 				"req_body_type": "json",
 				"req_headers": [
 					{
@@ -991,7 +1219,7 @@
 				},
 				"req_body_form": [],
 				"req_body_is_json_schema": true,
-				"req_body_other": "{\"properties\":{\"addr\":{\"description\":\"地址\",\"name\":\"addr\",\"required\":\"1\",\"type\":\"string\"},\"enable\":{\"description\":\"是否启用\",\"name\":\"enable\",\"required\":\"1\",\"type\":\"boolean\"},\"lastloginaddr\":{\"description\":\"最近登录地址\",\"name\":\"lastloginaddr\",\"required\":\"1\",\"type\":\"string\"},\"lastlogintime\":{\"description\":\"最近登录时间\",\"name\":\"lastlogintime\",\"required\":\"1\",\"type\":\"string\"},\"loginaccount\":{\"description\":\"登录账户\",\"name\":\"loginaccount\",\"required\":\"1\",\"type\":\"string\"},\"loginpwd\":{\"description\":\"登录密码\",\"name\":\"loginpwd\",\"required\":\"1\",\"type\":\"string\"},\"merchantid\":{\"description\":\"商家ID\",\"name\":\"merchantid\",\"required\":\"1\",\"type\":\"integer\"},\"merchantname\":{\"description\":\"商家名\",\"name\":\"merchantname\",\"required\":\"1\",\"type\":\"string\"},\"nick\":{\"description\":\"昵称\",\"name\":\"nick\",\"required\":\"1\",\"type\":\"string\"},\"phone\":{\"description\":\"手机号\",\"name\":\"phone\",\"required\":\"1\",\"type\":\"string\"},\"remark\":{\"description\":\"备注\",\"name\":\"remark\",\"required\":\"1\",\"type\":\"string\"},\"rigstertime\":{\"description\":\"注册时间\",\"name\":\"rigstertime\",\"required\":\"1\",\"type\":\"string\"},\"userroleid\":{\"description\":\"用户角色ID\",\"name\":\"userroleid\",\"required\":\"1\",\"type\":\"integer\"},\"wechataccount\":{\"description\":\"微信账号\",\"name\":\"wechataccount\",\"required\":\"1\",\"type\":\"string\"},\"wechatsign\":{\"description\":\"微信签名\",\"name\":\"wechatsign\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"merchantid\",\"merchantname\",\"phone\",\"userroleid\",\"loginpwd\",\"loginaccount\",\"nick\",\"wechataccount\",\"wechatsign\",\"remark\",\"lastlogintime\",\"lastloginaddr\",\"rigstertime\",\"enable\",\"addr\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_other": "{\"properties\":{\"addr\":{\"description\":\"地址\",\"name\":\"addr\",\"required\":\"1\",\"type\":\"string\"},\"enable\":{\"description\":\"是否启用\",\"name\":\"enable\",\"required\":\"1\",\"type\":\"integer\"},\"lastloginaddr\":{\"description\":\"最近登录地址\",\"name\":\"lastloginaddr\",\"required\":\"1\",\"type\":\"string\"},\"lastlogintime\":{\"description\":\"最近登录时间\",\"name\":\"lastlogintime\",\"required\":\"1\",\"type\":\"string\"},\"loginaccount\":{\"description\":\"登录账户\",\"name\":\"loginaccount\",\"required\":\"1\",\"type\":\"string\"},\"loginpwd\":{\"description\":\"登录密码\",\"name\":\"loginpwd\",\"required\":\"1\",\"type\":\"string\"},\"merchantid\":{\"description\":\"商家ID\",\"name\":\"merchantid\",\"required\":\"1\",\"type\":\"integer\"},\"merchantname\":{\"description\":\"商家名\",\"name\":\"merchantname\",\"required\":\"1\",\"type\":\"string\"},\"nick\":{\"description\":\"昵称\",\"name\":\"nick\",\"required\":\"1\",\"type\":\"string\"},\"phone\":{\"description\":\"手机号\",\"name\":\"phone\",\"required\":\"1\",\"type\":\"string\"},\"remark\":{\"description\":\"备注\",\"name\":\"remark\",\"required\":\"1\",\"type\":\"string\"},\"rigstertime\":{\"description\":\"注册时间\",\"name\":\"rigstertime\",\"required\":\"1\",\"type\":\"string\"},\"userroleid\":{\"description\":\"用户角色ID\",\"name\":\"userroleid\",\"required\":\"1\",\"type\":\"integer\"},\"wechataccount\":{\"description\":\"微信账号\",\"name\":\"wechataccount\",\"required\":\"1\",\"type\":\"string\"},\"wechatsign\":{\"description\":\"微信签名\",\"name\":\"wechatsign\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"merchantid\",\"merchantname\",\"phone\",\"userroleid\",\"loginpwd\",\"loginaccount\",\"nick\",\"wechataccount\",\"wechatsign\",\"remark\",\"lastlogintime\",\"lastloginaddr\",\"rigstertime\",\"enable\",\"addr\"],\"title\":\"empty object\",\"type\":\"object\"}",
 				"req_body_type": "json",
 				"req_headers": [
 					{
@@ -1066,7 +1294,7 @@
 	},
 	{
 		"desc": "",
-		"index": 5,
+		"index": 6,
 		"list": [
 			{
 				"__v": 0,
@@ -1279,7 +1507,671 @@
 	},
 	{
 		"desc": "",
-		"index": 6,
+		"index": 7,
+		"list": [
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e获取【市】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 0,
+				"markdown": "```\n获取【市】信息\n```",
+				"method": "GET",
+				"path": "/s_citys/:id",
+				"query_path": {
+					"params": [],
+					"path": "/s_citys/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "市ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"市\",\"properties\":{\"cityId\":{\"description\":\"市ID\",\"type\":\"integer\"},\"cityName\":{\"description\":\"市名称\",\"type\":\"string\"},\"dateCreated\":{\"description\":\"创建日期\",\"type\":\"string\"},\"dateUpdated\":{\"description\":\"更新日期\",\"type\":\"string\"},\"provinceId\":{\"description\":\"省ID\",\"type\":\"integer\"},\"provinceName\":{\"description\":\"省名称\",\"type\":\"string\"},\"zipCode\":{\"description\":\"编码\",\"type\":\"string\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"title": "获取【市】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e获取【市】列表\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 1,
+				"markdown": "```\n获取【市】列表\n```",
+				"method": "GET",
+				"path": "/s_citys",
+				"query_path": {
+					"params": [],
+					"path": "/s_citys"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [],
+				"req_query": [
+					{
+						"desc": "当前页码，从1开始，最大支持100000，默认是1。",
+						"name": "pageIndex",
+						"required": "0"
+					},
+					{
+						"desc": "每页记录数，从1开始，最大支持500，默认是15。",
+						"name": "pageSize",
+						"required": "0"
+					},
+					{
+						"desc": "市名称",
+						"name": "cityName",
+						"required": "0"
+					},
+					{
+						"desc": "省ID",
+						"name": "provinceId",
+						"required": "0"
+					}
+				],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"市列表\",\"items\":{\"properties\":{\"cityId\":{\"description\":\"市ID\",\"type\":\"integer\"},\"cityName\":{\"description\":\"市名称\",\"type\":\"string\"},\"dateCreated\":{\"description\":\"创建日期\",\"type\":\"string\"},\"dateUpdated\":{\"description\":\"更新日期\",\"type\":\"string\"},\"provinceId\":{\"description\":\"省ID\",\"type\":\"integer\"},\"provinceName\":{\"description\":\"省名称\",\"type\":\"string\"},\"zipCode\":{\"description\":\"编码\",\"type\":\"string\"}},\"type\":\"object\"},\"required\":[],\"type\":\"array\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"title": "获取【市】列表",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e插入【市】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 2,
+				"markdown": "```\n插入【市】信息\n```",
+				"method": "POST",
+				"path": "/s_citys",
+				"query_path": {
+					"params": [],
+					"path": "/s_citys"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_body_other": "{\"properties\":{\"cityName\":{\"description\":\"市名称\",\"name\":\"cityName\",\"required\":\"1\",\"type\":\"string\"},\"dateCreated\":{\"description\":\"创建日期\",\"name\":\"dateCreated\",\"required\":\"1\",\"type\":\"string\"},\"dateUpdated\":{\"description\":\"更新日期\",\"name\":\"dateUpdated\",\"required\":\"1\",\"type\":\"string\"},\"provinceId\":{\"description\":\"省ID\",\"name\":\"provinceId\",\"required\":\"1\",\"type\":\"integer\"},\"zipCode\":{\"description\":\"编码\",\"name\":\"zipCode\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"cityName\",\"zipCode\",\"provinceId\",\"dateCreated\",\"dateUpdated\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_type": "json",
+				"req_headers": [
+					{
+						"name": "Content-Type",
+						"required": "1",
+						"value": "application/json"
+					},
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"市\",\"properties\":{\"cityId\":{\"description\":\"市ID\",\"type\":\"integer\"},\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "插入【市】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e修改【市】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 3,
+				"markdown": "```\n修改【市】信息\n```",
+				"method": "PUT",
+				"path": "/s_citys/:id",
+				"query_path": {
+					"params": [],
+					"path": "/s_citys/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_body_other": "{\"properties\":{\"cityId\":{\"description\":\"市ID\",\"name\":\"cityId\",\"required\":\"1\",\"type\":\"integer\"},\"cityName\":{\"description\":\"市名称\",\"name\":\"cityName\",\"required\":\"1\",\"type\":\"string\"},\"dateCreated\":{\"description\":\"创建日期\",\"name\":\"dateCreated\",\"required\":\"1\",\"type\":\"string\"},\"dateUpdated\":{\"description\":\"更新日期\",\"name\":\"dateUpdated\",\"required\":\"1\",\"type\":\"string\"},\"provinceId\":{\"description\":\"省ID\",\"name\":\"provinceId\",\"required\":\"1\",\"type\":\"integer\"},\"zipCode\":{\"description\":\"编码\",\"name\":\"zipCode\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"cityId\",\"cityName\",\"zipCode\",\"provinceId\",\"dateCreated\",\"dateUpdated\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_type": "json",
+				"req_headers": [
+					{
+						"name": "Content-Type",
+						"required": "1",
+						"value": "application/json"
+					},
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "市ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"市\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "修改【市】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e删除【市】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 4,
+				"markdown": "```\n删除【市】信息\n```",
+				"method": "DELETE",
+				"path": "/s_citys/:id",
+				"query_path": {
+					"params": [],
+					"path": "/s_citys/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "市ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"市\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "删除【市】信息",
+				"type": "static"
+			}
+		],
+		"name": "市"
+	},
+	{
+		"desc": "",
+		"index": 8,
+		"list": [
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e获取【区县】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 0,
+				"markdown": "```\n获取【区县】信息\n```",
+				"method": "GET",
+				"path": "/s_districts/:id",
+				"query_path": {
+					"params": [],
+					"path": "/s_districts/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "区ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"区县\",\"properties\":{\"cityId\":{\"description\":\"市ID\",\"type\":\"integer\"},\"cityName\":{\"description\":\"市名称\",\"type\":\"string\"},\"dateCreated\":{\"description\":\"创建日期\",\"type\":\"string\"},\"dateUpdated\":{\"description\":\"更新日期\",\"type\":\"string\"},\"districtId\":{\"description\":\"区ID\",\"type\":\"integer\"},\"districtName\":{\"description\":\"区名称\",\"type\":\"string\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"title": "获取【区县】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e获取【区县】列表\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 1,
+				"markdown": "```\n获取【区县】列表\n```",
+				"method": "GET",
+				"path": "/s_districts",
+				"query_path": {
+					"params": [],
+					"path": "/s_districts"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [],
+				"req_query": [
+					{
+						"desc": "当前页码，从1开始，最大支持100000，默认是1。",
+						"name": "pageIndex",
+						"required": "0"
+					},
+					{
+						"desc": "每页记录数，从1开始，最大支持500，默认是15。",
+						"name": "pageSize",
+						"required": "0"
+					},
+					{
+						"desc": "区名称",
+						"name": "districtName",
+						"required": "0"
+					},
+					{
+						"desc": "市ID",
+						"name": "cityId",
+						"required": "0"
+					}
+				],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"区县列表\",\"items\":{\"properties\":{\"cityId\":{\"description\":\"市ID\",\"type\":\"integer\"},\"cityName\":{\"description\":\"市名称\",\"type\":\"string\"},\"dateCreated\":{\"description\":\"创建日期\",\"type\":\"string\"},\"dateUpdated\":{\"description\":\"更新日期\",\"type\":\"string\"},\"districtId\":{\"description\":\"区ID\",\"type\":\"integer\"},\"districtName\":{\"description\":\"区名称\",\"type\":\"string\"}},\"type\":\"object\"},\"required\":[],\"type\":\"array\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"title": "获取【区县】列表",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e插入【区县】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 2,
+				"markdown": "```\n插入【区县】信息\n```",
+				"method": "POST",
+				"path": "/s_districts",
+				"query_path": {
+					"params": [],
+					"path": "/s_districts"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_body_other": "{\"properties\":{\"cityId\":{\"description\":\"市ID\",\"name\":\"cityId\",\"required\":\"1\",\"type\":\"integer\"},\"dateCreated\":{\"description\":\"创建日期\",\"name\":\"dateCreated\",\"required\":\"1\",\"type\":\"string\"},\"dateUpdated\":{\"description\":\"更新日期\",\"name\":\"dateUpdated\",\"required\":\"1\",\"type\":\"string\"},\"districtName\":{\"description\":\"区名称\",\"name\":\"districtName\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"districtName\",\"cityId\",\"dateCreated\",\"dateUpdated\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_type": "json",
+				"req_headers": [
+					{
+						"name": "Content-Type",
+						"required": "1",
+						"value": "application/json"
+					},
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"区县\",\"properties\":{\"districtId\":{\"description\":\"区ID\",\"type\":\"integer\"},\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "插入【区县】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e修改【区县】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 3,
+				"markdown": "```\n修改【区县】信息\n```",
+				"method": "PUT",
+				"path": "/s_districts/:id",
+				"query_path": {
+					"params": [],
+					"path": "/s_districts/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_body_other": "{\"properties\":{\"cityId\":{\"description\":\"市ID\",\"name\":\"cityId\",\"required\":\"1\",\"type\":\"integer\"},\"dateCreated\":{\"description\":\"创建日期\",\"name\":\"dateCreated\",\"required\":\"1\",\"type\":\"string\"},\"dateUpdated\":{\"description\":\"更新日期\",\"name\":\"dateUpdated\",\"required\":\"1\",\"type\":\"string\"},\"districtId\":{\"description\":\"区ID\",\"name\":\"districtId\",\"required\":\"1\",\"type\":\"integer\"},\"districtName\":{\"description\":\"区名称\",\"name\":\"districtName\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"districtId\",\"districtName\",\"cityId\",\"dateCreated\",\"dateUpdated\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_type": "json",
+				"req_headers": [
+					{
+						"name": "Content-Type",
+						"required": "1",
+						"value": "application/json"
+					},
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "区ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"区县\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "修改【区县】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e删除【区县】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 4,
+				"markdown": "```\n删除【区县】信息\n```",
+				"method": "DELETE",
+				"path": "/s_districts/:id",
+				"query_path": {
+					"params": [],
+					"path": "/s_districts/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "区ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"区县\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "删除【区县】信息",
+				"type": "static"
+			}
+		],
+		"name": "区县"
+	},
+	{
+		"desc": "",
+		"index": 9,
+		"list": [
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e获取【省，直辖市】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 0,
+				"markdown": "```\n获取【省，直辖市】信息\n```",
+				"method": "GET",
+				"path": "/s_provinces/:id",
+				"query_path": {
+					"params": [],
+					"path": "/s_provinces/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "省ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"省，直辖市\",\"properties\":{\"dateCreated\":{\"description\":\"创建日期\",\"type\":\"string\"},\"dateUpdated\":{\"description\":\"更新日期\",\"type\":\"string\"},\"provinceId\":{\"description\":\"省ID\",\"type\":\"integer\"},\"provinceName\":{\"description\":\"省名称\",\"type\":\"string\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"title": "获取【省，直辖市】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e获取【省，直辖市】列表\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 1,
+				"markdown": "```\n获取【省，直辖市】列表\n```",
+				"method": "GET",
+				"path": "/s_provinces",
+				"query_path": {
+					"params": [],
+					"path": "/s_provinces"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [],
+				"req_query": [
+					{
+						"desc": "当前页码，从1开始，最大支持100000，默认是1。",
+						"name": "pageIndex",
+						"required": "0"
+					},
+					{
+						"desc": "每页记录数，从1开始，最大支持500，默认是15。",
+						"name": "pageSize",
+						"required": "0"
+					},
+					{
+						"desc": "省名称",
+						"name": "provinceName",
+						"required": "0"
+					}
+				],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"省，直辖市列表\",\"items\":{\"properties\":{\"dateCreated\":{\"description\":\"创建日期\",\"type\":\"string\"},\"dateUpdated\":{\"description\":\"更新日期\",\"type\":\"string\"},\"provinceId\":{\"description\":\"省ID\",\"type\":\"integer\"},\"provinceName\":{\"description\":\"省名称\",\"type\":\"string\"}},\"type\":\"object\"},\"required\":[],\"type\":\"array\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"title": "获取【省，直辖市】列表",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e插入【省，直辖市】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 2,
+				"markdown": "```\n插入【省，直辖市】信息\n```",
+				"method": "POST",
+				"path": "/s_provinces",
+				"query_path": {
+					"params": [],
+					"path": "/s_provinces"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_body_other": "{\"properties\":{\"dateCreated\":{\"description\":\"创建日期\",\"name\":\"dateCreated\",\"required\":\"1\",\"type\":\"string\"},\"dateUpdated\":{\"description\":\"更新日期\",\"name\":\"dateUpdated\",\"required\":\"1\",\"type\":\"string\"},\"provinceName\":{\"description\":\"省名称\",\"name\":\"provinceName\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"provinceName\",\"dateCreated\",\"dateUpdated\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_type": "json",
+				"req_headers": [
+					{
+						"name": "Content-Type",
+						"required": "1",
+						"value": "application/json"
+					},
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"省，直辖市\",\"properties\":{\"provinceId\":{\"description\":\"省ID\",\"type\":\"integer\"},\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "插入【省，直辖市】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e修改【省，直辖市】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 3,
+				"markdown": "```\n修改【省，直辖市】信息\n```",
+				"method": "PUT",
+				"path": "/s_provinces/:id",
+				"query_path": {
+					"params": [],
+					"path": "/s_provinces/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_body_other": "{\"properties\":{\"dateCreated\":{\"description\":\"创建日期\",\"name\":\"dateCreated\",\"required\":\"1\",\"type\":\"string\"},\"dateUpdated\":{\"description\":\"更新日期\",\"name\":\"dateUpdated\",\"required\":\"1\",\"type\":\"string\"},\"provinceId\":{\"description\":\"省ID\",\"name\":\"provinceId\",\"required\":\"1\",\"type\":\"integer\"},\"provinceName\":{\"description\":\"省名称\",\"name\":\"provinceName\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"provinceId\",\"provinceName\",\"dateCreated\",\"dateUpdated\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_type": "json",
+				"req_headers": [
+					{
+						"name": "Content-Type",
+						"required": "1",
+						"value": "application/json"
+					},
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "省ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"省，直辖市\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "修改【省，直辖市】信息",
+				"type": "static"
+			},
+			{
+				"__v": 0,
+				"api_opened": false,
+				"desc": "\u003cpre\u003e\u003ccode\u003e删除【省，直辖市】信息\u003c/code\u003e\u003c/pre\u003e",
+				"edit_uid": 0,
+				"index": 4,
+				"markdown": "```\n删除【省，直辖市】信息\n```",
+				"method": "DELETE",
+				"path": "/s_provinces/:id",
+				"query_path": {
+					"params": [],
+					"path": "/s_provinces/:id"
+				},
+				"req_body_form": [],
+				"req_body_is_json_schema": true,
+				"req_headers": [
+					{
+						"desc": "jwt的值",
+						"name": "Authorization",
+						"required": "1",
+						"value": "Bearer jwt的值"
+					}
+				],
+				"req_params": [
+					{
+						"desc": "省ID",
+						"name": "id",
+						"required": "1"
+					}
+				],
+				"req_query": [],
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"省，直辖市\",\"properties\":{\"result\":{\"description\":\"是否成功\",\"type\":\"boolean\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body_is_json_schema": true,
+				"res_body_type": "json",
+				"status": "done",
+				"tag": [],
+				"title": "删除【省，直辖市】信息",
+				"type": "static"
+			}
+		],
+		"name": "省，直辖市"
+	},
+	{
+		"desc": "",
+		"index": 10,
 		"list": [
 			{
 				"__v": 0,
@@ -1492,7 +2384,7 @@
 	},
 	{
 		"desc": "",
-		"index": 7,
+		"index": 11,
 		"list": [
 			{
 				"__v": 0,
@@ -1705,7 +2597,7 @@
 	},
 	{
 		"desc": "",
-		"index": 8,
+		"index": 12,
 		"list": [
 			{
 				"__v": 0,
@@ -1738,7 +2630,7 @@
 					}
 				],
 				"req_query": [],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"店铺表\",\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"address\":{\"description\":\"店铺详细地址\",\"type\":\"string\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"city\":{\"description\":\"店铺地址-市\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"district\":{\"description\":\"店铺地址-区\",\"type\":\"string\"},\"exittime\":{\"description\":\"退出平台日期\",\"type\":\"string\"},\"leaguetime\":{\"description\":\"加盟平台日期\",\"type\":\"string\"},\"merchantid\":{\"description\":\"商家ID\",\"type\":\"integer\"},\"merchantname\":{\"description\":\"商家名\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"phone\":{\"description\":\"电话\",\"type\":\"string\"},\"province\":{\"description\":\"店铺地址-省\",\"type\":\"string\"},\"shopcode\":{\"description\":\"店铺号\",\"type\":\"string\"},\"shopid\":{\"description\":\"店铺ID\",\"type\":\"integer\"},\"shopname\":{\"description\":\"店铺名称\",\"type\":\"string\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"店铺表\",\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"address\":{\"description\":\"店铺详细地址\",\"type\":\"string\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"city\":{\"description\":\"店铺地址-市\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"district\":{\"description\":\"店铺地址-区\",\"type\":\"string\"},\"exittime\":{\"description\":\"退出平台日期\",\"type\":\"string\"},\"latitude\":{\"description\":\"纬度\",\"type\":\"string\"},\"leaguetime\":{\"description\":\"加盟平台日期\",\"type\":\"string\"},\"longtitude\":{\"description\":\"经度\",\"type\":\"string\"},\"merchantid\":{\"description\":\"商家ID\",\"type\":\"integer\"},\"merchantname\":{\"description\":\"商家名\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"phone\":{\"description\":\"电话\",\"type\":\"string\"},\"province\":{\"description\":\"店铺地址-省\",\"type\":\"string\"},\"shopcode\":{\"description\":\"店铺号\",\"type\":\"string\"},\"shopid\":{\"description\":\"店铺ID\",\"type\":\"integer\"},\"shopname\":{\"description\":\"店铺名称\",\"type\":\"string\"}},\"required\":[],\"type\":\"object\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
 				"res_body_is_json_schema": true,
 				"res_body_type": "json",
 				"status": "done",
@@ -1781,7 +2673,7 @@
 						"required": "0"
 					}
 				],
-				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"店铺表列表\",\"items\":{\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"address\":{\"description\":\"店铺详细地址\",\"type\":\"string\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"city\":{\"description\":\"店铺地址-市\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"district\":{\"description\":\"店铺地址-区\",\"type\":\"string\"},\"exittime\":{\"description\":\"退出平台日期\",\"type\":\"string\"},\"leaguetime\":{\"description\":\"加盟平台日期\",\"type\":\"string\"},\"merchantid\":{\"description\":\"商家ID\",\"type\":\"integer\"},\"merchantname\":{\"description\":\"商家名\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"phone\":{\"description\":\"电话\",\"type\":\"string\"},\"province\":{\"description\":\"店铺地址-省\",\"type\":\"string\"},\"shopcode\":{\"description\":\"店铺号\",\"type\":\"string\"},\"shopid\":{\"description\":\"店铺ID\",\"type\":\"integer\"},\"shopname\":{\"description\":\"店铺名称\",\"type\":\"string\"}},\"type\":\"object\"},\"required\":[],\"type\":\"array\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"res_body": "{\"properties\":{\"code\":{\"description\":\"错误码，成功为\\\"ok\\\"\",\"type\":\"string\"},\"data\":{\"description\":\"店铺表列表\",\"items\":{\"properties\":{\"adder\":{\"description\":\"创建人\",\"type\":\"integer\"},\"address\":{\"description\":\"店铺详细地址\",\"type\":\"string\"},\"addtime\":{\"description\":\"创建时间\",\"type\":\"string\"},\"city\":{\"description\":\"店铺地址-市\",\"type\":\"string\"},\"deleteStatus\":{\"description\":\"0:未知，1：未删除，2：已删除\",\"type\":\"integer\"},\"district\":{\"description\":\"店铺地址-区\",\"type\":\"string\"},\"exittime\":{\"description\":\"退出平台日期\",\"type\":\"string\"},\"latitude\":{\"description\":\"纬度\",\"type\":\"string\"},\"leaguetime\":{\"description\":\"加盟平台日期\",\"type\":\"string\"},\"longtitude\":{\"description\":\"经度\",\"type\":\"string\"},\"merchantid\":{\"description\":\"商家ID\",\"type\":\"integer\"},\"merchantname\":{\"description\":\"商家名\",\"type\":\"string\"},\"moder\":{\"description\":\"修改人\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"type\":\"string\"},\"phone\":{\"description\":\"电话\",\"type\":\"string\"},\"province\":{\"description\":\"店铺地址-省\",\"type\":\"string\"},\"shopcode\":{\"description\":\"店铺号\",\"type\":\"string\"},\"shopid\":{\"description\":\"店铺ID\",\"type\":\"integer\"},\"shopname\":{\"description\":\"店铺名称\",\"type\":\"string\"}},\"type\":\"object\"},\"required\":[],\"type\":\"array\"},\"message\":{\"description\":\"错误信息\",\"type\":\"string\"}},\"required\":[\"code\",\"message\"],\"title\":\"empty object\",\"type\":\"object\"}",
 				"res_body_is_json_schema": true,
 				"res_body_type": "json",
 				"status": "done",
@@ -1803,7 +2695,7 @@
 				},
 				"req_body_form": [],
 				"req_body_is_json_schema": true,
-				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"address\":{\"description\":\"店铺详细地址\",\"name\":\"address\",\"required\":\"1\",\"type\":\"string\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"city\":{\"description\":\"店铺地址-市\",\"name\":\"city\",\"required\":\"1\",\"type\":\"string\"},\"district\":{\"description\":\"店铺地址-区\",\"name\":\"district\",\"required\":\"1\",\"type\":\"string\"},\"exittime\":{\"description\":\"退出平台日期\",\"name\":\"exittime\",\"required\":\"1\",\"type\":\"string\"},\"leaguetime\":{\"description\":\"加盟平台日期\",\"name\":\"leaguetime\",\"required\":\"1\",\"type\":\"string\"},\"merchantid\":{\"description\":\"商家ID\",\"name\":\"merchantid\",\"required\":\"1\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"phone\":{\"description\":\"电话\",\"name\":\"phone\",\"required\":\"1\",\"type\":\"string\"},\"province\":{\"description\":\"店铺地址-省\",\"name\":\"province\",\"required\":\"1\",\"type\":\"string\"},\"shopcode\":{\"description\":\"店铺号\",\"name\":\"shopcode\",\"required\":\"1\",\"type\":\"string\"},\"shopname\":{\"description\":\"店铺名称\",\"name\":\"shopname\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"shopcode\",\"shopname\",\"province\",\"city\",\"district\",\"address\",\"phone\",\"leaguetime\",\"exittime\",\"adder\",\"addtime\",\"moder\",\"modtime\",\"merchantid\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"address\":{\"description\":\"店铺详细地址\",\"name\":\"address\",\"required\":\"1\",\"type\":\"string\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"city\":{\"description\":\"店铺地址-市\",\"name\":\"city\",\"required\":\"1\",\"type\":\"string\"},\"district\":{\"description\":\"店铺地址-区\",\"name\":\"district\",\"required\":\"1\",\"type\":\"string\"},\"exittime\":{\"description\":\"退出平台日期\",\"name\":\"exittime\",\"required\":\"1\",\"type\":\"string\"},\"latitude\":{\"description\":\"纬度\",\"name\":\"latitude\",\"required\":\"1\",\"type\":\"string\"},\"leaguetime\":{\"description\":\"加盟平台日期\",\"name\":\"leaguetime\",\"required\":\"1\",\"type\":\"string\"},\"longtitude\":{\"description\":\"经度\",\"name\":\"longtitude\",\"required\":\"1\",\"type\":\"string\"},\"merchantid\":{\"description\":\"商家ID\",\"name\":\"merchantid\",\"required\":\"1\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"phone\":{\"description\":\"电话\",\"name\":\"phone\",\"required\":\"1\",\"type\":\"string\"},\"province\":{\"description\":\"店铺地址-省\",\"name\":\"province\",\"required\":\"1\",\"type\":\"string\"},\"shopcode\":{\"description\":\"店铺号\",\"name\":\"shopcode\",\"required\":\"1\",\"type\":\"string\"},\"shopname\":{\"description\":\"店铺名称\",\"name\":\"shopname\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"shopcode\",\"shopname\",\"province\",\"city\",\"district\",\"address\",\"phone\",\"leaguetime\",\"exittime\",\"adder\",\"addtime\",\"moder\",\"modtime\",\"merchantid\",\"longtitude\",\"latitude\"],\"title\":\"empty object\",\"type\":\"object\"}",
 				"req_body_type": "json",
 				"req_headers": [
 					{
@@ -1843,7 +2735,7 @@
 				},
 				"req_body_form": [],
 				"req_body_is_json_schema": true,
-				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"address\":{\"description\":\"店铺详细地址\",\"name\":\"address\",\"required\":\"1\",\"type\":\"string\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"city\":{\"description\":\"店铺地址-市\",\"name\":\"city\",\"required\":\"1\",\"type\":\"string\"},\"district\":{\"description\":\"店铺地址-区\",\"name\":\"district\",\"required\":\"1\",\"type\":\"string\"},\"exittime\":{\"description\":\"退出平台日期\",\"name\":\"exittime\",\"required\":\"1\",\"type\":\"string\"},\"leaguetime\":{\"description\":\"加盟平台日期\",\"name\":\"leaguetime\",\"required\":\"1\",\"type\":\"string\"},\"merchantid\":{\"description\":\"商家ID\",\"name\":\"merchantid\",\"required\":\"1\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"phone\":{\"description\":\"电话\",\"name\":\"phone\",\"required\":\"1\",\"type\":\"string\"},\"province\":{\"description\":\"店铺地址-省\",\"name\":\"province\",\"required\":\"1\",\"type\":\"string\"},\"shopcode\":{\"description\":\"店铺号\",\"name\":\"shopcode\",\"required\":\"1\",\"type\":\"string\"},\"shopid\":{\"description\":\"店铺ID\",\"name\":\"shopid\",\"required\":\"1\",\"type\":\"integer\"},\"shopname\":{\"description\":\"店铺名称\",\"name\":\"shopname\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"shopid\",\"shopcode\",\"shopname\",\"province\",\"city\",\"district\",\"address\",\"phone\",\"leaguetime\",\"exittime\",\"adder\",\"addtime\",\"moder\",\"modtime\",\"merchantid\"],\"title\":\"empty object\",\"type\":\"object\"}",
+				"req_body_other": "{\"properties\":{\"adder\":{\"description\":\"创建人\",\"name\":\"adder\",\"required\":\"1\",\"type\":\"integer\"},\"address\":{\"description\":\"店铺详细地址\",\"name\":\"address\",\"required\":\"1\",\"type\":\"string\"},\"addtime\":{\"description\":\"创建时间\",\"name\":\"addtime\",\"required\":\"1\",\"type\":\"string\"},\"city\":{\"description\":\"店铺地址-市\",\"name\":\"city\",\"required\":\"1\",\"type\":\"string\"},\"district\":{\"description\":\"店铺地址-区\",\"name\":\"district\",\"required\":\"1\",\"type\":\"string\"},\"exittime\":{\"description\":\"退出平台日期\",\"name\":\"exittime\",\"required\":\"1\",\"type\":\"string\"},\"latitude\":{\"description\":\"纬度\",\"name\":\"latitude\",\"required\":\"1\",\"type\":\"string\"},\"leaguetime\":{\"description\":\"加盟平台日期\",\"name\":\"leaguetime\",\"required\":\"1\",\"type\":\"string\"},\"longtitude\":{\"description\":\"经度\",\"name\":\"longtitude\",\"required\":\"1\",\"type\":\"string\"},\"merchantid\":{\"description\":\"商家ID\",\"name\":\"merchantid\",\"required\":\"1\",\"type\":\"integer\"},\"moder\":{\"description\":\"修改人\",\"name\":\"moder\",\"required\":\"1\",\"type\":\"integer\"},\"modtime\":{\"description\":\"修改时间\",\"name\":\"modtime\",\"required\":\"1\",\"type\":\"string\"},\"phone\":{\"description\":\"电话\",\"name\":\"phone\",\"required\":\"1\",\"type\":\"string\"},\"province\":{\"description\":\"店铺地址-省\",\"name\":\"province\",\"required\":\"1\",\"type\":\"string\"},\"shopcode\":{\"description\":\"店铺号\",\"name\":\"shopcode\",\"required\":\"1\",\"type\":\"string\"},\"shopid\":{\"description\":\"店铺ID\",\"name\":\"shopid\",\"required\":\"1\",\"type\":\"integer\"},\"shopname\":{\"description\":\"店铺名称\",\"name\":\"shopname\",\"required\":\"1\",\"type\":\"string\"}},\"required\":[\"shopid\",\"shopcode\",\"shopname\",\"province\",\"city\",\"district\",\"address\",\"phone\",\"leaguetime\",\"exittime\",\"adder\",\"addtime\",\"moder\",\"modtime\",\"merchantid\",\"longtitude\",\"latitude\"],\"title\":\"empty object\",\"type\":\"object\"}",
 				"req_body_type": "json",
 				"req_headers": [
 					{
@@ -1918,7 +2810,7 @@
 	},
 	{
 		"desc": "",
-		"index": 9,
+		"index": 13,
 		"list": [
 			{
 				"__v": 0,
@@ -2131,7 +3023,7 @@
 	},
 	{
 		"desc": "",
-		"index": 10,
+		"index": 14,
 		"list": [
 			{
 				"__v": 0,

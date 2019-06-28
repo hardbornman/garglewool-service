@@ -65,6 +65,12 @@ type updateShopInfoRequest struct {
 
 	// 商家ID
 	Merchantid int `form:"merchantid"`
+
+	// 经度
+	Longtitude string `form:"longtitude"`
+
+	// 纬度
+	Latitude string `form:"latitude"`
 }
 
 // 方法
@@ -422,8 +428,56 @@ func UpdateShopInfo(c *gin.Context) {
 	}
 	//endregion
 
+	//region 验证longtitude参数
+	if golibs.Length(request.Longtitude) <= 0 {
+		c.JSON(http.StatusOK, model.Response{
+			Code:    "shop.UpdateShopInfo.longtitude is null",
+			Message: "缺少【经度】参数",
+		})
+		return
+	}
+	if !golibs.IsGeneralString(request.Longtitude) {
+		c.JSON(http.StatusOK, model.Response{
+			Code:    "shop.UpdateShopInfo.longtitude format err",
+			Message: "【经度】参数格式不正确",
+		})
+		return
+	}
+	if golibs.Length(request.Longtitude) > 20 {
+		c.JSON(http.StatusOK, model.Response{
+			Code:    "shop.UpdateShopInfo.longtitude length err",
+			Message: "【经度】参数长度不能超过20个字符",
+		})
+		return
+	}
+	//endregion
+
+	//region 验证latitude参数
+	if golibs.Length(request.Latitude) <= 0 {
+		c.JSON(http.StatusOK, model.Response{
+			Code:    "shop.UpdateShopInfo.latitude is null",
+			Message: "缺少【纬度】参数",
+		})
+		return
+	}
+	if !golibs.IsGeneralString(request.Latitude) {
+		c.JSON(http.StatusOK, model.Response{
+			Code:    "shop.UpdateShopInfo.latitude format err",
+			Message: "【纬度】参数格式不正确",
+		})
+		return
+	}
+	if golibs.Length(request.Latitude) > 20 {
+		c.JSON(http.StatusOK, model.Response{
+			Code:    "shop.UpdateShopInfo.latitude length err",
+			Message: "【纬度】参数长度不能超过20个字符",
+		})
+		return
+	}
+	//endregion
+
 	//region 修改【店铺表】信息
-	isSuccess, err := service.UpdateShopInfo(request.shopidInt, request.Shopcode, request.Shopname, request.Province, request.City, request.District, request.Address, request.Phone, request.leaguetimeTime, request.exittimeTime, request.Adder, request.addtimeTime, request.Moder, request.modtimeTime, request.Merchantid)
+	isSuccess, err := service.UpdateShopInfo(request.shopidInt, request.Shopcode, request.Shopname, request.Province, request.City, request.District, request.Address, request.Phone, request.leaguetimeTime, request.exittimeTime, request.Adder, request.addtimeTime, request.Moder, request.modtimeTime, request.Merchantid, request.Longtitude, request.Latitude)
 	if err != nil {
 		c.JSON(http.StatusOK, model.Response{
 			Code:    "shop.UpdateShopInfo.update err",

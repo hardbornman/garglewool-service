@@ -23,4 +23,6 @@ type Shop struct {
 	DeleteStatus int8      //0:未知，1：未删除，2：已删除
 	Merchantid   int       //商家ID
 	Merchantname string    //商家名【外键表:商家用户表】
+	Longtitude   string    //经度
+	Latitude     string    //纬度
 }

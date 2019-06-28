@@ -116,6 +116,8 @@ func GetShopInfo(c *gin.Context) {
 			"modtime":      shopInfo.Modtime.Format(golibs.Time_TIMEStandard),    //修改时间
 			"deleteStatus": shopInfo.DeleteStatus,                                //0:未知，1：未删除，2：已删除
 			"merchantid":   shopInfo.Merchantid,                                  //商家ID
+			"longtitude":   shopInfo.Longtitude,                                  //经度
+			"latitude":     shopInfo.Latitude,                                    //纬度
 		},
 	})
 	//endregion

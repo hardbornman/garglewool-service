@@ -150,7 +150,7 @@ func GetShopList(pageIndex, pageSize int) (shops []model.Shop, count int, err er
 }
 
 // 插入【店铺表】信息
-func InsertShopInfo(shopcode string, shopname string, province string, city string, district string, address string, phone string, leaguetime time.Time, exittime time.Time, adder int, addtime time.Time, moder int, modtime time.Time, merchantid int) (int, error) {
+func InsertShopInfo(shopcode string, shopname string, province string, city string, district string, address string, phone string, leaguetime time.Time, exittime time.Time, adder int, addtime time.Time, moder int, modtime time.Time, merchantid int, longtitude string, latitude string) (int, error) {
 
 	//region 验证请求路径
 	validCallPath()
@@ -188,6 +188,8 @@ func InsertShopInfo(shopcode string, shopname string, province string, city stri
 	shopInfo.Moder = moder
 	shopInfo.Modtime = modtime
 	shopInfo.Merchantid = merchantid
+	shopInfo.Longtitude = longtitude
+	shopInfo.Latitude = latitude
 	shopInfo.DeleteStatus = 1
 	//endregion
 
@@ -222,7 +224,7 @@ func InsertShopInfo(shopcode string, shopname string, province string, city stri
 }
 
 //修改【店铺表】信息
-func UpdateShopInfo(shopid int, shopcode string, shopname string, province string, city string, district string, address string, phone string, leaguetime time.Time, exittime time.Time, adder int, addtime time.Time, moder int, modtime time.Time, merchantid int) (bool, error) {
+func UpdateShopInfo(shopid int, shopcode string, shopname string, province string, city string, district string, address string, phone string, leaguetime time.Time, exittime time.Time, adder int, addtime time.Time, moder int, modtime time.Time, merchantid int, longtitude string, latitude string) (bool, error) {
 
 	//region 验证请求路径
 	validCallPath()
@@ -269,7 +271,9 @@ func UpdateShopInfo(shopid int, shopcode string, shopname string, province strin
 		shopInfo.Addtime == addtime &&
 		shopInfo.Moder == moder &&
 		shopInfo.Modtime == modtime &&
-		shopInfo.Merchantid == merchantid {
+		shopInfo.Merchantid == merchantid &&
+		shopInfo.Longtitude == longtitude &&
+		shopInfo.Latitude == latitude {
 		return true, nil
 	}
 	//endregion
@@ -289,6 +293,8 @@ func UpdateShopInfo(shopid int, shopcode string, shopname string, province strin
 	shopInfo.Moder = moder
 	shopInfo.Modtime = modtime
 	shopInfo.Merchantid = merchantid
+	shopInfo.Longtitude = longtitude
+	shopInfo.Latitude = latitude
 	shopInfo.DeleteStatus = 1
 	//endregion
 

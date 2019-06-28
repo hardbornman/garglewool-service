@@ -131,6 +131,8 @@ func GetShopList(c *gin.Context) {
 				"modtime":      v.Modtime.Format(golibs.Time_TIMEStandard),    //修改时间
 				"deleteStatus": v.DeleteStatus,                                //0:未知，1：未删除，2：已删除
 				"merchantid":   v.Merchantid,                                  //商家ID
+				"longtitude":   v.Longtitude,                                  //经度
+				"latitude":     v.Latitude,                                    //纬度
 			}
 		}
 	}

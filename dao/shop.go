@@ -33,7 +33,7 @@ func (d *shop) Exist(shopid int) (bool, error) {
 
 // 插入单条记录到【店铺表】表中
 func (d *shop) Insert(m *model.Shop) (int64, error) {
-	result, err := garglewool.Exec("insert into shop(shopcode,shopname,province,city,district,address,phone,leaguetime,exittime,adder,addtime,moder,modtime,deleteStatus,merchantid) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", m.Shopcode, m.Shopname, m.Province, m.City, m.District, m.Address, m.Phone, m.Leaguetime, m.Exittime, m.Adder, m.Addtime, m.Moder, m.Modtime, m.DeleteStatus, m.Merchantid)
+	result, err := garglewool.Exec("insert into shop(shopcode,shopname,province,city,district,address,phone,leaguetime,exittime,adder,addtime,moder,modtime,deleteStatus,merchantid,longtitude,latitude) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", m.Shopcode, m.Shopname, m.Province, m.City, m.District, m.Address, m.Phone, m.Leaguetime, m.Exittime, m.Adder, m.Addtime, m.Moder, m.Modtime, m.DeleteStatus, m.Merchantid, m.Longtitude, m.Latitude)
 	if err != nil {
 		return -1, err
 	}
@@ -42,7 +42,7 @@ func (d *shop) Insert(m *model.Shop) (int64, error) {
 
 // 根据【店铺ID】修改【店铺表】表的单条记录
 func (d *shop) Update(m *model.Shop) (bool, error) {
-	result, err := garglewool.Exec("update shop set shopcode=?, shopname=?, province=?, city=?, district=?, address=?, phone=?, leaguetime=?, exittime=?, adder=?, addtime=?, moder=?, modtime=?, deleteStatus=?, merchantid=? where shopid=?", m.Shopcode, m.Shopname, m.Province, m.City, m.District, m.Address, m.Phone, m.Leaguetime, m.Exittime, m.Adder, m.Addtime, m.Moder, m.Modtime, m.DeleteStatus, m.Merchantid, m.Shopid)
+	result, err := garglewool.Exec("update shop set shopcode=?, shopname=?, province=?, city=?, district=?, address=?, phone=?, leaguetime=?, exittime=?, adder=?, addtime=?, moder=?, modtime=?, deleteStatus=?, merchantid=?, longtitude=?, latitude=? where shopid=?", m.Shopcode, m.Shopname, m.Province, m.City, m.District, m.Address, m.Phone, m.Leaguetime, m.Exittime, m.Adder, m.Addtime, m.Moder, m.Modtime, m.DeleteStatus, m.Merchantid, m.Longtitude, m.Latitude, m.Shopid)
 	if err != nil {
 		return false, err
 	}
@@ -94,7 +94,7 @@ func (d *shop) DeleteIn(shopids []int) (count int64, err error) {
 
 // 根据【店铺ID】查询【店铺表】表中的单条记录
 func (d *shop) Get(shopid int) (shop model.Shop, err error) {
-	rows, err := garglewool.Queryx("select /*+ MAX_EXECUTION_TIME(5000) */ shopid, shopcode, shopname, province, city, district, address, phone, leaguetime, exittime, adder, addtime, moder, modtime, deleteStatus, merchantid from shop where shopid=?", shopid)
+	rows, err := garglewool.Queryx("select /*+ MAX_EXECUTION_TIME(5000) */ shopid, shopcode, shopname, province, city, district, address, phone, leaguetime, exittime, adder, addtime, moder, modtime, deleteStatus, merchantid, longtitude, latitude from shop where shopid=?", shopid)
 	if err != nil {
 		return shop, err
 	}
@@ -115,7 +115,7 @@ func (d *shop) GetIn(shopids []int) (shops []model.Shop, err error) {
 		return shops, errors.New("shopids is empty")
 	}
 	sql_str := bytes.Buffer{}
-	sql_str.WriteString("select /*+ MAX_EXECUTION_TIME(5000) */ shopid, shopcode, shopname, province, city, district, address, phone, leaguetime, exittime, adder, addtime, moder, modtime, deleteStatus, merchantid from ")
+	sql_str.WriteString("select /*+ MAX_EXECUTION_TIME(5000) */ shopid, shopcode, shopname, province, city, district, address, phone, leaguetime, exittime, adder, addtime, moder, modtime, deleteStatus, merchantid, longtitude, latitude from ")
 	sql_str.WriteString("shop")
 	sql_str.WriteString(" where shopid in(")
 	param_keys := strings.Repeat("?,", len(shopids))
@@ -192,7 +192,7 @@ func (d *shop) GetRowList(pageIndex, pageSize int) (shops []model.Shop, err erro
 	params := make([]interface{}, 0)
 	conditions := 0
 
-	sqlString.Append("select /*+ MAX_EXECUTION_TIME(5000) */ shopid, shopcode, shopname, province, city, district, address, phone, leaguetime, exittime, adder, addtime, moder, modtime, deleteStatus, merchantid from shop")
+	sqlString.Append("select /*+ MAX_EXECUTION_TIME(5000) */ shopid, shopcode, shopname, province, city, district, address, phone, leaguetime, exittime, adder, addtime, moder, modtime, deleteStatus, merchantid, longtitude, latitude from shop")
 
 	//region 处理deleteStatus
 	if conditions > 0 {
@@ -227,7 +227,7 @@ func (d *shop) GetRowList(pageIndex, pageSize int) (shops []model.Shop, err erro
 func (d *shop) _RowsToArray(rows *sqlx.Rows) (shops []model.Shop, err error) {
 	for rows.Next() {
 		m := model.Shop{}
-		err = rows.Scan(&m.Shopid, &m.Shopcode, &m.Shopname, &m.Province, &m.City, &m.District, &m.Address, &m.Phone, &m.Leaguetime, &m.Exittime, &m.Adder, &m.Addtime, &m.Moder, &m.Modtime, &m.DeleteStatus, &m.Merchantid)
+		err = rows.Scan(&m.Shopid, &m.Shopcode, &m.Shopname, &m.Province, &m.City, &m.District, &m.Address, &m.Phone, &m.Leaguetime, &m.Exittime, &m.Adder, &m.Addtime, &m.Moder, &m.Modtime, &m.DeleteStatus, &m.Merchantid, &m.Longtitude, &m.Latitude)
 		if err != nil {
 			return shops, err
 		}
