@@ -18,7 +18,6 @@ import (
 	"github.com/hardbornman/garglewool-service/controller/rest/userrole"
 	"github.com/hardbornman/garglewool-service/controller/rest/voucher"
 	"github.com/hardbornman/garglewool-service/initials/config"
-	"github.com/hardbornman/garglewool-service/model"
 )
 
 // 启动服务
@@ -32,12 +31,13 @@ func Start() {
 	//endregion
 
 	//region 添加路由
-	r.NoRoute(func(c *gin.Context) {
-		c.JSON(404, model.Response{Code: "not found", Message: "Page not found"})
-	})
+	//r.NoRoute(func(c *gin.Context) {
+	//	c.JSON(404, model.Response{Code: "not found", Message: "Page not found"})
+	//})
+	r.Use(MiddleWare())
 	r.POST("/auth", rest.Auth)
 	v1 := r.Group("/v1")
-	v1.Use(middleware.LimitMiddleware(), middleware.CORSMiddleware())
+	v1.Use(middleware.LimitMiddleware())
 	{
 
 		//region REST接口
@@ -181,4 +181,17 @@ func Start() {
 	r.Run(fmt.Sprintf("0.0.0.0:%d", config.Config.Port))
 	//endregion
 
+}
+
+//cors
+func MiddleWare() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		//c.Request.SetBasicAuth("x","x")
+		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")             //允许访问所有域
+		c.Writer.Header().Add("Access-Control-Allow-Headers", "Content-Type") //header的类型
+		//c.Writer.Header().Set("content-type","application/json") //返回数据格式是json
+		c.Next()
+		//}
+
+	}
 }

@@ -95,9 +95,9 @@ func generateToken(c *gin.Context, user model.Merchant) {
 		Token:    token,
 	}
 	c.JSON(http.StatusOK, gin.H{
-		"status": 0,
-		"msg":    "登录成功！",
-		"data":   data,
+		"code": 0,
+		"msg":  "登录成功！",
+		"data": data,
 	})
 	return
 }
