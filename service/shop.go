@@ -90,21 +90,80 @@ func GetInShopList(shopids []int) (shops []model.Shop, count int, err error) {
 }
 
 // 分页查询【店铺表】列表
-func GetShopList(pageIndex, pageSize int) (shops []model.Shop, count int, err error) {
+//func GetShopList(pageIndex, pageSize int) (shops []model.Shop, count int, err error) {
+//
+//	//region 验证请求路径
+//	validCallPath()
+//	//endregion
+//
+//	//region 查询总数
+//	count, err = dao.ShopDao.GetRowCount()
+//	if err != nil || count <= 0 {
+//		return
+//	}
+//	//endregion
+//
+//	//region 查询列表
+//	shops, err = dao.ShopDao.GetRowList(pageIndex, pageSize)
+//	if err != nil {
+//		return
+//	}
+//	if len(shops) > 0 && shops[0].Shopid > 0 {
+//
+//		//region 查询外键表【商家用户表】列表
+//		merchantids := make([]int, 0)
+//		var merchants []model.Merchant
+//		for _, shop := range shops {
+//			if shop.Merchantid > 0 {
+//				merchantids = append(merchantids, shop.Merchantid)
+//			}
+//		}
+//		if len(merchantids) > 0 {
+//			merchants, err = dao.MerchantDao.GetIn(merchantids)
+//			if err != nil {
+//				return
+//			}
+//		}
+//		//endregion
+//
+//		//region 处理外键表
+//		for i, shop := range shops {
+//
+//			//region 处理【商家用户表】列表
+//			if len(merchants) > 0 {
+//				for _, merchant := range merchants {
+//					if shop.Merchantid == merchant.Merchantid {
+//						shops[i].Merchantname = merchant.Merchantname
+//						break
+//					}
+//				}
+//			}
+//			//endregion
+//
+//		}
+//		//endregion
+//
+//	}
+//	//endregion
+//
+//	return
+//}
+// 分页查询【店铺表】列表
+func GetShopList(shopid int, shopname string, address string, leaguetime time.Time, pageIndex, pageSize int) (shops []model.Shop, count int, err error) {
 
 	//region 验证请求路径
 	validCallPath()
 	//endregion
 
 	//region 查询总数
-	count, err = dao.ShopDao.GetRowCount()
+	count, err = dao.ShopDao.GetRowCount(shopid, shopname, address, leaguetime)
 	if err != nil || count <= 0 {
 		return
 	}
 	//endregion
 
 	//region 查询列表
-	shops, err = dao.ShopDao.GetRowList(pageIndex, pageSize)
+	shops, err = dao.ShopDao.GetRowList(shopid, shopname, address, leaguetime, pageIndex, pageSize)
 	if err != nil {
 		return
 	}

@@ -7,6 +7,7 @@ import (
 	"github.com/hardbornman/garglewool-service/model"
 	"github.com/jmoiron/sqlx"
 	"strings"
+	"time"
 )
 
 var ShopDao = shop{}
@@ -135,12 +136,152 @@ func (d *shop) GetIn(shopids []int) (shops []model.Shop, err error) {
 }
 
 // 查询【店铺表】表总记录数
-func (d *shop) GetRowCount() (count int, err error) {
+//func (d *shop) GetRowCount() (count int, err error) {
+//	sqlString := golibs.NewStringBuilder()
+//	params := make([]interface{}, 0)
+//	conditions := 0
+//
+//	sqlString.Append("select /*+ MAX_EXECUTION_TIME(5000) */ count(0) Count from shop")
+//
+//	//region 处理deleteStatus
+//	if conditions > 0 {
+//		sqlString.Append(" and ")
+//	} else {
+//		sqlString.Append(" where ")
+//	}
+//	sqlString.Append("deleteStatus = 1")
+//	//endregion
+//
+//	//region Query
+//	rows, err := garglewool.Queryx(sqlString.ToString(), params...)
+//	if err != nil {
+//		return -1, err
+//	}
+//	defer rows.Close()
+//	if rows.Next() {
+//		err = rows.Scan(&count)
+//		if err != nil {
+//			return -1, err
+//		}
+//		return count, nil
+//	}
+//	//endregion
+//
+//	return -1, nil
+//}
+
+// 根据【商家ID】查询【店铺表】总记录数
+func (d *shop) GetRowCountByMerchantid(merchantid int) (count int, err error) {
+	rows, err := garglewool.Queryx("select count(0) Count from shop where merchantid=? and deleteStatus = 1", merchantid)
+	if err != nil {
+		return -1, err
+	}
+	defer rows.Close()
+	if rows.Next() {
+		err = rows.Scan(&count)
+		if err != nil {
+			return -1, err
+		}
+		return count, nil
+	}
+	return -1, err
+}
+
+// 查询【店铺表】列表
+//func (d *shop) GetRowList(pageIndex, pageSize int) (shops []model.Shop, err error) {
+//	sqlString := golibs.NewStringBuilder()
+//	params := make([]interface{}, 0)
+//	conditions := 0
+//
+//	sqlString.Append("select /*+ MAX_EXECUTION_TIME(5000) */ shopid, shopcode, shopname, province, city, district, address, phone, leaguetime, exittime, adder, addtime, moder, modtime, deleteStatus, merchantid, longtitude, latitude from shop")
+//
+//	//region 处理deleteStatus
+//	if conditions > 0 {
+//		sqlString.Append(" and ")
+//	} else {
+//		sqlString.Append(" where ")
+//	}
+//	sqlString.Append("deleteStatus = 1")
+//	//endregion
+//
+//	//region order by
+//	sqlString.Append(" order by shopid desc")
+//	//endregion
+//
+//	//region limit
+//	sqlString.Append(" limit ?,?")
+//	params = append(params, (pageIndex-1)*pageSize)
+//	params = append(params, pageSize)
+//	//endregion
+//
+//	//region Query
+//	rows, err := garglewool.Queryx(sqlString.ToString(), params...)
+//	if err != nil {
+//		return shops, err
+//	}
+//	defer rows.Close()
+//	return d._RowsToArray(rows)
+//	//endregion
+//}
+// 查询【店铺表】表总记录数,使用条件：【店铺ID】,【店铺名称】,【店铺详细地址】,【加盟平台日期】
+func (d *shop) GetRowCount(shopid int, shopname string, address string, leaguetime time.Time) (count int, err error) {
 	sqlString := golibs.NewStringBuilder()
 	params := make([]interface{}, 0)
 	conditions := 0
 
 	sqlString.Append("select /*+ MAX_EXECUTION_TIME(5000) */ count(0) Count from shop")
+
+	//region 处理shopid
+	if shopid > 0 {
+		if conditions > 0 {
+			sqlString.Append(" and ")
+		} else {
+			sqlString.Append(" where ")
+		}
+		sqlString.Append("shopid=?")
+		params = append(params, shopid)
+		conditions++
+	}
+	//endregion
+
+	//region 处理shopname
+	if golibs.Length(shopname) > 0 {
+		if conditions > 0 {
+			sqlString.Append(" and ")
+		} else {
+			sqlString.Append(" where ")
+		}
+		sqlString.Append("shopname=?")
+		params = append(params, shopname)
+		conditions++
+	}
+	//endregion
+
+	//region 处理address
+	if golibs.Length(address) > 0 {
+		if conditions > 0 {
+			sqlString.Append(" and ")
+		} else {
+			sqlString.Append(" where ")
+		}
+		sqlString.Append("address=?")
+		params = append(params, address)
+		conditions++
+	}
+	//endregion
+
+	//region 处理leaguetime
+	if leaguetime.After(time.Date(2018, 1, 1, 0, 0, 0, 0, time.Local)) {
+		if conditions > 0 {
+			sqlString.Append(" and ")
+		} else {
+			sqlString.Append(" where ")
+		}
+		sqlString.Append("leaguetime=?")
+		params = append(params, leaguetime)
+		conditions++
+	}
+	//endregion
 
 	//region 处理deleteStatus
 	if conditions > 0 {
@@ -169,30 +310,65 @@ func (d *shop) GetRowCount() (count int, err error) {
 	return -1, nil
 }
 
-// 根据【商家ID】查询【店铺表】总记录数
-func (d *shop) GetRowCountByMerchantid(merchantid int) (count int, err error) {
-	rows, err := garglewool.Queryx("select count(0) Count from shop where merchantid=? and deleteStatus = 1", merchantid)
-	if err != nil {
-		return -1, err
-	}
-	defer rows.Close()
-	if rows.Next() {
-		err = rows.Scan(&count)
-		if err != nil {
-			return -1, err
-		}
-		return count, nil
-	}
-	return -1, err
-}
-
-// 查询【店铺表】列表
-func (d *shop) GetRowList(pageIndex, pageSize int) (shops []model.Shop, err error) {
+// 查询【店铺表】列表,使用条件：【店铺ID】,【店铺名称】,【店铺详细地址】,【加盟平台日期】
+func (d *shop) GetRowList(shopid int, shopname string, address string, leaguetime time.Time, pageIndex, pageSize int) (shops []model.Shop, err error) {
 	sqlString := golibs.NewStringBuilder()
 	params := make([]interface{}, 0)
 	conditions := 0
 
 	sqlString.Append("select /*+ MAX_EXECUTION_TIME(5000) */ shopid, shopcode, shopname, province, city, district, address, phone, leaguetime, exittime, adder, addtime, moder, modtime, deleteStatus, merchantid, longtitude, latitude from shop")
+
+	//region 处理shopid
+	if shopid > 0 {
+		if conditions > 0 {
+			sqlString.Append(" and ")
+		} else {
+			sqlString.Append(" where ")
+		}
+		sqlString.Append("shopid=?")
+		params = append(params, shopid)
+		conditions++
+	}
+	//endregion
+
+	//region 处理shopname
+	if golibs.Length(shopname) > 0 {
+		if conditions > 0 {
+			sqlString.Append(" and ")
+		} else {
+			sqlString.Append(" where ")
+		}
+		sqlString.Append("shopname=?")
+		params = append(params, shopname)
+		conditions++
+	}
+	//endregion
+
+	//region 处理address
+	if golibs.Length(address) > 0 {
+		if conditions > 0 {
+			sqlString.Append(" and ")
+		} else {
+			sqlString.Append(" where ")
+		}
+		sqlString.Append("address=?")
+		params = append(params, address)
+		conditions++
+	}
+	//endregion
+
+	//region 处理leaguetime
+	if leaguetime.After(time.Date(2018, 1, 1, 0, 0, 0, 0, time.Local)) {
+		if conditions > 0 {
+			sqlString.Append(" and ")
+		} else {
+			sqlString.Append(" where ")
+		}
+		sqlString.Append("leaguetime=?")
+		params = append(params, leaguetime)
+		conditions++
+	}
+	//endregion
 
 	//region 处理deleteStatus
 	if conditions > 0 {
